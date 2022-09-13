@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 연습07 - 시멘틱 레이아웃</title>
+    <style>
+    * { margin:0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    .wrap { width: 100%; }
+    .hd { clear:both; width: 100%;  height: 140px; border-bottom:5px solid #333; }
+    .hd_wrap { clear:both; width: 1200px; margin: 0 auto; }
+    .logo { display:block; width: 120px; height:50px; background-color: #333; float:left; margin-top: 20px; color:#fff; text-align: center; line-height: 50px; }
+    .tnb { float:right; }
+    .tnb li { float:left; padding:12px; }
+    .gnb { clear:both; width: 100%; }
+    .gnb li { float:left; }
+    .gnb li a { display:block; height: 48px; line-height: 48px; padding: 12px; }
+
+    .content { clear:both; width: 100%; }
+    .visual { clear:both; width: 100%; }
+    .visual img { display:block; width: 100%; height:auto; }
+    .conwrap { width: 100%; min-height:500px; }
+    .ft { clear:both; width: 100%; height:80px; border-top:5px solid #333; }
+    .ft_wrap { clear:both; width: 1200px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="hd_wrap">
+                <a href="" class="logo">logo</a>
+                <nav class="tnb">
+                    <ul>
+                        <li><a href="">상단1</a></li>
+                        <li><a href="">상단2</a></li>
+                        <li><a href="">상단3</a></li>
+                    </ul>
+                </nav>
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="">메인메뉴1</a></li>
+                        <li><a href="">메인메뉴2</a></li>
+                        <li><a href="">메인메뉴3</a></li>
+                        <li><a href="">메인메뉴4</a></li>
+                        <li><a href="">메인메뉴5</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="content">
+            <figure class="visual">
+                <img src="https://placeimg.com/960/280/any/grayscale" alt="비주얼 배너">
+            </figure>
+            <section class="conwrap">
+                <h2 class="con_tit">페이지 제목</h2>
+                <article class="art1">
+                    <img src="" alt="">
+                    <div class="para">
+                        <h3 class="cate_tit">내용의 제목</h3>
+                        <p>내용 본문 텍스트</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+        <footer class="ft">
+            <div class="ft_wrap">
+                <p class="copyright">All Copyrights ~</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
