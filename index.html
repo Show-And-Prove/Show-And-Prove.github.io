@@ -4,206 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>업비트 - 가장 신뢰받는 디지털 자산 거래소</title>
-    <!--메타포-->
-    <meta property="og:url" content="/home">
-    <meta property="og:site_name" content="업비트 - 가장 신뢰받는 디지털 자산 거래소">
-    <meta property="og:title" content="업비트">
-    <meta property="og:image" content="https://static.upbit.com/upbit-pc/seo/upbit_facebook.png">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="400">
-    <meta property="og:description" content="디지털 자산, 비트코인, 이더리움, 리플, 에이다, 솔라나 등 알트코인 거래.">
-    <meta property="og:locale" content="ko_kr">
-    <meta property="og:type" content="website">
-    <!--오픈그래프-->
-
-    <!--파비콘-->
-
-    <!--각종 플러그인과 설정 파일-->
-
+    <title>html 연습07 - 시멘틱 레이아웃</title>
     <style>
-      
+    * { margin:0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    .wrap { width: 100%; }
+    .hd { clear:both; width: 100%;  height: 140px; border-bottom:5px solid #333; }
+    .hd_wrap { clear:both; width: 1200px; margin: 0 auto; }
+    .logo { display:block; width: 120px; height:50px; background-color: #333; float:left; margin-top: 20px; color:#fff; text-align: center; line-height: 50px; }
+    .tnb { float:right; }
+    .tnb li { float:left; padding:12px; }
+    .gnb { clear:both; width: 100%; }
+    .gnb li { float:left; }
+    .gnb li a { display:block; height: 48px; line-height: 48px; padding: 12px; }
+
+    .content { clear:both; width: 100%; }
+    .visual { clear:both; width: 100%; }
+    .visual img { display:block; width: 100%; height:auto; }
+    .conwrap { width: 100%; min-height:500px; }
+    .ft { clear:both; width: 100%; height:80px; border-top:5px solid #333; }
+    .ft_wrap { clear:both; width: 1200px; margin: 0 auto; }
     </style>
 </head>
 <body>
     <div class="wrap">
         <header class="hd">
             <div class="hd_wrap">
-                <a href="https://upbit.com/" class="logo"><img src="../img/upbit_logo.png" alt="Upbit_logo"></a>
+                <a href="" class="logo">logo</a>
                 <nav class="tnb">
-                    <a href="login.html">로그인</a>
-                    <a href="join.html">회원가입</a>
-                    <a href="sitemap.html">사이트맵</a>
+                    <ul>
+                        <li><a href="">상단1</a></li>
+                        <li><a href="">상단2</a></li>
+                        <li><a href="">상단3</a></li>
+                    </ul>
                 </nav>
                 <nav class="gnb">
                     <ul>
-                        <li class="item1">
-                            <a href="" class="dp1"></a>
-                            <ul class="sub">
-                                <li><a href="info.html#page1">비전/연혁</a></li>
-                                <li><a href="info.html#page2">자회사/투자사</a></li>
-                                <li><a href="info.html#page3">오시는길</a></li>
-                            </ul>
-                        </li>
-                        <li class="item2">
-                            <a href="" class="dp1"></a>
-                            <ul class="sub">
-                                <li><a href="coin.html#page1">코인 시세</a></li>
-                                <li><a href="coin.html#page2">국내 증시</a></li>
-                                <li><a href="coin.html#page3">해외 증시</a></li>
-                            </ul>
-                        </li>
-                        <li class="item3">
-                            <a href="" class="dp1">NFT</a>
-                            <ul class="sub">
-                                <li><a href="nft.html#page1">Drops</a></li>
-                                <li><a href="nft.html#page1">Market Place</a></li>
-                                <li><a href="nft.html#page1">My NFT</a></li>
-                            </ul>
-                        </li>
-                        <li class="item4">
-                            <a href="" class="dp1">고객센터</a>
-                            <ul class="sub">
-                                <li><a href="custom.html#page1">공지사항</a></li>
-                                <li><a href="custom.html#page2">업비트 소식</a></li>
-                                <li><a href="custom.html#page3">1:1 문의하기</a></li>
-                                <li><a href="custom.html#page4">문의 내역</a></li>
-                            </ul>
-                        </li>
-                       <!-- <li class="item5">
-                            <a href="" class="dp1">설치 사례</a>
-                            <ul class="sub">
-                                <li><a href="">기업별</a></li>
-                                <li><a href="">시설별</a></li>
-                                <li><a href="">기기별</a></li>
-                            </ul>
-                        </li>-->
+                        <li><a href="">메인메뉴1</a></li>
+                        <li><a href="">메인메뉴2</a></li>
+                        <li><a href="">메인메뉴3</a></li>
+                        <li><a href="">메인메뉴4</a></li>
+                        <li><a href="">메인메뉴5</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <div class="content">
-            <figure class="vs">
-                <img src="../img/upbit_page1.png" class="img"></img>
+            <figure class="visual">
+                <img src="https://placeimg.com/960/280/any/grayscale" alt="비주얼 배너">
             </figure>
-            <section class="page" id="page1">
-                <div class="page_wrap">
-                    <h2 class="page_tit">가장 신뢰받는 글로벌 디지털 거래소<br>안전하고 투명한 시스템으로 빠르고 편리한 거래환경을 제공합니다.</h2>
-                    <ul class="lst">
-                        <li class="left">
-                            <iframe src="" frameborder="0"></iframe>
-                        </li>
-                        <li class="right">
-                            <ul class="ico_lst">
-                                <li>
-                                    <a href="" class="icon1">
-                                        <h3 class="cate_tit">대한민국 1등 코인거래소</h3>
-                                        <p class="cate_com">890만명이 선택한 거래소</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" class="icon2">
-                                        <h3 class="cate_tit">다양한 알트코인 상장</h3>
-                                        <p class="cate_com">취향에 맞게 골라 거래해보세요</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" class="icon3">
-                                        <h3 class="cate_tit">빠르고 편한 모바일 앱</h3>
-                                        <p class="cate_com">스마트폰으로 간편하게 거래해보세요</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+            <section class="conwrap">
+                <h2 class="con_tit">페이지 제목</h2>
+                <article class="art1">
+                    <img src="" alt="">
+                    <div class="para">
+                        <h3 class="cate_tit">내용의 제목</h3>
+                        <p>내용 본문 텍스트</p>
+                    </div>
+                </article>
             </section>
-            <section class="page" id="page2">
-                <div class="page_wrap">
-                    <h2 class="page_tit">실시간 거래대금 Top 3<br>코인 정보</h2>
-                    <ul class="pic_lst">
-                        <li>
-                            <a href="https://upbit.com/exchange?code=CRIX.UPBIT.KRW-XRP">
-                                <img src="../img/xrp_info.PNG" alt="XRP_INFO" class="pic">
-                                <div class="hv_box">
-                                    <h3 class="pic_tit">리플(XRP)</h3>
-                                    <p class="pic_com">..</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://upbit.com/exchange?code=CRIX.UPBIT.KRW-BTC">
-                                <img src="../img/bitcoin_info.PNG" alt="BTC_INFO" class="pic">
-                                <div class="hv_box">
-                                    <h3 class="pic_tit">비트코인(BTC)</h3>
-                                    <p class="pic_com">사진설명2</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://upbit.com/exchange?code=CRIX.UPBIT.KRW-ORBS">
-                                <img src="../img/orbs_info.PNG" alt="ORBS_INFO" class="pic">
-                                <div class="hv_box">
-                                    <h3 class="pic_tit">오브스(ORBS)</h3>
-                                    <p class="pic_com">사진설명3</p>
-                                </div>
-                            </a>
-                        </li>
-                       <!-- <li>
-                            <a href="">
-                                <img src="" alt="" class="pic">
-                                <div class="hv_box">
-                                    <h3 class="pic_tit">사진제목4</h3>
-                                    <p class="pic_com">사진설명4</p>
-                                </div>
-                            </a>
-                        </li>-->
-                    </ul>
-                </div>
-            </section>
-            <section class="page" id="page3">
-                <div class="page_wrap">
-                    <h2 class="page_tit">국제 표준 및 국내 주요 보안 인증 획득</h2>
-                    <ul class="circle_lst">
-                        <li><a href=""><img src="../img/자료/인증1.svg" alt="인증로고1"></a></li>
-                        <li><a href=""><img src="../img/자료/인증2.svg" alt="인증로고2"></a></li>
-                        <li><a href=""><img src="../img/자료/인증3.svg" alt="인증로고3"></a></li>
-                        <li><a href=""><img src="../img/자료/인증4.svg" alt="인증로고4"></a></li>
-                    </ul>
-                </div>
-            </section>
-        </div>    
+        </div>
         <footer class="ft">
             <div class="ft_wrap">
-                <div class="ft_logo"><img src="" alt=""></div>
-                <div class="mid_box">
-                    <nav class="fnb">
-                        <a href="">개인정보 처리 방침</a>
-                        <a href="">이용약관</a>
-                        <a href="">이메일무단수집거부</a>
-                    </nav>
-                    <p class="addr">
-                        두나무 주식회사 | 대표 | 이석우 | 사업자등록번호:119-86-54968<br>
-                        서울시 강남구 테헤란로 4길 14, 5층 | 고객센터 | 1588-5682<br>
-                        가상자산사업자 등록번호 2021-01 | 기사 배열 책임자 박동규 | 청소년 보호 책임자 송세정<br>
-                        투자에 대한 모든 책임은 본인에게 있습니다.  
-                    </p>
-                    <p class="copyright">Copyright © 2017 - 2022 Dunamu Inc. All rights reserved.</p>
-                </div>
-                <div class="sel_box">
-                    <select name="sel" id="sel" class="sel" onchange="sel_link(this)">
-                        <option value="">고객지원</option>
-                        <option value="https://upbitcare.com/">투자자보호센터</option>
-                        <option value="https://www.upbit.com/service_center/listing_guide">거래지원 문의 및 제보</option>
-                    </select>
-                </div>
-                <script>
-                function sel_link(sel){
-                    location.href = sel.value;
-                }
-                </script>
+                <p class="copyright">All Copyrights ~</p>
             </div>
         </footer>
-    </div>   
+    </div>
 </body>
 </html>
