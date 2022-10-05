@@ -16,20 +16,49 @@
     <meta property="og:locale" content="ko_kr">
     <meta property="og:type" content="website">
     <!--오픈그래프-->
-
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="/home">
+    <meta name="twitter:site_name" content="업비트 - 가장 신뢰받는 디지털 자산 거래소">
+    <meta name="twitter:title" content=업비트>
+    <meta name="twitter:image" content="https://static.upbit.com/upbit-pc/seo/upbit_facebook.png">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="627">
+    <meta name="twitter:description" content="디지털 자산, 비트코인, 이더리움, 리플, 에이다, 솔라나 등 알트코인 거래.">
+    <meta name="twitter:locale" content=ko_kr>
+    <meta name="twitter:type" content="website">
+    <meta name="author" content=두나무>
+    <meta name="image" content="https://static.upbit.com/upbit-pc/seo/upbit_facebook.png">
     <!--파비콘-->
     
     <!--각종 플러그인과 설정 파일-->
     <link rel="stylesheet" href="./css/reset2.css">
     <style>
     /* header.css */
-    .hd { width: 100%; position: fixed; top: 0; left: 0; z-index: 999; background-color: #fff; height: 142px;}
-    .hd:hover { background-color: transparent;}
-    .hd_wrap { width: 1200px; margin: 0 auto; }
-    .logo { display: block; width: 120px ; height: auto; margin-top: 40px; margin-bottom: 40px; float: left;}
-    .logo img {display: block; width: 100%;}    /*로고 사이즈 자동 조절*/
-    .tnb {float: right; margin-top: 40px; margin-bottom: 40px;}
-    .tnb a { font-size: 14px; color: #333; padding: 14px; font-weight: 300;}
+    .hd { width: 100%; position:fixed; top: 0; left: 0; z-index:999; 
+    background-color: #fff; height: 142px; }
+    .hd:hover { background-color: transparent; }
+    .hd_wrap { width: 1200px; margin: 0 auto;}
+    .logo { display:block; width:148px; height:auto; margin-top:40px; margin-bottom: 40px; float:left; }
+    .logo img { display:block; width: 100%; }
+    .tnb { float:right; margin-top: 40px; margin-bottom: 40px; height: auto;}
+    .tnb a { font-size:14px; color:#333; padding: 14px; font-weight:300; }
+    .tnb a:hover { color: rgb(74, 74, 252) ;font-weight:700; text-decoration: underline; }
+    .gnb { clear:both; }
+    /*clear-fix 처리*/
+    .gnb:after { content: ""; display: block; clear: both;}
+    .gnb > ul:after { content: ""; display: block; clear: both; }
+    .gnb li { float:left; }
+    .gnb li .sub { display:none; width: 100%; height: auto;}
+    .gnb > ul > li { float: left; width: 20%; height: 40px; line-height: 40px; position: relative; }
+    .gnb sub { display: none; width: 100%; height: auto; position: absolute; top: 40px; background-color: #ccc; left: 0; z-index: 90; height: 124px;}
+    .gnb .dp1 { display: block; color:#333; text-align: center; background-color: #fff; font-size: 16px;}
+    .gnb li .dp1 { display: block; height:40px; line-height: 40px; background-color: #333; color:#fff; }
+    .gnb li:hover .dp1 { background-color: rgb(0, 45, 192); }
+    .gnb:hover li .sub { display: block; }
+    .gnb li .sub li { clear: both; height: 30px;line-height: 30px; border-bottom: 1px solid #fff; }
+    .gnb li .sub li a { background-color: #ccc; color: #111; font-size: 14px; display: block; text-indent: 2em; overflow: hidden; white-space: nowwrap; text-overflow: ellipsis;}
+    .content { clear: both; width: 100%;}
+
     
     
     
@@ -49,7 +78,7 @@
                 <nav class="gnb">
                     <ul>
                         <li class="item1">
-                            <a href="" class="dp1"></a>
+                            <a href="" class="dp1">업비트 소개</a>
                             <ul class="sub">
                                 <li><a href="info.html#page1">비전/연혁</a></li>
                                 <li><a href="info.html#page2">자회사/투자사</a></li>
@@ -57,7 +86,7 @@
                             </ul>
                         </li>
                         <li class="item2">
-                            <a href="" class="dp1"></a>
+                            <a href="" class="dp1">동향</a>
                             <ul class="sub">
                                 <li><a href="coin.html#page1">코인 시세</a></li>
                                 <li><a href="coin.html#page2">국내 증시</a></li>
