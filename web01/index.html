@@ -74,21 +74,73 @@
     .content { clear: both; width: 100%; }
     .vs { clear:both; width: 100%; height:100vh; overflow:hidden; }
     .vdo { display:block; width:100%; height:auto; }
+    
+    
+    
+    /* content */
     .page { clear:both; width: 100%; }
     .page_wrap { width: 1200px; margin: 0 auto; }
     #page1, #page3 { background-color:#ececec; }
     .page_tit { text-align: center; font-size:32px; padding-top:1.2em; padding-bottom: 0.8em; }
     .lst { clear:both; width: 1200px; }
     .lst:after { content:""; display:block; clear: both;}
-    .lst li.left { float:left; width: 816px; height: 459px;}
-    .lst li.right { float:right; width: 350px; height: 459px;}
-    .ico_lst { clear: both; width: 100%; overflow: hidden;}
-    .ico_lst li a { display: block; background-repeat: no-repeat; background: position 0px center; background-size: auto;}
-    .cate_tit {color: #222; font-size: 20px; padding-bottom: 0.5em;}
-    .cate_com {color: #222; font-size: 14px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
-    
+    .lst li { margin-bottom: 40px; }
+    .lst li.left { float:left; width: 816px; height: 459px; }
+    .lst li.right { float:right; width:350px; height: 459px; }
+    .ico_lst { clear:both; width: 100%; overflow:hidden; }
+    .ico_lst li a { display:block; background-repeat: no-repeat; 
+    background-position:0px center; background-size:auto 80%; 
+padding-left: 55px; }
+    .ico_lst li a.icon1 { background-image: url("./img/icon/ico_service_01.svg"); }
+    .ico_lst li a.icon2 { background-image: url("./img/icon/ico_service_02.svg");}
+    .ico_lst li a.icon3 { background-image: url("./img/icon/ico_service_03.svg"); }
+    .cate_tit { color:#222; font-size:20px; padding-bottom: 0.5em; }
+    .cate_com { color:#222; font-size:14px; overflow:hidden;
+    white-space:nowrap; text-overflow:ellipsis; }
+
+    #page2 { background-color: rgba(230, 248, 255, 0.5); }
+    .pic_lst { clear:both; width: 100%; padding-bottom: 80px; }
+    .pic_lst:after { content:""; display:block; clear:both; }
+    .pic_lst li { float:left; position:relative; margin-bottom: 40px; }
+    .pic_lst li a { display:block; width: 360px; margin-right: 40px;
+    overflow: hidden; height: 300px; }
+    .pic_lst li a img { display:block; width:600px; margin-left: -120px; transition-duration:0.8s; }
+    .pic_lst li a:hover img { margin-left: 0; }
+    .pic_lst li a .hv_box { width: 360px; height: 300px; color:#fff; opacity:0; position:absolute; top:0; left: 0; z-index:10; transition-duration:0.8s; background-color:transparent; }
+    .pic_lst li a:hover .hv_box { opacity:1; }
+    .pic_tit { position:absolute; top:30px; left: 30px; 
+    text-shadow:0px 0px 3px red; }
+    .pic_com { position:absolute; right:30px; bottom:30px; 
+        text-shadow:0px 0px 3px blue; }
+
+    #page3 { background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position:center center; height: 100vh; background-image:url("./img/bg_partners.jpg"); overflow:hidden; }
+    #page3 .page_wrap { width: 100%; }
+    .circle_lst { clear:both; width: 4455px; }
+    .circle_lst li { width: 200px; height: 200px; position:relative; border-radius:120px; overflow:hidden; background-color: #fff;
+    float:left; margin:28px;  }
+    .circle_lst.lst2 li { float:right; }
+    .circle_lst li a { display:block; width: 100%; height: 100%; }
+    .circle_lst li a img { display:block; width:160px; height:auto; 
+    position:absolute; top:50%; left: 20px; z-index:11; margin-top: -28px; }
+
     /* footer */
-    
+    .ft { clear:both; width: 100%; height: 200px; background-color: #232; padding-bottom: 50px; }
+    .ft_wrap { clear:both; width: 1200px; margin: 0 auto; padding-top: 50px;  }
+    .ft_wrap:after { content:""; display:block; clear:both; }
+    .ft_logo { float:left; width: 150px; }
+    .mid_box { float:left; width: 760px; padding-left: 100px; }
+    .fnb { clear:both; }
+    .fnb a { color:#fff; font-size:14px; padding: 24px; }
+    .fnb a.dpc { color:deeppink; }
+    .addr { padding-left: 24px; color:#ececec; padding-top: 20px; 
+    font-size:12px; line-height: 2; }
+    .copyright { padding-left: 24px; color:#fff; padding-top: 10px; }
+    .sel_box { float:right; border-bottom:1px solid #fff;
+    height: 44px; line-height: 44px; text-align:center; width: 140px; }
+    #sel { border:none; outline: none; background-color: transparent; color:#fff; }
+    #sel option { color:#333; }
 
     </style>
     
