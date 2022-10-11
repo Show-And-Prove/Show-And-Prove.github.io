@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.hd { width: 100%; height:140px; position:absolute; top: 0; 
+    left: 0; z-index:91; background-color:#fff;}
+    .hd_wrap { width: 1200px; margin: 0 auto; }
+    .logo { display:block; width: 144px; height: auto; float:left;
+    margin:30px 0px; }
+    .logo img { display:block; width: 100%; height: auto; }
+    .tnb { float:right; margin: 30px 0px; }
+    .tnb a {/*display:block; text-align: center; */ padding: 1.5em; font-size:12px; color:#333; background-color: rgb(175, 223, 255); }
+    .tnb a:hover { color:deepskyblue; font-weight:700; text-decoration: underline; text-decoration-style: solid; }
+    /* 방법1 : logo/tnb/gnb 한 줄로 배치 */
+    /*.gnb { float:left;  width: 704px; margin-left: 50px; margin-top: 16px; }*/
+    /* 방법2 : gnb만 밑으로 내릴 경우 */
+    .gnb { clear:both; width: 100%; }
+    /* clear-fix 처리 */
+    .gnb:after { content:""; display:block; clear:both; } 
+    .gnb > ul:after { content:""; display:block; clear:both; }
+    .gnb > ul > li { float:left; width: 20%; height:40px; line-height: 40px; position:relative; }
+    .gnb .dp1 { display:block; color:#fff; text-align: center; 
+    background-color:rgba(11, 24, 214, 0.808); font-size:16px; }
+    .gnb li:hover .dp1 { color:#fff; background-color:#333; }
+    .gnb .sub { display:none; width: 100%; height:auto; position:absolute; top:40px; background-color:#ccc;
+    left: 0; z-index:90; height: 124px; }
+    .gnb:hover li .sub { display:block;  }
+    .gnb li .sub li { clear:both; height: 30px; line-height: 30px; 
+    border-bottom:1px solid #fff; }
+    .gnb li .sub li a { background-color:#ccc; color:#111; font-size:14px; display:block; text-indent:2em; 
+    overflow: hidden; white-space:nowrap; text-overflow: ellipsis; }
+    .gnb li .sub li:hover a { color:deepskyblue; }
+    .content { clear: both; width: 100%; }
+    .vs { clear:both; width: 100%; height:100vh; overflow:hidden; }
+    .vdo { display:block; width:100%; height:auto; }
