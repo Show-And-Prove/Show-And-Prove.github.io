@@ -44,31 +44,62 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <style>
-    /* header.css */
-    .hd { position: fixed; }
+        /* header.css */
+        .hd { position:fixed; }
     
-    /* content */
-    .vs {clear:both; width: 100%; height: 300px; overflow: hidden;}
-    .vs img {display: block; width: 100%; height: auto; }
-    .bread { clear:both; width: 100%; line-height: 60px;}
-    .bread_fr {width: 1200px; margin: 0 auto;}
-    .page {clear: both; width: 100%; min-height: 100vh;}
-    .page:after {content: ""; display: block;clear: both;}
-    .page_wrap { width: 1200px; margin: 0 auto;}
-
-
-    .page_title { padding-top: 1em;}
-    .home { color: black; }
-    .to_top { position: fixed; bottom: 80px; right: 80px; z-index: 999;
-    background-color: rgba(11,11,11,0.75); color: #fff; display: block; width: 60px; }
-
-    /* footer.css */
+        /* content */
+        .vs { clear:both; width: 100%; height:300px; overflow: hidden; }
+        .vs img { display:block; width: 100%; height:auto; }
+        .bread { clear:both; width: 100%; line-height: 60px; border-bottom:3px solid #eee; }
+        .bread_fr { width: 1200px; margin: 0 auto; }
+        .page { clear:both; width: 100%; min-height:100vh;}
+        .page:after { content:""; display:block; clear:both; }
+        .page_wrap { width: 1200px; margin: 0 auto; }
     
-
-    </style>
+        .page_title { padding-top: 1em; text-align: center; }
+        .home { color:#333; }
     
-</head>
-<body>
+        .frm { border:2px solid #333; padding: 24px; width: 580px; margin:50px auto; }
+        .frm_tb { display:table; margin:40px auto;  }
+        .frm_tb tr { display:table-row; }
+        .frm_tb td, .frm_tb th { display:table-cell; }
+        .frm_tb th { width:200px; height: 48px;  }
+        .frm_tb td { width:300px; height: 48px; }
+        .frm_tb label:before { content:"*"; }
+    
+        .in_dt { background-color:#fff; height:32px; line-height: 32px; width: 280px; 
+        color:#f36; font-size:16px; text-indent:0.5em; }
+        .in_btn { display:block; background-color:#333; min-width:120px; height: 32px; 
+        line-height: 32px; border-radius:20px; float:left; margin-left:80px; margin-right:20px; cursor:pointer; }
+        .in_btn:hover { background-color: deepskyblue; }
+    
+        /* ul > li 를 테이블 처럼 출력 */
+        .frm_tb { display:table; }
+        .frm_tb li { display:table-row; }
+        .frm_tb .td, .frm_tb .th, .frm_tb .td2 { display:table-cell; }
+        .frm_tb .th { width:200px; }
+        .frm_tb .td { width:200px; }
+        .frm_tb .td2 { width:400px; }
+        </style>
+        <link rel="stylesheet" href="footer.css">
+        <script>
+        $(document).ready(function(){
+            $(".to_top").attr("href", location.href);
+            $(window).scroll(function(){
+                var ht = $(window).height();
+                var tp = $(this).scrollTop();
+                if(tp>=300){
+                    $(".to_top").addClass("on");
+                    $(".to_top").attr("href", location.href);
+                } else {
+                    $(".to_top").removeClass("on");
+                    $(".to_top").attr("href", location.href);
+                }
+            });
+        });    
+        </script>
+    </head>
+    <body>
     <div class="wrap">
         <header class="hd">
             <div class="hd_wrap">
@@ -125,65 +156,48 @@
                 </nav>
             </div>
         </header>
-        <div class="content" >
+        <div class="content">
             <figure class="vs">
-                <img src="" alt="비주얼"></img>
+                <img src="./img/vs1.jpg" alt="비주얼">
             </figure>
             <div class="bread">
                 <div class="bread_fr">
-                    <a href="" class="home">HOME</a> &gt;
-                    <select name="sel1" id="sel1" class="sel">
-                    <option value=""></option>
-                    </select> &gt;
-                    <select name="sel2" id="sel2" class="sel">
-
-                    </select>
+                    <a href="index.html" class="home">HOME</a> &gt;
+                    <span class="sel">로그인</span>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="paga_title">비전/연혁</h2>
+                    <h2 class="page_title">로그인</h2>
+                    <div class="form_fr">
+                        <form name="frm1" action="" method="post" id="loginForm" class="frm">
+                            <table class="frm_tb">
+                                <tbody>
+                                    <tr>
+                                        <th><label for="id">아이디</label></th>
+                                        <td>
+                                            <input type="text" id="id" name="id" class="in_dt" required autofocus>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="id">비밀번호</label></th>
+                                        <td>
+                                            <input type="password" id="pw" name="pw" class="in_dt" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <button type="submit" class="in_btn">로그인</button>
+                                            <button type="reset" class="in_btn">취소</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
                 </div>
-            </section>
-            <section class="page" id="page2">
-                <div class="page_wrap">
-                    <h2 class="paga_title">자회사/투자사</h2>
-                </div>
-            </section>
-            <section class="page" id="page3">
-                <h2 class="paga_title">오시는길</h2>
-            </section>
-        </div>    
-        <script>
-        var sel1 = document.getElementById("sel1");
-        var sel2 = document.getElementById("sel2");
-        sel1.addEventListener("change", function(){
-            location.href = sel1.value;
-        });
-        sel2.addEventListener("change", function(){
-            location.href = sel2.value;
-        });
-
-        var sel3 = document.getElementById("sel3");
-        var sel4 = document.getElementById("sel4");
-        sel3.addEventListener("change", function(){
-            location.href = sel3.value;
-        });
-        sel4.addEventListener("change", function(){
-            location.href = sel4.value;
-        });
-
-        var sel5 = document.getElementById("sel5");
-        var sel6 = document.getElementById("sel6");
-        sel5.addEventListener("change", function(){
-            location.href = sel5.value;
-        });
-        sel6.addEventListener("change", function(){
-            location.href = sel6.value;
-        });
-
-
-        </script>
+        </section>
+</div>
         <footer class="ft">
             <div class="ft_wrap">
                 <div class="ft_logo"><img src="" alt=""></div>

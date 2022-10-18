@@ -226,36 +226,10 @@
         <script>
         var sel = document.getElementsByClassName("sel");
         for(var i=0;i<sel.length;i++){
-            sel[i].addEventListener("change", function(){
-                location.href = this.value;
-            });
+        sel[i].addEventListener("change", function(){
+            location.href = this.value;
+          });
         }
-        var sel1 = document.getElementById("sel1");
-        var sel2 = document.getElementById("sel2");
-        sel1.addEventListener("change", function(){
-            location.href = sel1.value;
-        });
-        sel2.addEventListener("change", function(){
-            location.href = sel2.value;
-        });
-
-        var sel3 = document.getElementById("sel3");
-        var sel4 = document.getElementById("sel4");
-        sel3.addEventListener("change", function(){
-            location.href = sel3.value;
-        });
-        sel4.addEventListener("change", function(){
-            location.href = sel4.value;
-        });
-
-        var sel5 = document.getElementById("sel5");
-        var sel6 = document.getElementById("sel6");
-        sel5.addEventListener("change", function(){
-            location.href = sel5.value;
-        });
-        sel6.addEventListener("change", function(){
-            location.href = sel6.value;
-        });
         </script>
         <footer class="ft">
             <div class="ft_wrap">

@@ -153,21 +153,21 @@
                 <div class="bread_fr">
                     <a href="index.html" class="home">HOME</a> &gt;
                     <select name="sel1" id="sel1" class="sel">
-                        <option>동향</option>
+                        <option>고객센터</option>
                         <option value="info.html#page1">업비트소개</option>
+                        <option value="coin.html#page1">동향</option>
                         <option value="nft.html#page1">NFT</option>
-                        <option value="custom.html#page1">고객센터</option>
                     </select> &gt;
                     <select name="sel2" id="sel2" class="sel">
-                        <option>코인동향</option>
-                        <option value="coin.html#page2">국내증시</option>
-                        <option value="coin.html#page3">해외증시</option>
+                        <option>공지사항</option>
+                        <option value="custom.html#page2">업비트소식</option>
+                        <option value="custom.html#page3">1:1문의하기</option>
                     </select>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="paga_title">동향</h2>
+                    <h2 class="paga_title">공지사항</h2>
                 </div>
             </section>
         </div>
@@ -179,21 +179,21 @@
                 <div class="bread_fr">
                     <a href="index.html" class="home">HOME</a> &gt;
                     <select name="sel3" id="sel3" class="sel">
-                        <option>동향</option>
+                        <option>고객센터</option>
                         <option value="info.html#page1">업비트소개</option>
+                        <option value="coin.html#page1">동향</option>
                         <option value="nft.html#page1">NFT</option>
-                        <option value="custom.html#page1">고객센터</option>
                     </select> &gt;
                     <select name="sel4" id="sel4" class="sel">
-                        <option selected>국내증시</option>
-                        <option value="coin.html#page1">코인동향</option>
-                        <option value="coin.html#page3">해외증시</option>
+                        <option selected>업비트소식</option>
+                        <option value="custom.html#page1">공지사항</option>
+                        <option value="custom.html#page3">1:1문의하기</option>
                     </select>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="page_title">국내증시</h2>
+                    <h2 class="page_title">업비트소식</h2>
                 </div>
             </section>
         </div>
@@ -205,57 +205,31 @@
                 <div class="bread_fr">
                     <a href="index.html" class="home">HOME</a> &gt;
                     <select name="sel5" id="sel5" class="sel">
-                        <option>동향</option>
+                        <option>고객센터</option>
                         <option value="info.html#page1">업비트소개</option>
+                        <option value="coin.html#page1">동향</option>
                         <option value="nft.html#page1">NFT</option>
-                        <option value="custom.html#page1">고객센터</option>
                     </select> &gt;
                     <select name="sel6" id="sel6" class="sel">
-                        <option selected>해외증시</option>
-                        <option value="coin.html#page1">코인동향</option>
-                        <option value="coin.html#page2">국내증시</option>
+                        <option selected>1:1문의하기</option>
+                        <option value="custom.html#page1">공지사항</option>
+                        <option value="custom.html#page2">업비트소식</option>
                     </select>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="page_title">해외 증시</h2>
+                    <h2 class="page_title">1:1문의하기</h2>
                 </div>
             </section>
         </div>
         <script>
-        var sel = document.getElementsByClassName("sel");
-        for(var i=0;i<sel.length;i++){
-            sel[i].addEventListener("change", function(){
-                location.href = this.value;
-            });
-        }
-        var sel1 = document.getElementById("sel1");
-        var sel2 = document.getElementById("sel2");
-        sel1.addEventListener("change", function(){
-            location.href = sel1.value;
-        });
-        sel2.addEventListener("change", function(){
-            location.href = sel2.value;
-        });
-
-        var sel3 = document.getElementById("sel3");
-        var sel4 = document.getElementById("sel4");
-        sel3.addEventListener("change", function(){
-            location.href = sel3.value;
-        });
-        sel4.addEventListener("change", function(){
-            location.href = sel4.value;
-        });
-
-        var sel5 = document.getElementById("sel5");
-        var sel6 = document.getElementById("sel6");
-        sel5.addEventListener("change", function(){
-            location.href = sel5.value;
-        });
-        sel6.addEventListener("change", function(){
-            location.href = sel6.value;
-        });
+            var sel = document.getElementsByClassName("sel");
+            for(var i=0;i<sel.length;i++){
+                sel[i].addEventListener("change", function(){
+                    location.href = this.value;
+                });
+            }
         </script>
         <footer class="ft">
             <div class="ft_wrap">

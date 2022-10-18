@@ -160,14 +160,14 @@
                     </select> &gt;
                     <select name="sel2" id="sel2" class="sel">
                         <option>Drops</option>
-                        <option value="info.html#page2">MarketPlace</option>
-                        <option value="info.html#page3">MyNFT</option>
+                        <option value="nft.html#page2">MarketPlace</option>
+                        <option value="nft.html#page3">MyNFT</option>
                     </select>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="paga_title">업비트소개</h2>
+                    <h2 class="paga_title">NFT</h2>
                 </div>
             </section>
         </div>
@@ -179,21 +179,21 @@
                 <div class="bread_fr">
                     <a href="index.html" class="home">HOME</a> &gt;
                     <select name="sel3" id="sel3" class="sel">
-                        <option>업비트소개</option>
+                        <option>NFT</option>
+                        <option value="info.html#page1">업비트소개</option>
                         <option value="coin.html#page1">동향</option>
-                        <option value="nft.html#page1">NFT</option>
                         <option value="custom.html#page1">고객센터</option>
-                    </select> &gt; 
+                    </select> &gt;
                     <select name="sel4" id="sel4" class="sel">
-                        <option selected>자회사/투자사</option>
-                        <option value="info.html#page1">비전/연혁</option>
-                        <option value="info.html#page3">오시는길</option>
+                        <option selected>MarketPlace</option>
+                        <option value="nft.html#page1">Drops</option>
+                        <option value="nft.html#page3">MyNFT</option>
                     </select>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="page_title">자회사/투자사</h2>
+                    <h2 class="page_title">MarketPlace</h2>
                 </div>
             </section>
         </div>
@@ -205,57 +205,31 @@
                 <div class="bread_fr">
                     <a href="index.html" class="home">HOME</a> &gt;
                     <select name="sel5" id="sel5" class="sel">
-                        <option>회사소개</option>
-                        <option value="product.html#page1">동향</option>
-                        <option value="service.html#page1">NFT</option>
+                        <option>NFT</option>
+                        <option value="info.html#page1">업비트소개</option>
+                        <option value="coin.html#page1">동향</option>
                         <option value="custom.html#page1">고객센터</option>
-                    </select> &gt; 
+                    </select> &gt;
                     <select name="sel6" id="sel6" class="sel">
-                        <option selected>오시는길</option>
-                        <option value="info.html#page1">비전/연혁</option>
-                        <option value="info.html#page2">자회사/투자사</option>
+                        <option selected>MyNFT</option>
+                        <option value="nft.html#page1">Drops</option>
+                        <option value="nft.html#page2">MarketPlace</option>
                     </select>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="page_title">오시는 길</h2>
+                    <h2 class="page_title">MyNFT</h2>
                 </div>
             </section>
         </div>
         <script>
-        var sel = document.getElementsByClassName("sel");
-        for(var i=0;i<sel.length;i++){
-            sel[i].addEventListener("change", function(){
-                location.href = this.value;
-            });
-        }
-        var sel1 = document.getElementById("sel1");
-        var sel2 = document.getElementById("sel2");
-        sel1.addEventListener("change", function(){
-            location.href = sel1.value;
-        });
-        sel2.addEventListener("change", function(){
-            location.href = sel2.value;
-        });
-
-        var sel3 = document.getElementById("sel3");
-        var sel4 = document.getElementById("sel4");
-        sel3.addEventListener("change", function(){
-            location.href = sel3.value;
-        });
-        sel4.addEventListener("change", function(){
-            location.href = sel4.value;
-        });
-
-        var sel5 = document.getElementById("sel5");
-        var sel6 = document.getElementById("sel6");
-        sel5.addEventListener("change", function(){
-            location.href = sel5.value;
-        });
-        sel6.addEventListener("change", function(){
-            location.href = sel6.value;
-        });
+            var sel = document.getElementsByClassName("sel");
+            for(var i=0;i<sel.length;i++){
+                sel[i].addEventListener("change", function(){
+                    location.href = this.value;
+                });
+            }
         </script>
         <footer class="ft">
             <div class="ft_wrap">
