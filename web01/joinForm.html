@@ -65,7 +65,28 @@
     height: 60px; line-height: 60px; text-align: center; font-size:20px; border-radius:32px; visibility:hidden; transition-duration:0.8s; }
     .to_top:hover { background-color: deepskyblue; }
     .to_top.on { visibility: visible; }
+    
+    .frm { border:2px solid #333; padding: 24px; width: 580px; margin:50px auto; }
+    .frm_tb { display:table; margin:40px auto;  }
+    .frm_tb tr { display:table-row; }
+    .frm_tb td, .frm_tb th { display:table-cell; }
+    .frm_tb th { width:200px; height: 48px;  }
+    .frm_tb td { width:300px; height: 48px; }
+    .frm_tb label:before { content:"*"; }
 
+    .in_dt { background-color:#fff; height:32px; line-height: 32px; width: 280px; 
+    color:#f36; font-size:16px; text-indent:0.5em; }
+    .in_btn { display:block; background-color:#333; min-width:120px; height: 32px; 
+    line-height: 32px; border-radius:20px; float:left; margin-left:80px; margin-right:20px; cursor:pointer; }
+    .in_btn:hover { background-color: deepskyblue; }
+
+    /* ul > li 를 테이블 처럼 출력 */
+    .frm_tb { display:table; }
+    .frm_tb li { display:table-row; }
+    .frm_tb .td, .frm_tb .th, .frm_tb .td2 { display:table-cell; }
+    .frm_tb .th { width:200px; }
+    .frm_tb .td { width:200px; }
+    .frm_tb .td2 { width:400px; }
     /* footer.css */
     </style>
     <script>
@@ -84,25 +105,15 @@
     });
     });    
     </script>
-<!-- head태그 닫기 전에 복사해서 붙여넣기 -->
-<link href="http://apis.map.daum.net/favicon.ico" rel="shortcut icon"> 
-<meta name="viewport" content="width=720">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Daum 지도 API">
-<link rel="stylesheet" type="text/css" href="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.css">
-<style>
-body { background:white; }
-</style>
-<script type="text/javascript" src="http://dmaps.daum.net/map_js_init/v3.js"></script>
-<script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.0.js"></script>
-<script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U0301/cssjs/JSON-js/fc535e9cc8/json2.min.js"></script>
-<!-- 다음지도API    -->
+
+
+    
 </head>
 <body>
     <div class="wrap">
         <header class="hd">
             <div class="hd_wrap">
-                <a href="https://upbit.com/" class="logo"><img src="./pic2/upbit_logo.png" alt="Upbit_logo"></a>
+                <a href="index.html" class="logo"><img src="./pic2/upbit_logo.png" alt="Upbit_logo"></a>
                 <nav class="tnb">
                     <a href="login.html">로그인</a>
                     <a href="join.html">회원가입</a>
@@ -162,160 +173,53 @@ body { background:white; }
             <div class="bread">
                 <div class="bread_fr">
                     <a href="index.html" class="home">HOME</a> &gt;
-                    <select name="sel1" id="sel1" class="sel">
-                        <option>업비트소개</option>
-                        <option value="coin.html#page1">동향</option>
-                        <option value="nft.html#page1">NFT</option>
-                        <option value="custom.html#page1">고객센터</option>
-                    </select> &gt;
-                    <select name="sel2" id="sel2" class="sel">
-                        <option>비전/연혁</option>
-                        <option value="info.html#page2">자회사/투자사</option>
-                        <option value="info.html#page3">오시는길</option>
-                    </select>
+                    <span class="sel">회원가입</span>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="paga_title">업비트소개</h2>
+                    <h2 class="page_title">회원가입</h2>
+                    <div class="form_fr">
+                        <form name="frm1" action="" method="post" id="joinForm" class="frm">
+                            <table class="frm_tb">
+                                <tbody>
+                                    <tr>
+                                        <th><label for="id">아이디</label></th>
+                                        <td>
+                                            <input type="text" id="id" name="id" class="in_dt" required autofocus>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="id">비밀번호</label></th>
+                                        <td>
+                                            <input type="password" id="pw" name="pw" class="in_dt" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="name">이  름</label></th>
+                                        <td>
+                                            <input type="text" id="name" name="name" class="in_dt" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="email">이메일</label></th>
+                                        <td>
+                                            <input type="email" id="email" name="email" class="in_dt" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <button type="submit" class="in_btn">회원가입</button>
+                                            <button type="reset" class="in_btn">취소</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
                 </div>
             </section>
         </div>
-        <div class="content" id="page2">
-            <figure class="vs">
-                <img src="" alt="비주얼"></img>
-            </figure>
-            <div class="bread">
-                <div class="bread_fr">
-                    <a href="index.html" class="home">HOME</a> &gt;
-                    <select name="sel3" id="sel3" class="sel">
-                        <option>업비트소개</option>
-                        <option value="coin.html#page1">동향</option>
-                        <option value="nft.html#page1">NFT</option>
-                        <option value="custom.html#page1">고객센터</option>
-                    </select> &gt; 
-                    <select name="sel4" id="sel4" class="sel">
-                        <option selected>자회사/투자사</option>
-                        <option value="info.html#page1">비전/연혁</option>
-                        <option value="info.html#page3">오시는길</option>
-                    </select>
-                </div>
-            </div>
-            <section class="page">
-                <div class="page_wrap">
-                    <h2 class="page_title">자회사/투자사</h2>
-                </div>
-            </section>
-        </div>
-        <div class="content" id="page3">
-            <figure class="vs">
-                <img src="" alt="비주얼">
-            </figure>
-            <div class="bread">
-                <div class="bread_fr">
-                    <a href="index.html" class="home">HOME</a> &gt;
-                    <select name="sel5" id="sel5" class="sel">
-                        <option>회사소개</option>
-                        <option value="product.html#page1">동향</option>
-                        <option value="service.html#page1">NFT</option>
-                        <option value="custom.html#page1">고객센터</option>
-                    </select> &gt; 
-                    <select name="sel6" id="sel6" class="sel">
-                        <option selected>오시는길</option>
-                        <option value="info.html#page1">비전/연혁</option>
-                        <option value="info.html#page2">자회사/투자사</option>
-                    </select>
-                </div>
-            </div>
-            <section class="page">
-                <div class="page_wrap">
-                    <h2 class="page_title">오시는 길</h2>
-                </div>
-            </section>
-        </div>
-        <div class="page_wrap">
-            <h2 class="page_title">비전/연혁</h2>
-            <div class="img_box">
-                <div class="img_box_fr"><img src="" alt=""></div>
-                비전/연혁 내용
-            </div>
-        </div> 
-        <!-- 수정 -->
-        <div class="page_wrap">
-            <h2 class="page_title">자회사/투자사</h2>
-            <div class="page_aside">
-                <h2 class="aside_tit">자회사/투자사 내용</h2>
-            </div>
-            <div class="year_fr">
-                <ul class="year_lst">
-                    <li>
-                        <h3 class="year_tit">1969. 03.</h3>
-                        <p class="yesr_com">한진상사㈜, 대한항공공사 운영권 인수</p>
-                    </li>
-                    <li>
-                        <h3 class="year_tit">1969. 03.</h3>
-                        <p class="yesr_com">한진상사㈜, 대한항공공사 운영권 인수</p>
-                    </li>
-                    <li>
-                        <h3 class="year_tit">1969. 03.</h3>
-                        <p class="yesr_com">한진상사㈜, 대한항공공사 운영권 인수</p>
-                    </li>
-                    <li>
-                        <h3 class="year_tit">1969. 03.</h3>
-                        <p class="yesr_com">한진상사㈜, 대한항공공사 운영권 인수</p>
-                    </li>
-                    <li>
-                        <h3 class="year_tit">1969. 03.</h3>
-                        <p class="yesr_com">한진상사㈜, 대한항공공사 운영권 인수</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="page_wrap">
-            <h2 class="page_title">오시는길</h2>
-            <div id="map" style="margin-left:120px;	margin-top:50px; width:800px;height:600px; background:white; ">
-            </div>            
-            <script>            
-            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-                mapOption = {  //위도는 37.49728086413712, 경도는 127.029733010215 입니다
-                    center: new daum.maps.LatLng(37.49728086413712,127.029733010215), // 지도의 중심좌표
-                    level: 3 // 지도의 확대 레벨
-                };
-            var map = new daum.maps.Map(mapContainer, mapOption);
-            // 마커가 표시될 위치입니다 
-            var markerPosition  = new daum.maps.LatLng(37.49728086413712,127.029733010215); 
-            // 마커를 생성합니다
-            var marker = new daum.maps.Marker({
-                position: markerPosition
-            });
-            // 마커가 지도 위에 표시되도록 설정합니다
-            marker.setMap(map);
-            var iwContent = '<div style="padding:5px;">업비트 <br><a href="" style="color:blue" target="_blank"></a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-                iwPosition = new daum.maps.LatLng(37.658827995980204,126.77512489202539); //인포윈도우 표시 위치입니다
-            // 인포윈도우를 생성합니다
-            var infowindow = new daum.maps.InfoWindow({
-                position : iwPosition, 
-                content : iwContent 
-            });
-            // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-            infowindow.open(map, marker);
-            </script>
-            <script type="text/javascript" src="http://m1.daumcdn.net/tiara/js/td.min.js"></script>
-            <script type="text/javascript">
-            var _tiq = 'undefined' !== typeof _tiq ? _tiq : [];
-                window._tiq = _tiq;
-                _tiq.push(['__trackPageview']);
-            </script>
-            <script type="text/javascript" src="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.js">
-            </script>
-        </div> 
-        <script>
-        var sel = document.getElementsByClassName("sel");
-        for(var i=0;i<sel.length;i++){
-        sel[i].addEventListener("change", function(){
-            location.href = this.value;
-          });
-        }
         </script>
         <footer class="ft">
             <div class="ft_wrap">
