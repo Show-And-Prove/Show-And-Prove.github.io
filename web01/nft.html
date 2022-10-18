@@ -58,10 +58,34 @@
     .content { display: none;}
     .content:target {display: block;}
 
-    /* footer.css */
-    
+    .page_title { padding-top: 1em;}
+    .home { color: black; }
+    .to_top { position:fixed; bottom:80px; right:80px; z-index:999; 
+    background-color:rgba(11,11,11,0.75); color:#fff; display:block; width: 60px;
+    height: 60px; line-height: 60px; text-align: center; font-size:20px; border-radius:32px; visibility:hidden; transition-duration:0.8s; }
+    .to_top:hover { background-color: deepskyblue; }
+    .to_top.on { visibility: visible; }
 
+    /* footer.css */
     </style>
+    <script>
+    $(document).ready(function(){
+    $(".to_top").attr("href", location.href);
+    $(window).scroll(function(){
+    var ht = $(window).height();
+    var tp = $(this).scrollTop();
+    if(tp>=300){
+        $(".to_top").addClass("on");
+        $(".to_top").attr("href", location.href);
+        } else {
+        $(".to_top").removeClass("on");
+        $(".to_top").attr("href", location.href);
+        }
+    });
+    });    
+    </script>
+
+
     
 </head>
 <body>
@@ -127,30 +151,85 @@
             </figure>
             <div class="bread">
                 <div class="bread_fr">
-                    <a href="" class="home">HOME</a> &gt;
+                    <a href="index.html" class="home">HOME</a> &gt;
                     <select name="sel1" id="sel1" class="sel">
-                    <option value=""></option>
+                        <option>NFT</option>
+                        <option value="info.html#page1">업비트소개</option>
+                        <option value="coin.html#page1">동향</option>
+                        <option value="custom.html#page1">고객센터</option>
                     </select> &gt;
                     <select name="sel2" id="sel2" class="sel">
-
+                        <option>Drops</option>
+                        <option value="info.html#page2">MarketPlace</option>
+                        <option value="info.html#page3">MyNFT</option>
                     </select>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="paga_title">비전/연혁</h2>
+                    <h2 class="paga_title">업비트소개</h2>
                 </div>
             </section>
-            <section class="page" id="page2">
+        </div>
+        <div class="content" id="page2">
+            <figure class="vs">
+                <img src="" alt="비주얼"></img>
+            </figure>
+            <div class="bread">
+                <div class="bread_fr">
+                    <a href="index.html" class="home">HOME</a> &gt;
+                    <select name="sel3" id="sel3" class="sel">
+                        <option>업비트소개</option>
+                        <option value="coin.html#page1">동향</option>
+                        <option value="nft.html#page1">NFT</option>
+                        <option value="custom.html#page1">고객센터</option>
+                    </select> &gt; 
+                    <select name="sel4" id="sel4" class="sel">
+                        <option selected>자회사/투자사</option>
+                        <option value="info.html#page1">비전/연혁</option>
+                        <option value="info.html#page3">오시는길</option>
+                    </select>
+                </div>
+            </div>
+            <section class="page">
                 <div class="page_wrap">
-                    <h2 class="paga_title">자회사/투자사</h2>
+                    <h2 class="page_title">자회사/투자사</h2>
                 </div>
             </section>
-            <section class="page" id="page3">
-                <h2 class="paga_title">오시는길</h2>
+        </div>
+        <div class="content" id="page3">
+            <figure class="vs">
+                <img src="" alt="비주얼">
+            </figure>
+            <div class="bread">
+                <div class="bread_fr">
+                    <a href="index.html" class="home">HOME</a> &gt;
+                    <select name="sel5" id="sel5" class="sel">
+                        <option>회사소개</option>
+                        <option value="product.html#page1">동향</option>
+                        <option value="service.html#page1">NFT</option>
+                        <option value="custom.html#page1">고객센터</option>
+                    </select> &gt; 
+                    <select name="sel6" id="sel6" class="sel">
+                        <option selected>오시는길</option>
+                        <option value="info.html#page1">비전/연혁</option>
+                        <option value="info.html#page2">자회사/투자사</option>
+                    </select>
+                </div>
+            </div>
+            <section class="page">
+                <div class="page_wrap">
+                    <h2 class="page_title">오시는 길</h2>
+                </div>
             </section>
-        </div>    
+        </div>
         <script>
+        var sel = document.getElementsByClassName("sel");
+        for(var i=0;i<sel.length;i++){
+            sel[i].addEventListener("change", function(){
+                location.href = this.value;
+            });
+        }
         var sel1 = document.getElementById("sel1");
         var sel2 = document.getElementById("sel2");
         sel1.addEventListener("change", function(){
@@ -177,8 +256,6 @@
         sel6.addEventListener("change", function(){
             location.href = sel6.value;
         });
-
-
         </script>
         <footer class="ft">
             <div class="ft_wrap">
@@ -211,6 +288,7 @@
                 </script>
             </div>
         </footer>
-    </div>   
+    </div>
+    <a href="" class="to_top">↑</a><!-- .to_top.on -->       
 </body>
 </html>
