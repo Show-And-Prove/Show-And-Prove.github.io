@@ -66,7 +66,26 @@
     .to_top:hover { background-color: deepskyblue; }
     .to_top.on { visibility: visible; }
 
-    /* footer.css */
+    /* 게시판 */
+    .noti_lst {  width:590px; float:left; }
+    .noti_lst li { clear:both; height:32px; border-bottom:1px solid #333;
+    box-sizing:border-box; }
+    .noti_lst li:first-child { border-top:2px solid #333; }
+    .noti_lst li:last-child { border-bottom:2px solid #333; }
+    .noti_lst li span { display:block; box-sizing:border-box; float:left;
+    line-height: 32px; font-size:14px; }
+    .noti_num { width: 60px; text-align:center; }
+    .not_tit { width: 340px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .item_hd { font-weight:600; }
+    .not_tit.item_hd { text-align: center; }
+    .not_tit a { display: block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-right: 12px; color:#333; }
+    .noti_auth { width: 80px; text-align: center; }
+    .noti_date { width: 110px; text-align: center; }
+
+
+
+
+
     </style>
     <script>
     $(document).ready(function(){
@@ -128,8 +147,8 @@
                             <a href="" class="dp1">고객센터</a>
                             <ul class="sub">
                                 <li><a href="custom.html#page1">공지사항</a></li>
-                                <li><a href="custom.html#page2">업비트 소식</a></li>
-                                <li><a href="custom.html#page3">1:1 문의하기</a></li>
+                                <li><a href="custom.html#page2">자주하는질문</a></li>
+                                <li><a href="custom.html#page3">QnA</a></li>
                                 <li><a href="custom.html#page4">문의 내역</a></li>
                             </ul>
                         </li>
@@ -160,8 +179,8 @@
                     </select> &gt;
                     <select name="sel2" id="sel2" class="sel">
                         <option>공지사항</option>
-                        <option value="custom.html#page2">업비트소식</option>
-                        <option value="custom.html#page3">1:1문의하기</option>
+                        <option value="custom.html#page2">자주하는질문</option>
+                        <option value="custom.html#page3">QnA</option>
                     </select>
                 </div>
             </div>
@@ -185,15 +204,15 @@
                         <option value="nft.html#page1">NFT</option>
                     </select> &gt;
                     <select name="sel4" id="sel4" class="sel">
-                        <option selected>업비트소식</option>
+                        <option selected>자주하는질문</option>
                         <option value="custom.html#page1">공지사항</option>
-                        <option value="custom.html#page3">1:1문의하기</option>
+                        <option value="custom.html#page3">QnA</option>
                     </select>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="page_title">업비트소식</h2>
+                    <h2 class="page_title">자주하는질문</h2>
                 </div>
             </section>
         </div>
@@ -211,18 +230,50 @@
                         <option value="nft.html#page1">NFT</option>
                     </select> &gt;
                     <select name="sel6" id="sel6" class="sel">
-                        <option selected>1:1문의하기</option>
+                        <option selected>QnA</option>
                         <option value="custom.html#page1">공지사항</option>
-                        <option value="custom.html#page2">업비트소식</option>
+                        <option value="custom.html#page2">자주하는질문</option>
                     </select>
                 </div>
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="page_title">1:1문의하기</h2>
+                    <h2 class="page_title">QnA</h2>
                 </div>
             </section>
         </div>
+        <!-- 공지사항(게시판) 자주하는질문(게시판) QnA(게시판)      -->
+        <section class="page">
+            <div class="page_wrap">
+                <h2 class="page_title">글 목록</h2>
+                <ul class="noti_lst">
+                    <li>
+                        <span class="noti_num item_hd">연번</span>
+                        <span class="not_tit item_hd">제목</span>
+                        <span class="noti_auth item_hd">작성자</span>
+                        <span class="noti_date item_hd">작성일</span>
+                    </li>
+                    <li>
+                        <span class="noti_num">1</span>
+                        <span class="not_tit"><a href="">공지사항</a></span>
+                        <span class="noti_auth">김기태</span>
+                        <span class="noti_date">2022-10-18</span>
+                    </li>
+                    <li>
+                        <span class="noti_num">2</span>
+                        <span class="not_tit"><a href="">글 제목2</a></span>
+                        <span class="noti_auth">김기태</span>
+                        <span class="noti_date">2022-10-18</span>
+                    </li>
+                    <li><span class="noti_num">3</span><span class="not_tit"><a href="">글 제목3</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                    <li><span class="noti_num">4</span><span class="not_tit"><a href="">글 제목4</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                    <li><span class="noti_num">5</span><span class="not_tit"><a href="">글 제목5</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                </ul>
+            </div>
+        </section>
+
+
+
         <script>
             var sel = document.getElementsByClassName("sel");
             for(var i=0;i<sel.length;i++){

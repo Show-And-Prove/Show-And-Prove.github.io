@@ -66,7 +66,48 @@
     .to_top:hover { background-color: deepskyblue; }
     .to_top.on { visibility: visible; }
 
-    /* footer.css */
+    /* 썸네일 */
+    .thumb_lst { width:50%; float:left; margin-bottom: 50px; }
+    .thumb_lst li { clear:both; border-bottom:3px solid #ececec; height: 150px; 
+    border-right:3px solid #ececec; }
+    .thumb_lst li:first-child { border-top:3px solid #ececec; }
+    .thumb_lst li a { display:block; }
+    .thumb_lst li .img_fr { width: 150px; height: 150px; overflow:hidden; float:left; }
+    .thumb_lst li .img_fr img { display:block; width: 100%; height:auto; 
+    margin-top:-28px; }
+    .thumb_lst li .com_fr { padding-left: 30px; float:left; color:#333; }
+    .thumb_tit { line-height: 2.4; text-overflow: ellipsis; overflow: hidden; white-space:nowrap; }
+    .thumb_com { line-height:2; text-overflow: ellipsis; overflow: hidden; white-space:nowrap; }
+    .thumb_price { line-height: 1.8; text-overflow: ellipsis; overflow: hidden; white-space:nowrap; }
+    
+    /* 제품사진목록 */
+    .pic_lst { clear:both; width: 100%; }
+    .pic_lst li { width: 30%; float:left; margin-right: 5%; margin-bottom: 60px;
+    position:relative; }
+    .pic_lst li a { display:block; position:relative; }
+    .pic_lst li a .pic_fr { width: 100%; height:450px; overflow:hidden; background-color:#dcdcdc;  }
+    .pic_lst li a img { display:block; width: 100%; height:auto; }
+    .pic_lst li:nth-child(3n) { margin-right: 0; }
+    .pic_tit { line-height:2; overflow:hidden; text-overflow: ellipsis;
+    white-space:nowrap; color:#222; }
+    .pic_com, .pic_info { line-height:2; overflow:hidden; text-overflow: ellipsis;
+    white-space:nowrap; color:#222;  }
+    .sale_price { font-size:16px; font-weight: bold; color:red; }
+    .origin_price { text-decoration: line-through; }
+    .pic_hd { position:absolute; top:0; left: 0; z-index:10; 
+    width: 100%; height:32px; opacity:0.8; text-shadow:2px 2px 0px #fff, 1px 1px 0px #fff;}
+    .ht_ico { display:block; float:left; width:100px; line-height: 32px; height: 32px; padding-left: 10px; padding-top: 10px; color:#333; }
+    .best:before { content:"BEST"; }
+    .new:before { content:"NEW"; }
+    .hit:before { content:"HIT"; }
+    .starating { display:block; float:right; width: 32px; height: 32px; margin-top: 10px; margin-right: 10px; background-image:url(""); background-repeat: no-repeat; background-size:100% 100%; }
+    .starating.on { background-image:url("");  }
+    
+    /* 목록 */
+    .list li { clear:both; line-height: 2.4;  }
+    .list li:before { content:""; display:block; float:left; width: 18px; height: 18px; border:1px solid #333; margin: 10px;  }
+
+
     </style>
     <script>
     $(document).ready(function(){
@@ -223,6 +264,125 @@
                 </div>
             </section>
         </div>
+        <!-- Drops(섬네일)3개 MarketPlace(섬네일)3개 MyNFT(목록) -->
+        <section class="page">
+            <div class="page_wrap">
+                <h2 class="page_title">Drops</h2>
+                <br>
+                <hr>
+                <br>
+                <ul class="thumb_lst">
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/web01/pic/nft_1.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">달빛 Moonscape</h3>
+                                <p class="thumb_com">오묘한 달빛이 수직으로 하강하는 폭포수를 비추고 있다.</p>
+                                <p class="thumb_price">가격 : 0.216 ETH ≈ 404,028 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/web01/pic/nft_2.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">일장춘몽-秋</h3>
+                                <p class="thumb_com">동양 산수화를 학습한 AI를 활용하여 제작한 작품이다.</p>
+                                <p class="thumb_price">0.089 ETH ≈ 206,836 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/web01/pic/nft_3.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">달빛녹취록 Transcript of the Moonlit Vol.1</h3>
+                                <p class="thumb_com">달빛에 비친 흑백의 압도적인 대나무숲</p>
+                                <p class="thumb_price">가격 : 0.189 ETH ≈ 353,524 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="thumb_lst">
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/web01/pic/nft_4.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">모두가 잠든 새벽</h3>
+                                <p class="thumb_com">생명에 대한 작가의 섬세한 시선</p>
+                                <p class="thumb_price">0.09 ETH ≈ 182,430 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/web01/pic/nft_5.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">낮잠</h3>
+                                <p class="thumb_com">자고싶다</p>
+                                <p class="thumb_price">0.108 ETH ≈ 201,744 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/web01/pic/nft_6.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">올리·베리 태양계시리즈 [목성]</h3>
+                                <p class="thumb_com">이런게 진짜 팔리냐</p>
+                                <p class="thumb_price">0.013 ETH ≈ 25,044 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+           </section>
+    </div>
+        
+                    <section class="page">
+                        <div class="page_wrap">
+                            <h2 class="page_title">MarketPlace</h2>
+                            <div class="con_wrap">
+                                <ul class="pic_lst">
+                                    <li>
+                                        <a href="">
+                                            <div class="pic_fr"><img src="/web01/pic/nft_market_1.png" alt="pic1"></div>
+                                            <div class="pic_hd"><span class="ht_ico best"></span><span class="starating on"></span></div>
+                                            <h3 class="pic_tit">산</h3>
+                                            <p class="pic_com"></p>
+                                            <p class="pic_info">가격 : 0.189 ETH ≈ 353,524 KRW</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="pic_fr"><img src="/web01/pic/nft_market_2.png" alt="pic2"></div>
+                                            <div class="pic_hd"><span class="ht_ico best"></span><span class="starating"></span></div>
+                                            <h3 class="pic_tit">빌딩속 숲</h3>
+                                            <p class="pic_com"></p>
+                                            <p class="pic_info">가격 : 0.01 BTC ≈ 276,510 KRW</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="pic_fr"><img src="/web01/pic/nft_market_3.png" alt="pic3"></div>
+                                            <div class="pic_hd"><span class="ht_ico new"></span><span class="starating on"></span></div>
+                                            <h3 class="pic_tit">NO PARKING</h3>
+                                            <p class="pic_com"></p>
+                                            <p class="pic_info">가격 : 0.1 BTC ≈ 2,765,100 KRW</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </ul>
+            </div>
+            <div class="page_wrap">
+                <h2 class="page_title">MyNFT</h2>
+                <div class="list_symbol">
+                    <ul class="list">
+                        <li>보유중인 상품 없음</li>
+                    </ul>
+                </div>
+            </div>
         <script>
             var sel = document.getElementsByClassName("sel");
             for(var i=0;i<sel.length;i++){

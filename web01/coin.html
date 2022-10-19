@@ -66,7 +66,26 @@
     .to_top:hover { background-color: deepskyblue; }
     .to_top.on { visibility: visible; }
 
-    /* footer.css */
+    /* 게시판 */
+    .noti_lst {  width:590px; float:left; }
+    .noti_lst li { clear:both; height:32px; border-bottom:1px solid #333;
+    box-sizing:border-box; }
+    .noti_lst li:first-child { border-top:2px solid #333; }
+    .noti_lst li:last-child { border-bottom:2px solid #333; }
+    .noti_lst li span { display:block; box-sizing:border-box; float:left;
+    line-height: 32px; font-size:14px; }
+    .noti_num { width: 60px; text-align:center; }
+    .not_tit { width: 340px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .item_hd { font-weight:600; }
+    .not_tit.item_hd { text-align: center; }
+    .not_tit a { display: block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-right: 12px; color:#333; }
+    .noti_auth { width: 80px; text-align: center; }
+    .noti_date { width: 110px; text-align: center; }
+    
+    /* 본문이미지 */
+    .img_box { clear:both; width: 1200px; margin:40px auto;}
+    .img_box_fr { margin:10px; width: 1200px; height: auto; overflow:hidden; }
+    .img_box_fr img { display:block; width: 100%; height: auto; }
     </style>
     <script>
     $(document).ready(function(){
@@ -223,6 +242,60 @@
                 </div>
             </section>
         </div>
+        <!-- 동향(사진) 국내증시(사진) 기사(게시판) -->
+        <div class="page_wrap">
+            <h2 class="page_title">코인 동향</h2>
+            <div class="page_aside">
+                <h2 class="aside_tit"></h2>
+                <div class="page_wrap">
+                    <h2 class="page_title">지수</h2>
+                    <div class="img_box">
+                        <div class="img_box_fr"><img src="/web01/pic/coin_main.PNG" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <div class="page_wrap">
+            <h2 class="page_title">국내증시</h2>
+            <div class="page_aside">
+                <h2 class="aside_tit"></h2>
+                <div class="page_wrap">
+                    <h2 class="page_title">지수</h2>
+                    <div class="img_box">
+                        <div class="img_box_fr"><img src="/web01/pic/coin_main.PNG" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <section class="page">
+            <div class="page_wrap">
+                <h2 class="page_title">글 목록</h2>
+                <ul class="noti_lst">
+                    <li>
+                        <span class="noti_num item_hd">1</span>
+                        <span class="not_tit item_hd">비트코인, 달러 역상관관계 심화….주식 지수 상관성은 높아져</span>
+                        <span class="noti_auth item_hd">운영자</span>
+                        <span class="noti_date item_hd">2022-10-19</span>
+                    </li>
+                    <li>
+                        <span class="noti_num">2</span>
+                        <span class="not_tit"><a href="">원달러 환율 1424원 출발…보합권 등락
+                        </a></span>
+                        <span class="noti_auth">운영자</span>
+                        <span class="noti_date">2022-10-19</span>
+                    </li>
+                    <li>
+                        <span class="noti_num">3</span>
+                        <span class="not_tit"><a href="">BTC 중점 VC, 펀드 조성 위해 3000만 달러 유치 중</a></span>
+                        <span class="noti_auth">운영자</span>
+                        <span class="noti_date">2022-10-19</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+
         <script>
             var sel = document.getElementsByClassName("sel");
             for(var i=0;i<sel.length;i++){

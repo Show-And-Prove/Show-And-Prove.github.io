@@ -58,7 +58,7 @@
     .content { display: none;}
     .content:target {display: block;}
 
-    .page_title { padding-top: 1em;}
+    .page_title { padding-top: 3em; padding-bottom:1em; }
     .home { color: black; }
     .to_top { position:fixed; bottom:80px; right:80px; z-index:999; 
     background-color:rgba(11,11,11,0.75); color:#fff; display:block; width: 60px;
@@ -66,7 +66,32 @@
     .to_top:hover { background-color: deepskyblue; }
     .to_top.on { visibility: visible; }
 
-    /* footer.css */
+
+    /* 회사 소개 이미지 */
+    .img_box { clear:both; width: 1200px; margin:40px auto;}
+    .img_box_fr { margin:10px; width: 1200px; height: auto; overflow:hidden; }
+    .img_box_fr img { display:block; width: 100%; height: auto; }
+    
+    
+    
+    /* 회사연혁 */
+    .page_aside { width: 200px; min-height:500px; float:left; }
+    .year_fr { width: 1000px; min-height:500px; float:right; }
+    .year_lst { clear: both; border-left:1px solid #333; }
+    .year_lst li { clear:both; height: 90px; position:relative; }
+    .year_lst li:before { content:""; display:block; width: 12px; height: 12px; 
+    border-radius:8px; background-color:#333; position:absolute; top:0px; left:-6px; z-index:10; }
+    .year_lst li h3, .year_lst li p { padding-left: 30px; }
+    
+    .list li { clear:both; line-height: 2.4;  }
+    .list li:before { content:""; display:block; float:left; width: 18px; height: 18px; border:1px solid #333; margin: 10px;  }
+
+
+
+
+
+
+
     </style>
     <script>
     $(document).ready(function(){
@@ -234,42 +259,58 @@ body { background:white; }
             </section>
         </div>
         <div class="page_wrap">
-            <h2 class="page_title">비전/연혁</h2>
-            <div class="img_box">
-                <div class="img_box_fr"><img src="" alt=""></div>
-                비전/연혁 내용
+            <h2 class="page_title">연혁</h2>
+            <div class="year_fr">
+                <ul class="year_lst">
+                    <li>
+                        <h3 class="year_tit">2017</h3>
+                        <p class="yesr_com">10. 가장 신뢰받는 글로벌 표준 디지털 자산 거래소 ‘업비트’ 출시</p>
+                    </li>
+                    <li>
+                        <h3 class="year_tit">2018</h3>
+                        <p class="yesr_com">3. 투자 전문 자회사 두나무앤파트너스 설립</p>
+                    </li>
+                    <li>
+                        <h3 class="year_tit">2018</h3>
+                        <p class="yesr_com">9. 업비트 개발자 컨퍼런스 2018(UDC 2018) 개최</p>
+                    </li>
+                    <li>
+                        <h3 class="year_tit">2019</h3>
+                        <p class="yesr_com">11. 국내 대표 비상장 주식 거래 플랫폼 ‘증권플러스 비상장’ 출시</p>
+                    </li>
+                    <li>
+                        <h3 class="year_tit">2020</h3>
+                        <p class="yesr_com">12.거래지원 사기 제보 채널 개설</p>
+                    </li>
+                    <li>
+                        <h3 class="year_tit">2021</h3>
+                        <p class="yesr_com">12. 업비트 투자자보호센터 출범</p>
+                    </li>
+                    <li>
+                        <h3 class="year_tit">2022</h3>
+                        <p class="yesr_com">1. ‘업비트 스테이킹’ 정식 서비스 출시</p>
+                    </li>
+                    <li>
+                        <h3 class="year_tit">2022</h3>
+                        <p class="yesr_com">6. 두나무 정보보호 현황 공시</p>
+                    </li>
+                </ul>
             </div>
         </div> 
         <!-- 수정 -->
         <div class="page_wrap">
-            <h2 class="page_title">자회사/투자사</h2>
-            <div class="page_aside">
-                <h2 class="aside_tit">자회사/투자사 내용</h2>
+            <h2 class="page_title">비전</h2>
+            <div class="img_box">
+                <div class="img_box_fr"><img src="/web01/pic/info_main.png" alt=""></div>
+                <h3>
+                    "블록체인과 핀테크로 만나는 새로운 투자 환경, "
+                    <br>
+                    "모두에게 열려있는 글로벌 표준을 제시합니다"
+                </h3>
             </div>
-            <div class="year_fr">
-                <ul class="year_lst">
-                    <li>
-                        <h3 class="year_tit">1969. 03.</h3>
-                        <p class="yesr_com">한진상사㈜, 대한항공공사 운영권 인수</p>
-                    </li>
-                    <li>
-                        <h3 class="year_tit">1969. 03.</h3>
-                        <p class="yesr_com">한진상사㈜, 대한항공공사 운영권 인수</p>
-                    </li>
-                    <li>
-                        <h3 class="year_tit">1969. 03.</h3>
-                        <p class="yesr_com">한진상사㈜, 대한항공공사 운영권 인수</p>
-                    </li>
-                    <li>
-                        <h3 class="year_tit">1969. 03.</h3>
-                        <p class="yesr_com">한진상사㈜, 대한항공공사 운영권 인수</p>
-                    </li>
-                    <li>
-                        <h3 class="year_tit">1969. 03.</h3>
-                        <p class="yesr_com">한진상사㈜, 대한항공공사 운영권 인수</p>
-                    </li>
-                </ul>
-            </div>
+        </div>
+            
+
         </div>
         <div class="page_wrap">
             <h2 class="page_title">오시는길</h2>
