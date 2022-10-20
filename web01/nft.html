@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>업비트 - 가장 신뢰받는 디지털 자산 거래소</title>
-    <!--메타포-->
+    <!-- 메타포(검색엔진에서 잘 검색되기 위해서) -->
     <meta property="og:url" content="/home">
     <meta property="og:site_name" content="업비트 - 가장 신뢰받는 디지털 자산 거래소">
     <meta property="og:title" content="업비트">
@@ -15,7 +16,6 @@
     <meta property="og:description" content="디지털 자산, 비트코인, 이더리움, 리플, 에이다, 솔라나 등 알트코인 거래.">
     <meta property="og:locale" content="ko_kr">
     <meta property="og:type" content="website">
-    <!--오픈그래프-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="/home">
     <meta name="twitter:site_name" content="업비트 - 가장 신뢰받는 디지털 자산 거래소">
@@ -44,29 +44,191 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <style>
-    /* header.css */
-    .hd { position: fixed; }
-    
-    /* content */
-    .vs {clear:both; width: 100%; height: 300px; overflow: hidden;}
-    .vs img {display: block; width: 100%; height: auto; }
-    .bread { clear:both; width: 100%; line-height: 60px;}
-    .bread_fr {width: 1200px; margin: 0 auto;}
-    .page {clear: both; width: 100%; min-height: 100vh;}
-    .page:after {content: ""; display: block;clear: both;}
-    .page_wrap { width: 1200px; margin: 0 auto;}
-    .content { display: none;}
-    .content:target {display: block;}
+        /* header.css */
+        .hd {
+            position: fixed;
+        }
 
-    .page_title { padding-top: 3em; padding-bottom:1em; }
-    .home { color: black; }
-    .to_top { position:fixed; bottom:80px; right:80px; z-index:999; 
-    background-color:rgba(11,11,11,0.75); color:#fff; display:block; width: 60px;
-    height: 60px; line-height: 60px; text-align: center; font-size:20px; border-radius:32px; visibility:hidden; transition-duration:0.8s; }
-    .to_top:hover { background-color: deepskyblue; }
-    .to_top.on { visibility: visible; }
+        /* content */
+        .vs {
+            clear: both;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
 
-    /* 썸네일 */
+        .vs img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .bread {
+            clear: both;
+            width: 100%;
+            line-height: 60px;
+            border-bottom: 3px solid rgb(129, 175, 219);
+        }
+
+        .bread_fr {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page {
+            clear: both;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .page:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .page_wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content:target {
+            display: block;
+        }
+
+        .page_wrap {
+            padding: 2em;
+        }
+
+        .page_title {
+            padding-top: 1em;
+        }
+
+        .home {
+            color: rgb(0, 0, 0);
+        }
+
+        .car {
+            padding-top: 70px;
+        }
+
+        .car img {
+            float: left;
+        }
+
+        .car_com {
+            float: right;
+            width: 800px;
+            white-space: pre-wrap;
+        }
+
+        .car_com h3 {
+            font-size: 2.5em;
+        }
+
+        .car_vid {
+            clear: both;
+            display: block;
+            width: 330px;
+            height: 195px;
+            margin-top: 280px;
+            background-color: rgb(72, 72, 192);
+            border-radius: 10px;
+        }
+
+        .car iframe {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .car_vid p {
+            color: aliceblue;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .str {
+            padding-top: 70px;
+        }
+
+        .str img {
+            float: left;
+        }
+
+        .str_com {
+            float: right;
+            width: 800px;
+            white-space: pre-wrap;
+        }
+
+        .str_com h3 {
+            font-size: 2.5em;
+        }
+
+        .coin {
+            padding-top: 70px;
+        }
+
+        .coin img {
+            float: left;
+        }
+
+        .coin_com {
+            float: right;
+            width: 800px;
+            white-space: pre-wrap;
+        }
+
+        .coin_com h3 {
+            font-size: 2.5em;
+        }
+
+        .coin_vid {
+            clear: both;
+            display: block;
+            width: 400px;
+            height: 250px;
+            margin-top: 280px;
+            border-radius: 10px;
+        }
+
+        .coin iframe {
+            width: 100%;
+            height: auto;
+        }
+
+        .to_top {
+            position: fixed;
+            bottom: 80px;
+            right: 80px;
+            z-index: 999;
+            background-color: rgb(211, 153, 44);
+            color: black;
+            display: block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 32px;
+            visibility: hidden;
+            transition-duration: 0.8s;
+        }
+
+        .to_top:hover {
+            background-color: aqua;
+        }
+
+        .to_top.on {
+            visibility: visible;
+        }
+        /* 썸네일 */
     .thumb_lst { width:50%; float:left; margin-bottom: 50px; }
     .thumb_lst li { clear:both; border-bottom:3px solid #ececec; height: 150px; 
     border-right:3px solid #ececec; }
@@ -79,7 +241,6 @@
     .thumb_tit { line-height: 2.4; text-overflow: ellipsis; overflow: hidden; white-space:nowrap; }
     .thumb_com { line-height:2; text-overflow: ellipsis; overflow: hidden; white-space:nowrap; }
     .thumb_price { line-height: 1.8; text-overflow: ellipsis; overflow: hidden; white-space:nowrap; }
-    
     /* 제품사진목록 */
     .pic_lst { clear:both; width: 100%; }
     .pic_lst li { width: 30%; float:left; margin-right: 5%; margin-bottom: 60px;
@@ -106,89 +267,76 @@
     /* 목록 */
     .list li { clear:both; line-height: 2.4;  }
     .list li:before { content:""; display:block; float:left; width: 18px; height: 18px; border:1px solid #333; margin: 10px;  }
-
-
+        /* footer.css */
     </style>
+    <link rel="stylesheet" href="footer.css">
     <script>
-    $(document).ready(function(){
-    $(".to_top").attr("href", location.href);
-    $(window).scroll(function(){
-    var ht = $(window).height();
-    var tp = $(this).scrollTop();
-    if(tp>=300){
-        $(".to_top").addClass("on");
-        $(".to_top").attr("href", location.href);
-        } else {
-        $(".to_top").removeClass("on");
-        $(".to_top").attr("href", location.href);
-        }
-    });
-    });    
+        $(document), ready(function () {
+            $(window).scroll(function () {
+                var ht = $(window).height();
+                var tp = $(this).scrollTop();
+                if (tp >= 300) {
+                    $(".to_top").addClass("on");
+                    $(".to_top").attr("href", location.href);
+                } else {
+                    $(".to_top").removeClass("on");
+                    $(".to_top").attr("href", location.href);
+                }
+            });
+        });
     </script>
-
-
-    
 </head>
+
 <body>
     <div class="wrap">
         <header class="hd">
             <div class="hd_wrap">
-                <a href="https://upbit.com/" class="logo"><img src="./pic2/upbit_logo.png" alt="Upbit_logo"></a>
+                <a href="index.html" class="logo"><img src="./pic2/upbit_logo.png" alt="Upbit_logo"></a>
                 <nav class="tnb">
                     <a href="login.html">로그인</a>
                     <a href="join.html">회원가입</a>
-                    <a href="sitemap.html">사이트맵</a>
-                </nav>
+                    <a href="sitemap.html">사이트맵</a></nav>
                 <nav class="gnb">
                     <ul>
                         <li class="item1">
-                            <a href="" class="dp1">업비트 소개</a>
+                            <a href="info.html#page1" class="dp1">회사소개</a>
                             <ul class="sub">
-                                <li><a href="info.html#page1">비전/연혁</a></li>
-                                <li><a href="info.html#page2">자회사/투자사</a></li>
+                                <li><a href="info.html#page1">서비스소개</a></li>
+                                <li><a href="info.html#page2">비전</a></li>
                                 <li><a href="info.html#page3">오시는길</a></li>
                             </ul>
                         </li>
                         <li class="item2">
-                            <a href="" class="dp1">동향</a>
+                            <a href="coin.html#page1" class="dp1">대표 코인</a>
                             <ul class="sub">
-                                <li><a href="coin.html#page1">코인 시세</a></li>
-                                <li><a href="coin.html#page2">국내 증시</a></li>
-                                <li><a href="coin.html#page3">관련 기사</a></li>
+                                <li><a href="coin.html#page1">비트코인(BTC)</a></li>
+                                <li><a href="coin.html#page2">이더리움(ETH)</a></li>
+                                <li><a href="coin.html#page3">도지코인(DOGE)</a></li>
                             </ul>
                         </li>
                         <li class="item3">
-                            <a href="" class="dp1">NFT</a>
+                            <a href="nft.html#page1" class="dp1">NFT</a>
                             <ul class="sub">
                                 <li><a href="nft.html#page1">Drops</a></li>
-                                <li><a href="nft.html#page1">Market Place</a></li>
-                                <li><a href="nft.html#page1">My NFT</a></li>
+                                <li><a href="nft.html#page2">Market Place</a></li>
+                                <li><a href="nft.html#page3">My NFT</a></li>
                             </ul>
                         </li>
                         <li class="item4">
-                            <a href="" class="dp1">고객센터</a>
+                            <a href="custom.html#page1" class="dp1">고객센터</a>
                             <ul class="sub">
                                 <li><a href="custom.html#page1">공지사항</a></li>
-                                <li><a href="custom.html#page2">업비트 소식</a></li>
-                                <li><a href="custom.html#page3">1:1 문의하기</a></li>
-                                <li><a href="custom.html#page4">문의 내역</a></li>
+                                <li><a href="custom.html#page2">자주하는질문</a></li>
+                                <li><a href="custom.html#page3">QnA</a></li>
                             </ul>
                         </li>
-                       <!-- <li class="item5">
-                            <a href="" class="dp1">설치 사례</a>
-                            <ul class="sub">
-                                <li><a href="">기업별</a></li>
-                                <li><a href="">시설별</a></li>
-                                <li><a href="">기기별</a></li>
-                            </ul>
-                        </li>-->
                     </ul>
                 </nav>
             </div>
         </header>
         <div class="content" id="page1">
             <figure class="vs">
-                <img src="" alt="비주얼"></img>
+                <img src="" alt="비주얼">
             </figure>
             <div class="bread">
                 <div class="bread_fr">
@@ -208,13 +356,78 @@
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="paga_title">NFT</h2>
-                </div>
+                    <h2 class="page_title">Drops</h2>
+                <br>
+                <hr>
+                <br>
+                <ul class="thumb_lst">
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/pic/nft_1.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">달빛 Moonscape</h3>
+                                <p class="thumb_com">오묘한 달빛이 수직으로 하강하는 폭포수를 비추고 있다.</p>
+                                <p class="thumb_price">가격 : 0.216 ETH ≈ 404,028 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/pic/nft_2.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">일장춘몽-秋</h3>
+                                <p class="thumb_com">동양 산수화를 학습한 AI를 활용하여 제작한 작품이다.</p>
+                                <p class="thumb_price">0.089 ETH ≈ 206,836 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/pic/nft_3.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">달빛녹취록 Transcript of the Moonlit Vol.1</h3>
+                                <p class="thumb_com">달빛에 비친 흑백의 압도적인 대나무숲</p>
+                                <p class="thumb_price">가격 : 0.189 ETH ≈ 353,524 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="thumb_lst">
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/pic/nft_4.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">모두가 잠든 새벽</h3>
+                                <p class="thumb_com">생명에 대한 작가의 섬세한 시선</p>
+                                <p class="thumb_price">0.09 ETH ≈ 182,430 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/pic/nft_5.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">낮잠</h3>
+                                <p class="thumb_com">자고싶다</p>
+                                <p class="thumb_price">0.108 ETH ≈ 201,744 KRW</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img_fr"><img src="/pic/nft_6.png" alt=""></div>
+                            <div class="com_fr">
+                                <h3 class="thumb_tit">올리·베리 태양계시리즈 [목성]</h3>
+                                <p class="thumb_com">이런게 진짜 팔리냐</p>
+                                <p class="thumb_price">0.013 ETH ≈ 25,044 KRW</p>
+                            </div>
+                        </a>
+                    </li>
             </section>
         </div>
         <div class="content" id="page2">
             <figure class="vs">
-                <img src="" alt="비주얼"></img>
+                <img src="img/baner/product_2.jpg" alt="비주얼">
             </figure>
             <div class="bread">
                 <div class="bread_fr">
@@ -235,12 +448,43 @@
             <section class="page">
                 <div class="page_wrap">
                     <h2 class="page_title">MarketPlace</h2>
-                </div>
-            </section>
+                            <div class="con_wrap">
+                                <ul class="pic_lst">
+                                    <li>
+                                        <a href="">
+                                            <div class="pic_fr"><img src="/pic/nft_market_1.png" alt="pic1"></div>
+                                            <div class="pic_hd"><span class="ht_ico best"></span><span class="starating on"></span></div>
+                                            <h3 class="pic_tit">산</h3>
+                                            <p class="pic_com"></p>
+                                            <p class="pic_info">가격 : 0.189 ETH ≈ 353,524 KRW</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="pic_fr"><img src="/pic/nft_market_2.png" alt="pic2"></div>
+                                            <div class="pic_hd"><span class="ht_ico best"></span><span class="starating"></span></div>
+                                            <h3 class="pic_tit">빌딩속 숲</h3>
+                                            <p class="pic_com"></p>
+                                            <p class="pic_info">가격 : 0.01 BTC ≈ 276,510 KRW</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="pic_fr"><img src="/pic/nft_market_3.png" alt="pic3"></div>
+                                            <div class="pic_hd"><span class="ht_ico new"></span><span class="starating on"></span></div>
+                                            <h3 class="pic_tit">NO PARKING</h3>
+                                            <p class="pic_com"></p>
+                                            <p class="pic_info">가격 : 0.1 BTC ≈ 2,765,100 KRW</p>
+                                        </a>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>  
         </div>
         <div class="content" id="page3">
             <figure class="vs">
-                <img src="" alt="비주얼">
+                <img src="img/baner/product_3.jpg" alt="비주얼">
             </figure>
             <div class="bread">
                 <div class="bread_fr">
@@ -261,120 +505,6 @@
             <section class="page">
                 <div class="page_wrap">
                     <h2 class="page_title">MyNFT</h2>
-                </div>
-            </section>
-        </div>
-        <!-- Drops(섬네일)3개 MarketPlace(섬네일)3개 MyNFT(목록) -->
-        <section class="page">
-            <div class="page_wrap">
-                <h2 class="page_title">Drops</h2>
-                <br>
-                <hr>
-                <br>
-                <ul class="thumb_lst">
-                    <li>
-                        <a href="">
-                            <div class="img_fr"><img src="/web01/pic/nft_1.png" alt=""></div>
-                            <div class="com_fr">
-                                <h3 class="thumb_tit">달빛 Moonscape</h3>
-                                <p class="thumb_com">오묘한 달빛이 수직으로 하강하는 폭포수를 비추고 있다.</p>
-                                <p class="thumb_price">가격 : 0.216 ETH ≈ 404,028 KRW</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="img_fr"><img src="/web01/pic/nft_2.png" alt=""></div>
-                            <div class="com_fr">
-                                <h3 class="thumb_tit">일장춘몽-秋</h3>
-                                <p class="thumb_com">동양 산수화를 학습한 AI를 활용하여 제작한 작품이다.</p>
-                                <p class="thumb_price">0.089 ETH ≈ 206,836 KRW</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="img_fr"><img src="/web01/pic/nft_3.png" alt=""></div>
-                            <div class="com_fr">
-                                <h3 class="thumb_tit">달빛녹취록 Transcript of the Moonlit Vol.1</h3>
-                                <p class="thumb_com">달빛에 비친 흑백의 압도적인 대나무숲</p>
-                                <p class="thumb_price">가격 : 0.189 ETH ≈ 353,524 KRW</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="thumb_lst">
-                    <li>
-                        <a href="">
-                            <div class="img_fr"><img src="/web01/pic/nft_4.png" alt=""></div>
-                            <div class="com_fr">
-                                <h3 class="thumb_tit">모두가 잠든 새벽</h3>
-                                <p class="thumb_com">생명에 대한 작가의 섬세한 시선</p>
-                                <p class="thumb_price">0.09 ETH ≈ 182,430 KRW</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="img_fr"><img src="/web01/pic/nft_5.png" alt=""></div>
-                            <div class="com_fr">
-                                <h3 class="thumb_tit">낮잠</h3>
-                                <p class="thumb_com">자고싶다</p>
-                                <p class="thumb_price">0.108 ETH ≈ 201,744 KRW</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="img_fr"><img src="/web01/pic/nft_6.png" alt=""></div>
-                            <div class="com_fr">
-                                <h3 class="thumb_tit">올리·베리 태양계시리즈 [목성]</h3>
-                                <p class="thumb_com">이런게 진짜 팔리냐</p>
-                                <p class="thumb_price">0.013 ETH ≈ 25,044 KRW</p>
-                            </div>
-                        </a>
-                    </li>
-           </section>
-    </div>
-        
-                    <section class="page">
-                        <div class="page_wrap">
-                            <h2 class="page_title">MarketPlace</h2>
-                            <div class="con_wrap">
-                                <ul class="pic_lst">
-                                    <li>
-                                        <a href="">
-                                            <div class="pic_fr"><img src="/web01/pic/nft_market_1.png" alt="pic1"></div>
-                                            <div class="pic_hd"><span class="ht_ico best"></span><span class="starating on"></span></div>
-                                            <h3 class="pic_tit">산</h3>
-                                            <p class="pic_com"></p>
-                                            <p class="pic_info">가격 : 0.189 ETH ≈ 353,524 KRW</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <div class="pic_fr"><img src="/web01/pic/nft_market_2.png" alt="pic2"></div>
-                                            <div class="pic_hd"><span class="ht_ico best"></span><span class="starating"></span></div>
-                                            <h3 class="pic_tit">빌딩속 숲</h3>
-                                            <p class="pic_com"></p>
-                                            <p class="pic_info">가격 : 0.01 BTC ≈ 276,510 KRW</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <div class="pic_fr"><img src="/web01/pic/nft_market_3.png" alt="pic3"></div>
-                                            <div class="pic_hd"><span class="ht_ico new"></span><span class="starating on"></span></div>
-                                            <h3 class="pic_tit">NO PARKING</h3>
-                                            <p class="pic_com"></p>
-                                            <p class="pic_info">가격 : 0.1 BTC ≈ 2,765,100 KRW</p>
-                                        </a>
-                                    </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>  
-            <div class="page_wrap">
-                <h2 class="page_title">MyNFT</h2>
                 <div class="list_symbol">
                     <ul class="list">
                         <li><strong>보유중인 상품 없음</strong></li>
@@ -383,26 +513,26 @@
             </div>
         <script>
             var sel = document.getElementsByClassName("sel");
-            for(var i=0;i<sel.length;i++){
-                sel[i].addEventListener("change", function(){
+            for (var i = 0; i < sel.length; i++) {
+                sel[i].addEventListener("change", function () {
                     location.href = this.value;
                 });
             }
         </script>
         <footer class="ft">
             <div class="ft_wrap">
-                <div class="ft_logo"><img src="" alt=""></div>
+                <div class="ft_logo"><img src="" alt="하단로고"></div>
                 <div class="mid_box">
                     <nav class="fnb">
-                        <a href="">개인정보 처리 방침</a>
-                        <a href="">이용약관</a>
+                        <a href="" class="dpc">개인정보처리방침</a>
+                        <a href="" class="dpc">이용약관</a>
                         <a href="">이메일무단수집거부</a>
                     </nav>
                     <p class="addr">
                         두나무 주식회사 | 대표 | 이석우 | 사업자등록번호:119-86-54968<br>
                         서울시 강남구 테헤란로 4길 14, 5층 | 고객센터 | 1588-5682<br>
                         가상자산사업자 등록번호 2021-01 | 기사 배열 책임자 박동규 | 청소년 보호 책임자 송세정<br>
-                        투자에 대한 모든 책임은 본인에게 있습니다.  
+                        투자에 대한 모든 책임은 본인에게 있습니다. 
                     </p>
                     <p class="copyright">Copyright © 2017 - 2022 Dunamu Inc. All rights reserved.</p>
                 </div>
@@ -414,13 +544,13 @@
                     </select>
                 </div>
                 <script>
-                function sel_link(sel){
-                    location.href = sel.value;
-                }
+                    function sel_link(sel) {
+                        location.href = sel.value;
+                    }
                 </script>
             </div>
         </footer>
     </div>
-    <a href="" class="to_top">↑</a><!-- .to_top.on -->       
 </body>
+
 </html>

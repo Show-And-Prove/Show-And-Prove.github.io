@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>업비트 - 가장 신뢰받는 디지털 자산 거래소</title>
-    <!--메타포-->
+    <!-- 메타포(검색엔진에서 잘 검색되기 위해서) -->
     <meta property="og:url" content="/home">
     <meta property="og:site_name" content="업비트 - 가장 신뢰받는 디지털 자산 거래소">
     <meta property="og:title" content="업비트">
@@ -15,7 +16,6 @@
     <meta property="og:description" content="디지털 자산, 비트코인, 이더리움, 리플, 에이다, 솔라나 등 알트코인 거래.">
     <meta property="og:locale" content="ko_kr">
     <meta property="og:type" content="website">
-    <!--오픈그래프-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="/home">
     <meta name="twitter:site_name" content="업비트 - 가장 신뢰받는 디지털 자산 거래소">
@@ -44,69 +44,184 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <style>
-    /* header.css */
-    .hd { position: fixed; }
-    
-    /* content */
-    .vs {clear:both; width: 100%; height: 300px; overflow: hidden;}
-    .vs img {display: block; width: 100%; height: auto; }
-    .bread { clear:both; width: 100%; line-height: 60px;}
-    .bread_fr {width: 1200px; margin: 0 auto;}
-    .page {clear: both; width: 100%; min-height: 100vh;}
-    .page:after {content: ""; display: block;clear: both;}
-    .page_wrap { width: 1200px; margin: 0 auto;}
-    .content { display: none;}
-    .content:target {display: block;}
-
-    .page_title { padding-top: 3em; padding-bottom:1em; }
-    .home { color: black; }
-    .to_top { position:fixed; bottom:80px; right:80px; z-index:999; 
-    background-color:rgba(11,11,11,0.75); color:#fff; display:block; width: 60px;
-    height: 60px; line-height: 60px; text-align: center; font-size:20px; border-radius:32px; visibility:hidden; transition-duration:0.8s; }
-    .to_top:hover { background-color: deepskyblue; }
-    .to_top.on { visibility: visible; }
-
-    /* 게시판 */
-    .noti_lst {  width:590px; float:left; }
-    .noti_lst li { clear:both; height:32px; border-bottom:1px solid #333;
-    box-sizing:border-box; }
-    .noti_lst li:first-child { border-top:2px solid #333; }
-    .noti_lst li:last-child { border-bottom:2px solid #333; }
-    .noti_lst li span { display:block; box-sizing:border-box; float:left;
-    line-height: 32px; font-size:14px; }
-    .noti_num { width: 60px; text-align:center; }
-    .not_tit { width: 340px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-    .item_hd { font-weight:600; }
-    .not_tit.item_hd { text-align: center; }
-    .not_tit a { display: block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-right: 12px; color:#333; }
-    .noti_auth { width: 80px; text-align: center; }
-    .noti_date { width: 110px; text-align: center; }
-
-
-
-
-
-    </style>
-    <script>
-    $(document).ready(function(){
-    $(".to_top").attr("href", location.href);
-    $(window).scroll(function(){
-    var ht = $(window).height();
-    var tp = $(this).scrollTop();
-    if(tp>=300){
-        $(".to_top").addClass("on");
-        $(".to_top").attr("href", location.href);
-        } else {
-        $(".to_top").removeClass("on");
-        $(".to_top").attr("href", location.href);
+        /* header.css */
+        .hd {
+            position: fixed;
         }
-    });
-    });    
+
+        /* content */
+        .vs {
+            clear: both;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .vs img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .bread {
+            clear: both;
+            width: 100%;
+            line-height: 60px;
+            border-bottom: 3px solid rgb(129, 175, 219);
+        }
+
+        .bread_fr {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page {
+            clear: both;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .page:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .page_wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content:target {
+            display: block;
+        }
+
+        .page_wrap {
+            padding: 2em;
+        }
+
+        .page_title {
+            padding-top: 1em;
+        }
+
+        .home {
+            color: rgb(0, 0, 0);
+        }
+
+        .noti_lst {
+            display: block;
+            margin: 80px auto;
+            width: 1000px;
+            height: 800px;
+        }
+
+        .noti_lst li {
+            clear: both;
+            height: 55px;
+            line-height: 32px;
+            border-bottom: 2px solid rgb(157, 175, 212);
+            box-sizing: border-box;
+        }
+
+        .noti_lst li:first-child {
+            border-top: 3px solid #333;
+        }
+
+        .noti_lst li span {
+            display: block;
+            box-sizing: border-box;
+            float: left;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+        .noti_num {
+            width: 80px;
+            text-align: center;
+        }
+
+        .noti_tit {
+            width: 700px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .item_hd {
+            font-weight: 700;
+        }
+
+        .noti_tit.item_hd {
+            text-align: center;
+        }
+
+        .noti_tit a {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-right: 12px;
+            color: #333;
+        }
+
+        .noti_auth {
+            width: 100px;
+            text-align: center;
+        }
+
+        .noti_date {
+            width: 120px;
+            text-align: center;
+        }
+
+        .to_top {
+            position: fixed;
+            bottom: 80px;
+            right: 80px;
+            z-index: 999;
+            background-color: rgb(211, 153, 44);
+            color: black;
+            display: block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 32px;
+            visibility: hidden;
+            transition-duration: 0.8s;
+        }
+
+        .to_top:hover {
+            background-color: aqua;
+        }
+
+        .to_top.on {
+            visibility: visible;
+        }
+    </style>
+    <link rel="stylesheet" href="footer.css">
+    <script>
+        $(document), ready(function () {
+            $(window).scroll(function () {
+                var ht = $(window).height();
+                var tp = $(this).scrollTop();
+                if (tp >= 300) {
+                    $(".to_top").addClass("on");
+                    $(".to_top").attr("href", location.href);
+                } else {
+                    $(".to_top").removeClass("on");
+                    $(".to_top").attr("href", location.href);
+                }
+            });
+        });
     </script>
-
-
-    
 </head>
+
 <body>
     <div class="wrap">
         <header class="hd">
@@ -115,58 +230,48 @@
                 <nav class="tnb">
                     <a href="login.html">로그인</a>
                     <a href="join.html">회원가입</a>
-                    <a href="sitemap.html">사이트맵</a>
-                </nav>
+                    <a href="sitemap.html">사이트맵</a></nav>
                 <nav class="gnb">
                     <ul>
                         <li class="item1">
-                            <a href="" class="dp1">업비트 소개</a>
+                            <a href="info.html#page1" class="dp1">회사소개</a>
                             <ul class="sub">
-                                <li><a href="info.html#page1">연혁</a></li>
+                                <li><a href="info.html#page1">서비스소개</a></li>
                                 <li><a href="info.html#page2">비전</a></li>
                                 <li><a href="info.html#page3">오시는길</a></li>
                             </ul>
                         </li>
                         <li class="item2">
-                            <a href="" class="dp1">동향</a>
+                            <a href="coin.html#page1" class="dp1">대표 코인</a>
                             <ul class="sub">
-                                <li><a href="coin.html#page1">코인 시세</a></li>
-                                <li><a href="coin.html#page2">국내 증시</a></li>
-                                <li><a href="coin.html#page3">해외 증시</a></li>
+                                <li><a href="coin.html#page1">비트코인(BTC)</a></li>
+                                <li><a href="coin.html#page2">이더리움(ETH)</a></li>
+                                <li><a href="coin.html#page3">도지코인(DOGE)</a></li>
                             </ul>
                         </li>
                         <li class="item3">
-                            <a href="" class="dp1">NFT</a>
+                            <a href="nft.html#page1" class="dp1">NFT</a>
                             <ul class="sub">
                                 <li><a href="nft.html#page1">Drops</a></li>
-                                <li><a href="nft.html#page1">Market Place</a></li>
-                                <li><a href="nft.html#page1">My NFT</a></li>
+                                <li><a href="nft.html#page2">Market Place</a></li>
+                                <li><a href="nft.html#page3">My NFT</a></li>
                             </ul>
                         </li>
                         <li class="item4">
-                            <a href="" class="dp1">고객센터</a>
+                            <a href="custom.html#page1" class="dp1">고객센터</a>
                             <ul class="sub">
                                 <li><a href="custom.html#page1">공지사항</a></li>
                                 <li><a href="custom.html#page2">자주하는질문</a></li>
                                 <li><a href="custom.html#page3">QnA</a></li>
-                                <li><a href="custom.html#page4">문의 내역</a></li>
                             </ul>
                         </li>
-                       <!-- <li class="item5">
-                            <a href="" class="dp1">설치 사례</a>
-                            <ul class="sub">
-                                <li><a href="">기업별</a></li>
-                                <li><a href="">시설별</a></li>
-                                <li><a href="">기기별</a></li>
-                            </ul>
-                        </li>-->
                     </ul>
                 </nav>
             </div>
         </header>
         <div class="content" id="page1">
             <figure class="vs">
-                <img src="" alt="비주얼"></img>
+                <img src="" alt="비주얼">
             </figure>
             <div class="bread">
                 <div class="bread_fr">
@@ -186,13 +291,36 @@
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="paga_title">공지사항</h2>
+                    <h2 class="page_title">글 목록</h2>
+                    <ul class="noti_lst">
+                        <li>
+                            <span class="noti_num item_hd">연번</span>
+                            <span class="not_tit item_hd">제목</span>
+                            <span class="noti_auth item_hd">작성자</span>
+                            <span class="noti_date item_hd">작성일</span>
+                        </li>
+                        <li>
+                            <span class="noti_num">1</span>
+                            <span class="not_tit"><a href="">공지사항</a></span>
+                            <span class="noti_auth">김기태</span>
+                            <span class="noti_date">2022-10-18</span>
+                        </li>
+                        <li>
+                            <span class="noti_num">2</span>
+                            <span class="not_tit"><a href="">글 제목2</a></span>
+                            <span class="noti_auth">김기태</span>
+                            <span class="noti_date">2022-10-18</span>
+                        </li>
+                        <li><span class="noti_num">3</span><span class="not_tit"><a href="">글 제목3</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                        <li><span class="noti_num">4</span><span class="not_tit"><a href="">글 제목4</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                        <li><span class="noti_num">5</span><span class="not_tit"><a href="">글 제목5</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                    </ul>
                 </div>
             </section>
         </div>
         <div class="content" id="page2">
             <figure class="vs">
-                <img src="" alt="비주얼"></img>
+                <img src="" alt="비주얼">
             </figure>
             <div class="bread">
                 <div class="bread_fr">
@@ -212,13 +340,36 @@
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="page_title">자주하는질문</h2>
+                    <h2 class="page_title">글 목록</h2>
+                    <ul class="noti_lst">
+                        <li>
+                            <span class="noti_num item_hd">연번</span>
+                            <span class="not_tit item_hd">제목</span>
+                            <span class="noti_auth item_hd">작성자</span>
+                            <span class="noti_date item_hd">작성일</span>
+                        </li>
+                        <li>
+                            <span class="noti_num">1</span>
+                            <span class="not_tit"><a href="">공지사항</a></span>
+                            <span class="noti_auth">김기태</span>
+                            <span class="noti_date">2022-10-18</span>
+                        </li>
+                        <li>
+                            <span class="noti_num">2</span>
+                            <span class="not_tit"><a href="">글 제목2</a></span>
+                            <span class="noti_auth">김기태</span>
+                            <span class="noti_date">2022-10-18</span>
+                        </li>
+                        <li><span class="noti_num">3</span><span class="not_tit"><a href="">글 제목3</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                        <li><span class="noti_num">4</span><span class="not_tit"><a href="">글 제목4</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                        <li><span class="noti_num">5</span><span class="not_tit"><a href="">글 제목5</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                    </ul>
                 </div>
             </section>
         </div>
         <div class="content" id="page3">
             <figure class="vs">
-                <img src="" alt="비주얼">
+                <img src="img/baner/product_3.jpg" alt="비주얼">
             </figure>
             <div class="bread">
                 <div class="bread_fr">
@@ -238,64 +389,55 @@
             </div>
             <section class="page">
                 <div class="page_wrap">
-                    <h2 class="page_title">QnA</h2>
+                    <h2 class="page_title">글 목록</h2>
+                    <ul class="noti_lst">
+                        <li>
+                            <span class="noti_num item_hd">연번</span>
+                            <span class="not_tit item_hd">제목</span>
+                            <span class="noti_auth item_hd">작성자</span>
+                            <span class="noti_date item_hd">작성일</span>
+                        </li>
+                        <li>
+                            <span class="noti_num">1</span>
+                            <span class="not_tit"><a href="">공지사항</a></span>
+                            <span class="noti_auth">김기태</span>
+                            <span class="noti_date">2022-10-18</span>
+                        </li>
+                        <li>
+                            <span class="noti_num">2</span>
+                            <span class="not_tit"><a href="">글 제목2</a></span>
+                            <span class="noti_auth">김기태</span>
+                            <span class="noti_date">2022-10-18</span>
+                        </li>
+                        <li><span class="noti_num">3</span><span class="not_tit"><a href="">글 제목3</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                        <li><span class="noti_num">4</span><span class="not_tit"><a href="">글 제목4</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                        <li><span class="noti_num">5</span><span class="not_tit"><a href="">글 제목5</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
+                    </ul>
                 </div>
             </section>
         </div>
-        <!-- 공지사항(게시판) 자주하는질문(게시판) QnA(게시판)      -->
-        <section class="page">
-            <div class="page_wrap">
-                <h2 class="page_title">글 목록</h2>
-                <ul class="noti_lst">
-                    <li>
-                        <span class="noti_num item_hd">연번</span>
-                        <span class="not_tit item_hd">제목</span>
-                        <span class="noti_auth item_hd">작성자</span>
-                        <span class="noti_date item_hd">작성일</span>
-                    </li>
-                    <li>
-                        <span class="noti_num">1</span>
-                        <span class="not_tit"><a href="">공지사항</a></span>
-                        <span class="noti_auth">김기태</span>
-                        <span class="noti_date">2022-10-18</span>
-                    </li>
-                    <li>
-                        <span class="noti_num">2</span>
-                        <span class="not_tit"><a href="">글 제목2</a></span>
-                        <span class="noti_auth">김기태</span>
-                        <span class="noti_date">2022-10-18</span>
-                    </li>
-                    <li><span class="noti_num">3</span><span class="not_tit"><a href="">글 제목3</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
-                    <li><span class="noti_num">4</span><span class="not_tit"><a href="">글 제목4</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
-                    <li><span class="noti_num">5</span><span class="not_tit"><a href="">글 제목5</a></span><span class="noti_auth">김기태</span><span class="noti_date">2022-10-18</span></li>
-                </ul>
-            </div>
-        </section>
-
-
-
         <script>
             var sel = document.getElementsByClassName("sel");
-            for(var i=0;i<sel.length;i++){
-                sel[i].addEventListener("change", function(){
+            for (var i = 0; i < sel.length; i++) {
+                sel[i].addEventListener("change", function () {
                     location.href = this.value;
                 });
             }
         </script>
         <footer class="ft">
             <div class="ft_wrap">
-                <div class="ft_logo"><img src="" alt=""></div>
+                <div class="ft_logo"><img src="" alt="하단로고"></div>
                 <div class="mid_box">
                     <nav class="fnb">
-                        <a href="">개인정보 처리 방침</a>
-                        <a href="">이용약관</a>
+                        <a href="" class="dpc">개인정보처리방침</a>
+                        <a href="" class="dpc">이용약관</a>
                         <a href="">이메일무단수집거부</a>
                     </nav>
                     <p class="addr">
                         두나무 주식회사 | 대표 | 이석우 | 사업자등록번호:119-86-54968<br>
                         서울시 강남구 테헤란로 4길 14, 5층 | 고객센터 | 1588-5682<br>
                         가상자산사업자 등록번호 2021-01 | 기사 배열 책임자 박동규 | 청소년 보호 책임자 송세정<br>
-                        투자에 대한 모든 책임은 본인에게 있습니다.  
+                        투자에 대한 모든 책임은 본인에게 있습니다. 
                     </p>
                     <p class="copyright">Copyright © 2017 - 2022 Dunamu Inc. All rights reserved.</p>
                 </div>
@@ -307,13 +449,13 @@
                     </select>
                 </div>
                 <script>
-                function sel_link(sel){
-                    location.href = sel.value;
-                }
+                    function sel_link(sel) {
+                        location.href = sel.value;
+                    }
                 </script>
             </div>
         </footer>
     </div>
-    <a href="" class="to_top">↑</a><!-- .to_top.on -->       
 </body>
+
 </html>

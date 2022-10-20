@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>업비트 - 가장 신뢰받는 디지털 자산 거래소</title>
-    <!--메타포-->
+    <!-- 메타포(검색엔진에서 잘 검색되기 위해서) -->
     <meta property="og:url" content="/home">
     <meta property="og:site_name" content="업비트 - 가장 신뢰받는 디지털 자산 거래소">
     <meta property="og:title" content="업비트">
@@ -15,7 +16,6 @@
     <meta property="og:description" content="디지털 자산, 비트코인, 이더리움, 리플, 에이다, 솔라나 등 알트코인 거래.">
     <meta property="og:locale" content="ko_kr">
     <meta property="og:type" content="website">
-    <!--오픈그래프-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="/home">
     <meta name="twitter:site_name" content="업비트 - 가장 신뢰받는 디지털 자산 거래소">
@@ -44,63 +44,261 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <style>
-    /* header.css */
-    
-    
-    /* content */
-    .page { clear:both; width: 100%; }
-    .page_wrap { width: 1200px; margin: 0 auto; }
-    #page1, #page3 { background-color:#ececec; }
-    .page_tit { text-align: center; font-size:32px; padding-top:1.2em; padding-bottom: 0.8em; }
-    .lst { clear:both; width: 1200px; }
-    .lst:after { content:""; display:block; clear: both;}
-    .lst li { margin-bottom: 40px; }
-    .lst li.left { float:left; width: 816px; height: 459px; }
-    .lst li.right { float:right; width:350px; height: 459px; }
-    .ico_lst { clear:both; width: 100%; overflow:hidden; }
-    .ico_lst li a { display:block; background-repeat: no-repeat; 
-    background-position:0px center; background-size:auto 80%; 
-    padding-left: 55px; }
-    .ico_lst li a.icon1 { background-image: url("./img/icon/ico_service_01.svg"); }
-    .ico_lst li a.icon2 { background-image: url("./img/icon/ico_service_02.svg");}
-    .ico_lst li a.icon3 { background-image: url("./img/icon/ico_service_03.svg"); }
-    .cate_tit { color:#222; font-size:20px; padding-bottom: 0.5em; }
-    .cate_com { color:#222; font-size:14px; overflow:hidden;
-    white-space:nowrap; text-overflow:ellipsis; }
+        /* header.css */
 
-    #page2 { background-color: rgba(230, 248, 255, 0.5); }
-    .pic_lst { clear:both; width: 100%; padding-bottom: 80px; }
-    .pic_lst:after { content:""; display:block; clear:both; }
-    .pic_lst li { float:left; position:relative; margin-bottom: 40px; }
-    .pic_lst li a { display:block; width: 360px; margin-right: 40px;
-    overflow: hidden; height: 300px; }
-    .pic_lst li a img { display:block; width:600px; margin-left: -120px; transition-duration:0.8s; }
-    .pic_lst li a:hover img { margin-left: 0; }
-    .pic_lst li a .hv_box { width: 360px; height: 300px; color:rgb(0, 26, 255); opacity:0; position:absolute; top:0; left: 0; z-index:10; transition-duration:0.8s; background-color:transparent; }
-    .pic_lst li a:hover .hv_box { opacity:1; }
-    .pic_tit { position:absolute; top:30px; left: 30px; 
-    text-shadow:0px 0px 7px rgba(2, 2, 3, 0.925); }
-    .pic_com { position:absolute; right:30px; bottom:30px; 
-        text-shadow:0px 0px 7px rgba(7, 7, 10, 0.904); }
+        /* content */
+        .content {
+            clear: both;
+            width: 100%;
+        }
 
-    #page3 { background-repeat: no-repeat; 
-    background-size: cover; 
-    background-position:center center; height: 100vh; background-image:url("./img/bg_partners.jpg"); overflow:hidden; }
-    #page3 .page_wrap { width: 100%; }
-    .circle_lst { clear:both; width: 4455px; }
-    .circle_lst li { width: 300px; height: 300px; position:relative; border-radius:120px; overflow:hidden; background-color: #fff;
-    float:left; margin:70px;  }
-    .circle_lst.lst2 li { float:right; }
-    .circle_lst li a { display:block; width: 100%; height: 100%; }
-    .circle_lst li a img { display:block; width:160px; height:auto; 
-    position:absolute; top:45%; left: 60px; z-index:11; margin-top: -30px; }
+        .content:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
 
-    /* footer.css */
-    
+        .vs {
+            clear: both;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
 
+        .vdo {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .page {
+            clear: both;
+            width: 100%;
+        }
+
+        .page_wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #page1,
+        #page3 {
+            background-color: #ececec;
+        }
+
+        .page_tit {
+            text-align: center;
+            font-size: 32px;
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+
+        .lst {
+            clear: both;
+            width: 1200px;
+            padding-bottom: 80px;
+        }
+
+        .lst:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .lst li {
+            margin-bottom: 40px;
+        }
+
+        .lst li.left {
+            float: left;
+            width: 620px;
+            height: 349px;
+        }
+
+        .lst li.right {
+            float: right;
+            width: 540px;
+            height: 349px;
+            padding-top: 25px;
+        }
+
+        .ico_lst {
+            clear: both;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .ico_lst li a {
+            display: block;
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            background-size: auto 80%;
+            padding-left: 85px;
+        }
+
+        .ico_lst li a.icon1 { background-image: url("./img/icon/ico_service_01.svg"); }
+        .ico_lst li a.icon2 { background-image: url("./img/icon/ico_service_02.svg");}
+        .ico_lst li a.icon3 { background-image: url("./img/icon/ico_service_03.svg"); }
+
+        .cate_tit {
+            color: #222;
+            font-size: 20px;
+            padding-bottom: 0.5em;
+        }
+
+        .cate_com {
+            color: #222;
+            font-size: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        #page2 {
+            background-color: rgb(235, 230, 211);
+        }
+
+        .pic_lst {
+            clear: both;
+            width: 100%;
+            padding-bottom: 120px;
+        }
+
+        .pic_lst::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .pic_lst li {
+            float: left;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .pic_lst li a {
+            display: block;
+            width: 360px;
+            margin-right: 40px;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .pic_lst li a img {
+            display: block;
+            width: 732px;
+            margin-left: -120px;
+            transition-duration: 0.8s;
+        }
+
+        .pic_lst li a:hover img {
+            margin-left: 0;
+        }
+
+        .pic_lst li a .hv_box {
+            width: 360px;
+            height: 300px;
+            color: #fff;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            transition-duration: 0.8s;
+            background-color: transparent;
+        }
+
+        .pic_lst li a:hover .hv_box {
+            opacity: 1;
+        }
+
+        .pic_date {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            text-shadow: 0px 0px 3px red;
+        }
+
+        .pic_tit {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            text-shadow: 0px 0px 3px blue;
+        }
+
+        #page3 {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: 100vh;
+            background-image:url("./img/bg_partners.jpg");
+            overflow: hidden;
+        }
+
+        #page3 .page_wrap {
+            width: 100%;
+        }
+
+        .circle_lst {
+            clear: both;
+            width: 5120px;
+        }
+
+        .circle_lst li {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            border-radius: 120px;
+            overflow: hidden;
+            background-color: #fff;
+            float: left;
+            margin: 28px;
+        }
+
+        .circle_lst.lst2 li {
+            float: right;
+        }
+
+        .circle_lst li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .circle_lst li img {
+            display: block;
+            width: 250px;
+            height: auto;
+            position: absolute;
+            top: 35%;
+            left: -25px;
+            z-index: 11;
+            margin-top: -28px;
+        }
+
+        
     </style>
-    
+    <!-- footer.css -->
+    <link rel="stylesheet" href="footer.css">
+    <script>
+        $(document), ready(function () {
+            $(window).scroll(function () {
+                var ht = $(window).height();
+                var tp = $(this).scrollTop();
+                if (tp >= 600) {
+                    $(".hd").css("position", "fixed");
+                } else {
+                    $(".hd").css("position", "absolute");
+                }
+            });
+            $
+            $("<ul class='circle_lst lst2'></ul>").insertAfter($(".circle_lst"));
+            $lst1_obj = $(".circle_lst li").clone();
+            $(".circle_lst.lst2").append($lst2_obj);
+        });
+    </script>
 </head>
+
 <body>
     <div class="wrap">
         <header class="hd">
@@ -109,12 +307,11 @@
                 <nav class="tnb">
                     <a href="login.html">로그인</a>
                     <a href="join.html">회원가입</a>
-                    <a href="sitemap.html">사이트맵</a>
-                </nav>
+                    <a href="sitemap.html">사이트맵</a></nav>
                 <nav class="gnb">
                     <ul>
                         <li class="item1">
-                            <a href="" class="dp1">업비트 소개</a>
+                            <a href="info.html#page1" class="dp1">회사소개</a>
                             <ul class="sub">
                                 <li><a href="info.html#page1">연혁</a></li>
                                 <li><a href="info.html#page2">비전</a></li>
@@ -122,38 +319,29 @@
                             </ul>
                         </li>
                         <li class="item2">
-                            <a href="" class="dp1">동향</a>
+                            <a href="coin.html#page1" class="dp1">코인 동향</a>
                             <ul class="sub">
                                 <li><a href="coin.html#page1">코인 시세</a></li>
-                                <li><a href="coin.html#page2">국내 증시</a></li>
-                                <li><a href="coin.html#page3">해외 증시</a></li>
+                                <li><a href="coin.html#page2">국내외증시</a></li>
+                                <li><a href="coin.html#page3">관련 기사</a></li>
                             </ul>
                         </li>
                         <li class="item3">
-                            <a href="" class="dp1">NFT</a>
+                            <a href="nft.html#page1" class="dp1">NFT</a>
                             <ul class="sub">
                                 <li><a href="nft.html#page1">Drops</a></li>
-                                <li><a href="nft.html#page1">Market Place</a></li>
-                                <li><a href="nft.html#page1">My NFT</a></li>
+                                <li><a href="nft.html#page2">Market Place</a></li>
+                                <li><a href="nft.html#page3">My NFT</a></li>
                             </ul>
                         </li>
                         <li class="item4">
-                            <a href="" class="dp1">고객센터</a>
+                            <a href="custom.html#page1" class="dp1">고객센터</a>
                             <ul class="sub">
                                 <li><a href="custom.html#page1">공지사항</a></li>
                                 <li><a href="custom.html#page2">자주하는질문</a></li>
                                 <li><a href="custom.html#page3">QnA</a></li>
-                                <li><a href="custom.html#page4">문의 내역</a></li>
                             </ul>
                         </li>
-                       <!-- <li class="item5">
-                            <a href="" class="dp1">설치 사례</a>
-                            <ul class="sub">
-                                <li><a href="">기업별</a></li>
-                                <li><a href="">시설별</a></li>
-                                <li><a href="">기기별</a></li>
-                            </ul>
-                        </li>-->
                     </ul>
                 </nav>
             </div>
@@ -167,20 +355,23 @@
                     <h2 class="page_tit">가장 신뢰받는 글로벌 디지털 거래소<br>안전하고 투명한 시스템으로 빠르고 편리한 거래환경을 제공합니다.</h2>
                     <ul class="lst">
                         <li class="left">
-                            <iframe name="vdo2" id="vdo2" width="846" height="459" src="https://www.youtube.com/embed/4nWx3LMaUHw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe name="vdo2" id="vdo2" width="620" height="349"
+                                src="https://www.youtube.com/embed/4nWx3LMaUHw" title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
                         </li>
                         <li class="right">
                             <ul class="ico_lst">
                                 <li>
                                     <a href="https://www.youtube.com/embed/4nWx3LMaUHw" target="vdo2" class="icon1">
                                         <h3 class="cate_tit">대한민국 1등 코인거래소</h3>
-                                        <p class="cate_com">890만명이 선택한 거래소</p>
+                                        <p class="cate_com">890만명이 선택한 거래소 업비트.</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.youtube.com/embed/0YTRl6RZnYo" target="vdo2" class="icon2">
                                         <h3 class="cate_tit">한 때는 코스피 거래대금 추월</h3>
-                                        <p class="cate_com">불장은 다시 옵니다.</p>
+                                        <p class="cate_com">불장은 다시 옵니다!!!!!</p>
                                     </a>
                                 </li>
                                 <li>
@@ -200,40 +391,29 @@
                     <ul class="pic_lst">
                         <li>
                             <a href="https://upbit.com/exchange?code=CRIX.UPBIT.KRW-XRP">
-                                <img src="./pic2/xrp_info.PNG" alt="XRP_INFO" class="pic">
+                                <img src="./pic2/xrp_info.PNG" alt="XRP_INFO"
+                                    class="pic">
                                 <div class="hv_box">
-                                    <h3 class="pic_tit">리플(XRP)</h3>
-                                    <p class="pic_com">..</p>
+                                    <p class="pic_tit">리플(XRP)</p>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a href="https://upbit.com/exchange?code=CRIX.UPBIT.KRW-BTC">
+                            <a href="">
                                 <img src="./pic2/bitcoin_info.PNG" alt="BTC_INFO" class="pic">
                                 <div class="hv_box">
-                                    <h3 class="pic_tit">비트코인(BTC)</h3>
-                                    <p class="pic_com">사진설명2</p>
+                                    <p class="pic_tit">비트코인(BTC)</p>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a href="https://upbit.com/exchange?code=CRIX.UPBIT.KRW-ORBS">
+                            <a href="">
                                 <img src="./pic2/orbs_info.PNG" alt="ORBS_INFO" class="pic">
                                 <div class="hv_box">
-                                    <h3 class="pic_tit">오브스(ORBS)</h3>
-                                    <p class="pic_com">사진설명3</p>
+                                    <p class="pic_tit">오브스(ORBS)</p>
                                 </div>
                             </a>
                         </li>
-                       <!-- <li>
-                            <a href="">
-                                <img src="" alt="" class="pic">
-                                <div class="hv_box">
-                                    <h3 class="pic_tit">사진제목4</h3>
-                                    <p class="pic_com">사진설명4</p>
-                                </div>
-                            </a>
-                        </li>-->
                     </ul>
                 </div>
             </section>
@@ -241,28 +421,28 @@
                 <div class="page_wrap">
                     <h2 class="page_tit">국제 표준 및 국내 주요 보안 인증 획득</h2>
                     <ul class="circle_lst">
-                        <li><a href=""><img src="./pic/인증1.svg" alt="인증로고1"></a></li>
-                        <li><a href=""><img src="./pic/인증2.svg" alt="인증로고2"></a></li>
-                        <li><a href=""><img src="./pic/인증3.svg" alt="인증로고3"></a></li>
-                        <li><a href=""><img src="./pic/인증4.svg" alt="인증로고4"></a></li>
+                        <li><a href=""><img src="./pic/인증1.svg" alt="인증로고1" class="thumb"></a></li>
+                        <li><a href=""><img src="./pic/인증2.svg" alt="인증로고2" class="thumb"></a></li>
+                        <li><a href=""><img src="./pic/인증3.svg" alt="인증로고3" class="thumb"></a></li>
+                        <li><a href=""><img src="./pic/인증4.svg" alt="인증로고4" class="thumb"></a></li>
                     </ul>
                 </div>
             </section>
-        </div>    
+        </div>
         <footer class="ft">
             <div class="ft_wrap">
-                <div class="ft_logo"><img src="" alt=""></div>
+                <div class="ft_logo"><img src="" alt="하단로고"></div>
                 <div class="mid_box">
                     <nav class="fnb">
-                        <a href="">개인정보 처리 방침</a>
-                        <a href="">이용약관</a>
+                        <a href="" class="dpc">개인정보처리방침</a>
+                        <a href="" class="dpc">이용약관</a>
                         <a href="">이메일무단수집거부</a>
                     </nav>
                     <p class="addr">
                         두나무 주식회사 | 대표 | 이석우 | 사업자등록번호:119-86-54968<br>
                         서울시 강남구 테헤란로 4길 14, 5층 | 고객센터 | 1588-5682<br>
                         가상자산사업자 등록번호 2021-01 | 기사 배열 책임자 박동규 | 청소년 보호 책임자 송세정<br>
-                        투자에 대한 모든 책임은 본인에게 있습니다.  
+                        투자에 대한 모든 책임은 본인에게 있습니다. 
                     </p>
                     <p class="copyright">Copyright © 2017 - 2022 Dunamu Inc. All rights reserved.</p>
                 </div>
@@ -274,12 +454,13 @@
                     </select>
                 </div>
                 <script>
-                function sel_link(sel){
-                    location.href = sel.value;
-                }
+                    function sel_link(sel) {
+                        location.href = sel.value;
+                    }
                 </script>
             </div>
         </footer>
-    </div>   
+    </div>
 </body>
+
 </html>

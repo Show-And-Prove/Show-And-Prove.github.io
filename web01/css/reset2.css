@@ -1,7 +1,7 @@
 @charset "UTF-8";
 * { margin: 0; padding: 0; }
-body, html { width: 100%; }
-ul { list-style: none; }
+body, html { width:100%; }
+ul { list-style:none; }
 a { text-decoration: none; }
-button, input { outline: 0; background-color: #333; color: #fff; }
-.wrap{ width: 100%; clear: both; }
+button, input { outline:0; background-color: #333; color:#fff; }
+.wrap { width: 100%; clear:both; }
