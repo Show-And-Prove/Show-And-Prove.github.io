@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DDFAF02B-7405-5875-4837-20263A4CBF5F" schemaObject="D774C947-7E75-9A63-A101-721B493419B9" name="BOARDA">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>SQLTEST</sourceObjSchema>
+<sourceObjName>BOARDA</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NO" id="94F87E32-2903-C3D6-4200-FB14FCEBE9EF">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>BOARDA</sourceObjSchema>
+<sourceObjName>NO</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TITLE" id="F90DE0E9-2971-893E-5889-E3D89666DFB8">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>BOARDA</sourceObjSchema>
+<sourceObjName>TITLE</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTENT" id="38CB5B92-7163-4586-8FDA-D86B859627D5">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>BOARDA</sourceObjSchema>
+<sourceObjName>CONTENT</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>600 BYTE</dataTypeSize>
+<ownDataTypeParameters>600 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AUTHOR" id="10D83BF3-189C-6DA3-8712-63015A96C710">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>BOARDA</sourceObjSchema>
+<sourceObjName>AUTHOR</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3368BDC6-7903-2F82-840E-B3D0C1ACCDD2" referredColumn="BE75E70D-5C35-5492-2EEC-8EE211786B17"/>
+</associations>
+</Column>
+<Column name="RESDATE" id="5377831B-9BA9-C74D-8735-A130CBD86D35">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>BOARDA</sourceObjSchema>
+<sourceObjName>RESDATE</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<defaultValue>SYSDATE</defaultValue>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8D822CCD-FE13-F34E-D0D5-9D7DF448D883" schemaObject="D774C947-7E75-9A63-A101-721B493419B9" name="BOARDA_PK">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>SQLTEST</sourceObjSchema>
+<sourceObjName>SYS_C007276</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94F87E32-2903-C3D6-4200-FB14FCEBE9EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="91F0BD1E-3178-965C-4D3A-63A5BEB8E04D" name="FK_ID">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10D83BF3-189C-6DA3-8712-63015A96C710"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="MEMBERA" directorySegmentName="seg_0" id="5D26E54F-56D5-2A8E-9A9A-14AC7FD373A5">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<schemaObject>D774C947-7E75-9A63-A101-721B493419B9</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>089137E4-6C89-34DB-C434-56CEA8201C73</segment>
+<tableSpace>C672CD10-100E-DFD9-177F-DE1FEE2285D9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="EMAIL" id="3ACBC03F-F860-DC7B-4E1A-4AB9BAFB0E76">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="7CC375C7-BC7D-FA53-4470-71EAC4A8D9C6">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REGDATE" id="AFB9CF3B-C998-DDEB-D0FC-0411979F3963">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<defaultValue>SYSDATE     --가입일</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="ID" id="BE75E70D-5C35-5492-2EEC-8EE211786B17">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PW" id="BFBD5420-FB01-8858-8E7B-0E9F975CCB61">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TEL" id="CEA52601-8DF1-0BCF-B6D8-01B98363C7DD">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="MEMBERA_PK" id="7E0A9F93-5BC2-EF1C-DC5F-200AD1132198">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<schemaObject>D774C947-7E75-9A63-A101-721B493419B9</schemaObject>
+<segment>D4B3B715-6903-F555-D675-0984A0ABB49D</segment>
+<tableSpace>C672CD10-100E-DFD9-177F-DE1FEE2285D9</tableSpace>
+<indexSegment>D4B3B715-6903-F555-D675-0984A0ABB49D</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

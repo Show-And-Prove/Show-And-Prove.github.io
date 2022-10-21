@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5D26E54F-56D5-2A8E-9A9A-14AC7FD373A5" schemaObject="D774C947-7E75-9A63-A101-721B493419B9" name="MEMBERA">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>SQLTEST</sourceObjSchema>
+<sourceObjName>MEMBERA</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:52 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="BE75E70D-5C35-5492-2EEC-8EE211786B17">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>MEMBERA</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PW" id="BFBD5420-FB01-8858-8E7B-0E9F975CCB61">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>MEMBERA</sourceObjSchema>
+<sourceObjName>PW</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="7CC375C7-BC7D-FA53-4470-71EAC4A8D9C6">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>MEMBERA</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="3ACBC03F-F860-DC7B-4E1A-4AB9BAFB0E76">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>MEMBERA</sourceObjSchema>
+<sourceObjName>EMAIL</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TEL" id="CEA52601-8DF1-0BCF-B6D8-01B98363C7DD">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>MEMBERA</sourceObjSchema>
+<sourceObjName>TEL</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 BYTE</dataTypeSize>
+<ownDataTypeParameters>13 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REGDATE" id="AFB9CF3B-C998-DDEB-D0FC-0411979F3963">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>MEMBERA</sourceObjSchema>
+<sourceObjName>REGDATE</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<defaultValue>SYSDATE     --가입일</defaultValue>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7E0A9F93-5BC2-EF1C-DC5F-200AD1132198" schemaObject="D774C947-7E75-9A63-A101-721B493419B9" name="MEMBERA_PK">
+<sourceConnName>xe3</sourceConnName>
+<sourceObjSchema>SQLTEST</sourceObjSchema>
+<sourceObjName>SYS_C007273</sourceObjName>
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE75E70D-5C35-5492-2EEC-8EE211786B17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

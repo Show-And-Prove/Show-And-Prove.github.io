@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="BOARDA" directorySegmentName="seg_0" id="DDFAF02B-7405-5875-4837-20263A4CBF5F">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<schemaObject>D774C947-7E75-9A63-A101-721B493419B9</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>089137E4-6C89-34DB-C434-56CEA8201C73</segment>
+<tableSpace>C672CD10-100E-DFD9-177F-DE1FEE2285D9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="AUTHOR" id="10D83BF3-189C-6DA3-8712-63015A96C710">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CONTENT" id="38CB5B92-7163-4586-8FDA-D86B859627D5">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RESDATE" id="5377831B-9BA9-C74D-8735-A130CBD86D35">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<defaultValue>SYSDATE</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="NO" id="94F87E32-2903-C3D6-4200-FB14FCEBE9EF">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TITLE" id="F90DE0E9-2971-893E-5889-E3D89666DFB8">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_ID" id="91F0BD1E-3178-965C-4D3A-63A5BEB8E04D">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="BOARDA_PK" id="8D822CCD-FE13-F34E-D0D5-9D7DF448D883">
+<createdBy>201-11</createdBy>
+<createdTime>2022-10-21 02:13:53 UTC</createdTime>
+<ownerDesignName>1</ownerDesignName>
+<schemaObject>D774C947-7E75-9A63-A101-721B493419B9</schemaObject>
+<segment>D4B3B715-6903-F555-D675-0984A0ABB49D</segment>
+<tableSpace>C672CD10-100E-DFD9-177F-DE1FEE2285D9</tableSpace>
+<indexSegment>D4B3B715-6903-F555-D675-0984A0ABB49D</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
