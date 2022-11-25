@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+ul, ul li { list-style:none; }
+.in_container { clear:both; width:1480px; margin:0 auto; }
+.in_container:after, .in_container:before { content:""; display:block; clear:both; }
+#logo { font-size:32pt; width:222px; position:absolute; top:0px; 
+left:50%; margin-left:-111px; display:block; padding-left:20px; padding-right:20px; }
+#navbarSupportedContent { padding-top:14px; padding-bottom:14px; }
+
+#content { min-height:90vh; }
+#best { margin-top:20px; padding-top:20px; }
+#best li { padding-top:margin-top:24px; }
+#footer { margin-top:20px; padding-top:20px; border-top:3px solid #eee; }
+#footer p { font-size:0.75em; }
+#footer p.copyright { font-size:0.85em; font-weight:bold; }
+.ft_ico_lst { list-style:none; margin-block-start: 0;
+    margin-block-end: 0; margin-left:0; margin:right:0;
+    padding-inline-start:0px;  }
+.ft_ico_lst li { float:left; width:25%; }
+.ft_ico_lst li a { display:block; padding:6px; }
+.ft_ico_lst li img { display:block; width:100%; height:auto; }

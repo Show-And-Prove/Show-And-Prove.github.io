@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- 지도 추가 -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />	<!--  -->
+<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>	<!--  -->
+<style>
+body, html { font-family: 'Noto Sans KR', sans-serif; }
+.table { min-width:960px; }
+#logo { display:block; width:195px; height:55px; background-image:url("https://tour.shinan.go.kr/images/tour/main/logo.png");
+background-size:85% auto; background-repeat:no-repeat; background-position:center center; }
+#nav-group { border-bottom:3px solid #ddd; }
+#gnb .navbar-link::after { content:""; display:none; }
+#sidebar .navbar { display:block; width:100%; background-color:transparent; }
+#sidebar .navbar-item { float:none; clear:both; display:block; width:100%; }
+#frm1.search_form { border-top:2px solid #ddd; border-bottom:2px solid #ddd; height:60px; padding-top:10px; padding-bottom:10px;  }
+#frm1 .inline { width:70%; float:left; margin-right:2%; }
+#frm1.search_form .inline { display:inline-block; width:auto; } 
+.navbar-item.has-dropdown.is-hoverable { min-width:110px; position:static; }
+.navbar-item.has-dropdown.is-hoverable a { font-weight:800; }
+.navbar-item.has-dropdown.is-hoverable.single { position:relative; }
+#nav .navbar-dropdown.cate { min-width:940px; width:940px; position:absolute; left:50px; }
+#nav .navbar-dropdown.single { min-width:150px; width:150px; left:auto; top:68px; }
+#nav .navbar-dropdown.cate a { display:inline-block; padding:8px; margin-right:20px;  
+width:120px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
+font-weight:500; }
+#nav .navbar-dropdown.single a { display:inline-block; width:150px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
+font-weight:500; }
+p.title { font-size:1.4rem; }
+p.subtitle { font-size:1.1rem; }
+.item_com {   overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;
+  -webkit-line-clamp: 3;  -webkit-box-orient: vertical; font-size:0.9rem; }
+.breadcrumb ul li:last-child { padding-right:1.5rem; }
+p.comment2 { max-width:400px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
+max-height:40px; }
+.hidden_item { display:none; }
+.star_data { height:36px; position:relative; background-image:url("/pro03/data/star.png"); 
+background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
+#star_group { width:100px; height:36px; position:relative; }
+#star_group #stardate { width:100px; height:36px; background-image:url("/pro03/data/star1.png"); 
+background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
+#star_group #starrate { width:100px; height:36px; background-image:url("/pro03/data/star.png"); 
+background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
+#star10:checked ~ #star_group #starrate { width:100px; }
+#star9:checked ~ #star_group #starrate { width:90px; }
+#star8:checked ~ #star_group #starrate { width:80px; }
+#star7:checked ~ #star_group #starrate { width:70px; }
+#star6:checked ~ #star_group #starrate { width:60px; }
+#star5:checked ~ #star_group #starrate { width:50px; }
+#star4:checked ~ #star_group #starrate { width:40px; }
+#star3:checked ~ #star_group #starrate { width:30px; }
+#star2:checked ~ #star_group #starrate { width:20px; }
+#star1:checked ~ #star_group #starrate { width:10px; }
+#star_btn { width:100px; height:36px; position:absolute; z-index:20; top:0; left:0;  }
+#star_btn label { display:block; width:10px; height:36px; position:relative; float:left; }
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 박으면 로고 이상하게출력 -->
+	<!-- <link rel="stylesheet" type="text/css" href="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.css"> -->
+	<style>
+	body { background:white; }
+	</style>	
+	<script type="text/javascript" src="http://dmaps.daum.net/map_js_init/v3.js"></script>
+	<script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.0.js"></script>	
+	<script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U0301/cssjs/JSON-js/fc535e9cc8/json2.min.js"></script>
+	<!-- ??????? -->
+  </head>
+  <body class="web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
+  
+
+ 
+<div id="nav-group">
+	<div class="container"> 
+		<nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
+		  <div class="navbar-brand">
+		    <a class="navbar-item" id="logo" href="index.html">
+		    </a>
+		
+		    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+		      <span aria-hidden="true"></span>
+		      <span aria-hidden="true"></span>
+		      <span aria-hidden="true"></span>
+		    </a>
+		  </div>
+		
+		  <div id="navbarBasicExample" class="navbar-menu">
+		    <div class="navbar-start" id="gnb">
+		    	<!-- ajax로 메뉴 로딩하여 추가하기 -->
+				<div class="navbar-item has-dropdown is-hoverable">
+			    	<a href="GetTourCateListCateA.html" class="navbar-link" >
+				      	관광
+				    </a>
+				    <div class="navbar-dropdown cate" id="cate01">
+                        <a href="GetTourDetailCateA1.html">지도향교</a>
+                        <a href="GetTourDetailCateA2.html">송도수산시장</a>
+                        <a href="GetTourDetailCateA3.html">짱뚱어다리</a>
+                        <a href="GetTourDetailCateA4.html">태평염전</a>
+				    </div>
+				</div>
+				<div class="navbar-item has-dropdown is-hoverable">
+			    	<a href="GetTourCateListCateB.html" class="navbar-link cate">
+				      	체험
+				    </a> 
+		   		    <div class="navbar-dropdown cate" id="cate02">
+                        <a href="GetTourDetailCateB1.html">1004섬 자전거길</a>
+                        <a href="GetTourDetailCateB2.html">증도 걷기여행 코스</a>
+                    </div>
+				</div>
+				
+				
+				<div class="navbar-item has-dropdown is-hoverable" >
+			    	<a href="GetTourCateListCateF.html" class="navbar-link cate">
+				      	음식
+				    </a>
+		    		<div class="navbar-dropdown cate" id="cate06">
+                        <a href="GetTourDetailCateF1.html">신안흑산홍어</a>
+                        <a href="GetTourDetailCateF2.html">신안 우럭</a>
+                        <a href="GetTourDetailCateF3.html">신안병어</a>
+				    </div>
+				</div>
+				<div class="navbar-item has-dropdown is-hoverable">
+			    	<a href="noticeList.html" class="navbar-link">
+				      	공지사항
+				    </a>
+				</div>
+				<div class="navbar-item has-dropdown is-hoverable">
+			    	<a href="qnaList.html" class="navbar-link">
+				      	QnA
+				    </a>
+				</div>
+				<div class="navbar-item has-dropdown is-hoverable">
+			    	<a href="impressList.html" class="navbar-link">
+				      	후기
+				    </a>
+				</div>
+				
+				<!-- <div class="navbar-item has-dropdown is-hoverable single">
+				    <a class="navbar-link">
+				      	신안에 대하여
+				    </a>
+			  </div> -->
+			</div>
+			
+			<div class="navbar-end" id="tnb">
+			  <div class="navbar-item">
+			  	
+			 <div class="buttons">
+			   <a href="agree.html" class="button is-dark">
+			     <strong>회원가입</strong>
+			   </a>
+			   <a href="login.html" class="button is-dark">
+			     로그인
+			   </a>
+			 </div>
+			
+			
+		  </div>
+		</div>
+		  </div>
+		</nav>
+	</div>
+</div>
+	<nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
+	  <ul style="float:right;">
+	    <li><a href="index.html">Home</a></li>
+	    <li><a href="GetTourCateList.html">전체 장소</a></li>
+	    <li><a href="GetTourCateListCateA.html">
+ 			 
+			
+			<span>관광</span>
+			
+			
+			
+			
+			
+			
+			
+			
+	    </a></li>
+	    <li class="is-active"><a href="#" aria-current="page">송도수산시장</a></li>
+	  </ul>
+	</nav>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">송도수산시장 상세보기</h1>
+      	<div id="con">
+      		<table class="table">
+      			
+      			<tr>
+				
+				<td>
+					<img src="https://tour.shinan.go.kr/images/tour/contents/sub02_0101_02.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+					<!-- onerror="this.style.display='none'"  -->
+	      		</td>
+					
+		    	</tr>
+		    	
+				
+		  </tbody>
+		</table>
+      	</div>
+		<table class="table">
+		   <tbody>
+		    <tr>
+		      <th style="min-width:180px;">번호</th>
+		      <td>2</td>
+		    </tr>
+		    <tr>
+		      <th>분류</th>
+		      <td>
+   				 
+				
+				<span>관광</span>
+				
+				
+				
+				
+				
+				
+				
+				
+		      </td>
+		    </tr>
+		    <tr>
+		      <th>장소 번호</th>
+		      <td><p>A0002</p>
+		      	<input type="hidden" name="tourno" id="tourno" value="A0002" />
+		      </td>
+		    </tr>
+		    <tr> 
+		      <th>장소명</th>
+		      <td>
+				송도수산시장
+		      </td>	
+		    </tr>
+		    <tr>
+		      <th>장소 주요 설명</th>
+		      <td><p>물 반 병어 반, 물 반 민어 반 송도 수산시장</p></td>
+		    </tr>
+		    <tr>
+		      <th>장소 상세 설명</th>
+		      <td><p>신안 북부 해역 일대에서 잡힌 물고기는 지도 송도수산시장으로 모인다. 임자도 부근에서 잡힌 새우나 민어, 병어, 꽃게, 갑오징어도 마찬 가지이다. 여름엔 디딜 틈이 없다. '물 반 병어 반, 물 반 민어 반, 물 반 새우 반' 이다. 6월 병어축제가 그 시작이다. 복달임음식으로 으뜸인 민어도 이곳 송도 수산지상에서 경미된 것들이 전국으로 팔려 나간다. 임자도, 증도 등 게르마늄 청정해역에서 잡히는 품질 좋은 생선과 새우젓 등을 쉽게 접할수 있는 곳으로 매년 병어 축제가 개최되며 전국 각지에서 병어를 사러 온 사람들로 북새통을 이룬다.</p></td>
+		    </tr>
+		    <tr>
+		    	<th>주소</th>
+		    	<td>전라남도 신안군 지도읍 송도2길 38 (읍내리)
+		    		<input type="hidden" name="addr" id="addr" value="전라남도 신안군 지도읍 송도2길 38 (읍내리)" />
+		    		<input type="hidden" name="place" id="place" value="송도수산시장" />
+		    	</td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div style="clear:both; margin-bottom:20px; padding-bottom:20px; ">
+			<div id="map" style="margin-left:120px;	margin-top:50px; width:800px;height:600px; background:white; "></div>
+			<!--<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>-->
+			<!-- https://developers.kakao.com/ 회원가입 후 -> 내 애플리케이션 -> 애플리케이션 추가 -> 추가된 해당 앱을 클릭하면 발급받은  API키를 확인할 수 있음  -->			
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=87d59325b29b9b5b02d26229a3352731&libraries=services"></script>
+			<script>
+			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			    mapOption = { 
+			        center: new kakao.maps.LatLng(35.0453984, 126.203054), // 지도의 중심좌표
+			        level: 3 // 지도의 확대 레벨
+			    };  
+			
+			// 지도를 생성합니다    
+			var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+			// 마커가 표시될 위치입니다 
+			var markerPosition  = new kakao.maps.LatLng(35.0453984, 126.203054); 
+
+			// 마커를 생성합니다
+			var marker = new kakao.maps.Marker({
+    			position: markerPosition
+			});
+
+			// 마커가 지도 위에 표시되도록 설정합니다
+			marker.setMap(map);
+			
+			</script>
+		</div>
+		
+		<div class="buttons">
+		  <a href="GetTourCateList.html" class="button is-dark">전체 목록</a>
+		  <a href="GetTourCateListCateA.html" class="button is-dark">카테고리 목록</a>
+		  
+		</div>
+    </div>
+  </section>
+  <script>
+  //image Lazy Loading : 실제로 사용자 화면에 보여질 필요가 있을 때까지 이미지 로딩을 지연하는 것으로 네트워크 대역폭을 줄이는 방법
+  /* document.addEventListener("DOMContentLoaded", function() {
+	  var lazyloadImages = document.querySelectorAll("img.lazy");    
+	  var lazyloadThrottleTimeout;
+	  
+	  function lazyload () {
+	    if(lazyloadThrottleTimeout) {
+	      clearTimeout(lazyloadThrottleTimeout);
+	    }    
+	    
+	    lazyloadThrottleTimeout = setTimeout(function() {
+	        var scrollTop = window.pageYOffset;
+	        lazyloadImages.forEach(function(img) {
+	            if(img.offsetTop < (window.innerHeight + scrollTop)) {
+	              img.src = img.dataset.src;
+	              img.classList.remove('lazy');
+	            }
+	        });
+	        if(lazyloadImages.length == 0) { 
+	          document.removeEventListener("scroll", lazyload);
+	          window.removeEventListener("resize", lazyload);
+	          window.removeEventListener("orientationChange", lazyload);
+	        }
+	    }, 20);
+	  }
+	  
+	  document.addEventListener("scroll", lazyload);
+	  window.addEventListener("resize", lazyload);
+	  window.addEventListener("orientationChange", lazyload);
+	}); */
+  </script>
+	
+  
+<section class="footer-2 section-padding gray-bg pb-6">
+		<div class="footer-btm mt-6 pt-6 border-top">
+			<div class="columns is-justify-content-center">
+				<div class="column is-6-desktop">
+					<div class="copyright has-text-centered ">
+						우편번호) 58827 전라남도 신안군 압해읍 천사로 1004 Tel 061-271-1004 Fax 061-240-8000 <br>Copyright (c) Shinan-gun. All Rights Reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+  </body>
+</html>
