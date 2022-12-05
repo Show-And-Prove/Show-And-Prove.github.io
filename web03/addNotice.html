@@ -11,7 +11,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>qna 목록</title>
+    <title>공지사항 등록</title>
     
 
 
@@ -171,74 +171,28 @@ background-repeat:no-repeat; background-position:left center; background-size:10
     </div>
   <section class="section">
     <div class="container">
-		<h2 class="title">묻고 답하기</h2>
-		<table class="table" id="tb1">
-			<thead>
-				<tr>
-					<th style="max-width:5px"></th><th>연번</th><th>제목</th><th>작성자</th><th>작성일</th>
-				</tr>
-			</thead>
-			<tbody>
-			
-			<tr>
-				<td><span style="color:transparent">1</span></td>
-				<td>
-					
-					
-						<span style="color:white">2</span>
-					
-				</td>
-				<td>
-				
-				
-					
-						
-						<a href="qnaAnswer.html" style="padding-left:60px;">테스트답변입니다</a>
-												
-					
-				
-				</td>
-				<td>admin</td>
-				<td>
-						<!--  -->
-		      		2022-11-23
-		      	</td>
-			</tr>
-			
-			<tr>
-				<td><span style="color:transparent">0</span></td>
-				<td>
-					
-						<span>1</span>
-					
-					
-				</td>
-				<td>
-				
-							
-						
-						<a href="qnaQuestion.html">테스트질문입니다</a>
-							
-					
-				
-				
-				</td>
-				<td>admin</td>
-				<td>
-						<!--  -->
-		      		2022-11-23
-		      	</td>
-			</tr>
-				
-			</tbody>
-		</table>
-		
-		<div class="btn-group">
-			<a href="qnaWrite.html" class="button is-dark">글 등록</a>
-		</div>
-		
-		</div>	
-	</section>
+      <h1 class="title">글 등록하기</h1>
+      	<form action="noticeList.html" method="post">
+			<table class="table">
+			   <tbody>
+			    <tr>
+			      <th><label for="title">제목</label></th>
+			      <td><input type="text" class="input" maxlength="120" name="title" id="title" placeholder="제목 입력" required /></td>
+			    </tr>
+			    <tr>
+			      <th><label for="content">내용</label></th>
+			      <td><textarea rows="8" cols="100" name="content" id="content" class="textarea" required></textarea></td>
+			    </tr>
+			  </tbody>
+			</table>
+			<div class="buttons">
+			  <button type="submit" class="button is-dark">등록</button>
+			  <button type="reset" class="button is-dark">초기화</button>
+			  <a href="noticeList.html" class="button is-dark">목록</a>
+			</div>
+		</form>
+    </div>
+  </section>
   
 <section class="footer-2 section-padding gray-bg pb-6">
 		<div class="footer-btm mt-6 pt-6 border-top">

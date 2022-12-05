@@ -11,7 +11,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>qna 목록</title>
+    <title>공지사항 수정</title>
     
 
 
@@ -171,74 +171,34 @@ background-repeat:no-repeat; background-position:left center; background-size:10
     </div>
   <section class="section">
     <div class="container">
-		<h2 class="title">묻고 답하기</h2>
-		<table class="table" id="tb1">
-			<thead>
-				<tr>
-					<th style="max-width:5px"></th><th>연번</th><th>제목</th><th>작성자</th><th>작성일</th>
-				</tr>
-			</thead>
-			<tbody>
-			
-			<tr>
-				<td><span style="color:transparent">1</span></td>
-				<td>
-					
-					
-						<span style="color:white">2</span>
-					
-				</td>
-				<td>
-				
-				
-					
-						
-						<a href="qnaAnswer.html" style="padding-left:60px;">테스트답변입니다</a>
-												
-					
-				
-				</td>
-				<td>admin</td>
-				<td>
-						<!--  -->
-		      		2022-11-23
-		      	</td>
-			</tr>
-			
-			<tr>
-				<td><span style="color:transparent">0</span></td>
-				<td>
-					
-						<span>1</span>
-					
-					
-				</td>
-				<td>
-				
-							
-						
-						<a href="qnaQuestion.html">테스트질문입니다</a>
-							
-					
-				
-				
-				</td>
-				<td>admin</td>
-				<td>
-						<!--  -->
-		      		2022-11-23
-		      	</td>
-			</tr>
-				
-			</tbody>
+      <h1 class="title">공지사항 수정하기</h1>
+      <form action="ModifyNoticeProCtrl.do" method="post">
+		<table class="table">
+		   <tbody>
+		    <tr>
+		      <th>번호</th>
+		      <td>
+		      	<input type="text" name="no" id="no" value="11" readonly />
+		      </td>
+		    </tr>
+		    <tr>
+		      <th>제목</th>
+		      <td><input type="text" class="input" maxlength="120" name="title" id="title" placeholder="제목 입력" value="공지사항 리스트 페이지입니다" required /></td>
+		    </tr>
+		    <tr>
+		      <th>내용</th>
+		      <td><textarea rows="8" cols="100" name="content" id="content" class="textarea" required>공지사항내용입니다</textarea></td>
+		    </tr>
+		  </tbody>
 		</table>
-		
-		<div class="btn-group">
-			<a href="qnaWrite.html" class="button is-dark">글 등록</a>
+		<div class="buttons">
+		  <button type="submit" class="button is-dark">글 수정</button>
+		  <button type="reset" class="button is-dark">취소</button>
+		  <a href="/pro03/GetNoticeListCtrl.do" class="button is-dark">목록</a>
 		</div>
-		
-		</div>	
-	</section>
+	  </form>
+    </div>
+  </section>
   
 <section class="footer-2 section-padding gray-bg pb-6">
 		<div class="footer-btm mt-6 pt-6 border-top">

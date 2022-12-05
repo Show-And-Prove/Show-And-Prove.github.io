@@ -11,7 +11,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>qna 목록</title>
+    <title>qna 상세보기</title>
     
 
 
@@ -171,72 +171,70 @@ background-repeat:no-repeat; background-position:left center; background-size:10
     </div>
   <section class="section">
     <div class="container">
-		<h2 class="title">묻고 답하기</h2>
-		<table class="table" id="tb1">
-			<thead>
-				<tr>
-					<th style="max-width:5px"></th><th>연번</th><th>제목</th><th>작성자</th><th>작성일</th>
-				</tr>
-			</thead>
+		<h2 class="title">질문 및 답변 상세 내용</h2>
+		<table class="table">
 			<tbody>
-			
-			<tr>
-				<td><span style="color:transparent">1</span></td>
-				<td>
+				<tr>
+					<th>구분</th>
+					<td>
 					
-					
-						<span style="color:white">2</span>
-					
-				</td>
-				<td>
-				
-				
-					
+						<span>질문</span>
 						
-						<a href="qnaAnswer.html" style="padding-left:60px;">테스트답변입니다</a>
-												
 					
-				
-				</td>
-				<td>admin</td>
-				<td>
-						<!--  -->
-		      		2022-11-23
-		      	</td>
-			</tr>
-			
-			<tr>
-				<td><span style="color:transparent">0</span></td>
-				<td>
-					
-						<span>1</span>
-					
-					
-				</td>
-				<td>
-				
-							
+					</td>
+				</tr>
+				<tr>
+					<th>공개여부</th>
+					<td>
 						
-						<a href="qnaQuestion.html">테스트질문입니다</a>
-							
 					
-				
-				
-				</td>
-				<td>admin</td>
-				<td>
-						<!--  -->
-		      		2022-11-23
-		      	</td>
-			</tr>
-				
+						<span>공개</span>
+					
+					</td>
+				</tr>
+				<tr>
+					<th>번호</th>
+					<td>1</td>
+				</tr>
+				<tr>
+					<th>제목</th>
+					<td>테스트질문입니다</td>
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td>테스트질문입니다</td>
+				</tr>
+				<tr>
+					<th>작성자</th>
+					<td>admin</td>
+				</tr>
+				<tr>
+					<th>작성일시</th>
+					<td>2022-11-23 10:12:41.0</td>
+				</tr>
+				<tr>
+					<th>읽은 횟수</th>
+					<td>9</td>
+				</tr>
 			</tbody>
 		</table>
-		
 		<div class="btn-group">
-			<a href="qnaWrite.html" class="button is-dark">글 등록</a>
-		</div>
-		
+			<a href="qnaList.html" class="button is-info">목록으로</a>
+			
+				
+				
+					<a href='qnaWriteAnswer.html' class="button is-dark">답변 하기</a>
+					<a href='updateQna.html' class="button is-dark">글 수정</a>
+					<a href='deleteQna.html' class="button is-dark">글 삭제</a>
+					
+					
+				
+			
+				<a href='updateQna.html' class="button is-dark">글 수정</a>
+				<a href='deleteQna.html' class="button is-dark">글 삭제</a>
+					
+			
+			</div>
 		</div>	
 	</section>
   

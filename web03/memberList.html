@@ -11,7 +11,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>qna 목록</title>
+    <title>회원 목록</title>
     
 
 
@@ -169,76 +169,78 @@ background-repeat:no-repeat; background-position:left center; background-size:10
             </nav>
         </div>
     </div>
-  <section class="section">
-    <div class="container">
-		<h2 class="title">묻고 답하기</h2>
-		<table class="table" id="tb1">
-			<thead>
-				<tr>
-					<th style="max-width:5px"></th><th>연번</th><th>제목</th><th>작성자</th><th>작성일</th>
-				</tr>
-			</thead>
-			<tbody>
-			
-			<tr>
-				<td><span style="color:transparent">1</span></td>
-				<td>
-					
-					
-						<span style="color:white">2</span>
-					
-				</td>
-				<td>
-				
-				
-					
-						
-						<a href="qnaAnswer.html" style="padding-left:60px;">테스트답변입니다</a>
-												
-					
-				
-				</td>
-				<td>admin</td>
-				<td>
-						<!--  -->
-		      		2022-11-23
-		      	</td>
-			</tr>
-			
-			<tr>
-				<td><span style="color:transparent">0</span></td>
-				<td>
-					
-						<span>1</span>
-					
-					
-				</td>
-				<td>
-				
-							
-						
-						<a href="qnaQuestion.html">테스트질문입니다</a>
-							
-					
-				
-				
-				</td>
-				<td>admin</td>
-				<td>
-						<!--  -->
-		      		2022-11-23
-		      	</td>
-			</tr>
-				
-			</tbody>
-		</table>
-		
-		<div class="btn-group">
-			<a href="qnaWrite.html" class="button is-dark">글 등록</a>
+	<section class="section">
+	    <div class="columns is-full">
+			    
+
+
+
+
+
+<aside class="column is-2 has-background-primary-dark has-text-white" style="min-height:90vh" id="sidebar">
+	<div class="navbar-menu">
+		<div class="navbar">
+			<a href="/pro03/GetUserListCtrl.do" class="navbar-item">회원관리</a>
+			<a href="/pro03/tour/addTour.jsp" class="navbar-item">장소관리</a>
+			<a href="/pro03/GetTourListCtrl.do" class="navbar-item">장소목록</a>
 		</div>
-		
-		</div>	
-	</section>
+	</div>
+</aside>
+			<div class="column is-10">
+		      <h1 class="title">회원 목록</h1>
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th><abbr title="No">No</abbr></th>
+				      <th><abbr title="Id">Id</abbr></th>
+				      <th><abbr title="Name">Name</abbr></th>
+				      <th><abbr title="RegDate">RegDate</abbr></th>
+				    </tr>
+				  </thead>
+				   <tbody>
+				   
+				    <tr>
+				      <td>1</td>
+				      <td><a href="/pro03/GetUserDetailCtrl.do?id=admin">admin</a></td>
+				      <td><a href="/pro03/GetUserDetailCtrl.do?id=admin">관리자</a></td>
+				      <td>
+				      	
+				      	2022-11-15
+				    </tr>
+				    
+				    <tr>
+				      <td>2</td>
+				      <td><a href="/pro03/GetUserDetailCtrl.do?id=alswo">alswo</a></td>
+				      <td><a href="/pro03/GetUserDetailCtrl.do?id=alswo">조민재</a></td>
+				      <td>
+				      	
+				      	2022-11-22
+				    </tr>
+				    
+				    <tr>
+				      <td>3</td>
+				      <td><a href="/pro03/GetUserDetailCtrl.do?id=kkt">kkt</a></td>
+				      <td><a href="/pro03/GetUserDetailCtrl.do?id=kkt">김기태</a></td>
+				      <td>
+				      	
+				      	2022-11-15
+				    </tr>
+				    
+				    <tr>
+				      <td>4</td>
+				      <td><a href="/pro03/GetUserDetailCtrl.do?id=test">test</a></td>
+				      <td><a href="/pro03/GetUserDetailCtrl.do?id=test">조민재</a></td>
+				      <td>
+				      	
+				      	2022-11-16
+				    </tr>
+				    
+					
+				  </tbody>
+				</table>
+			</div>
+		</div>
+  </section>
   
 <section class="footer-2 section-padding gray-bg pb-6">
 		<div class="footer-btm mt-6 pt-6 border-top">
