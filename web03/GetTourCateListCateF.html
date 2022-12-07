@@ -1,329 +1,377 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>장소 목록</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />	<!--  -->
-<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>	<!--  -->
-<style>
-body, html { font-family: 'Noto Sans KR', sans-serif; }
-.table { min-width:960px; }
-#logo { display:block; width:195px; height:55px; background-image:url("https://tour.shinan.go.kr/images/tour/main/logo.png");
-background-size:85% auto; background-repeat:no-repeat; background-position:center center; }
-#nav-group { border-bottom:3px solid #ddd; }
-#gnb .navbar-link::after { content:""; display:none; }
-#sidebar .navbar { display:block; width:100%; background-color:transparent; }
-#sidebar .navbar-item { float:none; clear:both; display:block; width:100%; }
-#frm1.search_form { border-top:2px solid #ddd; border-bottom:2px solid #ddd; height:60px; padding-top:10px; padding-bottom:10px;  }
-#frm1 .inline { width:70%; float:left; margin-right:2%; }
-#frm1.search_form .inline { display:inline-block; width:auto; } 
-.navbar-item.has-dropdown.is-hoverable { min-width:110px; position:static; }
-.navbar-item.has-dropdown.is-hoverable a { font-weight:800; }
-.navbar-item.has-dropdown.is-hoverable.single { position:relative; }
-#nav .navbar-dropdown.cate { min-width:940px; width:940px; position:absolute; left:50px; }
-#nav .navbar-dropdown.single { min-width:150px; width:150px; left:auto; top:68px; }
-#nav .navbar-dropdown.cate a { display:inline-block; padding:8px; margin-right:20px;  
-width:120px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
-font-weight:500; }
-#nav .navbar-dropdown.single a { display:inline-block; width:150px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
-font-weight:500; }
-p.title { font-size:1.4rem; }
-p.subtitle { font-size:1.1rem; }
-.item_com {   overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;
-  -webkit-line-clamp: 3;  -webkit-box-orient: vertical; font-size:0.9rem; }
-.breadcrumb ul li:last-child { padding-right:1.5rem; }
-p.comment2 { max-width:400px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
-max-height:40px; }
-.hidden_item { display:none; }
-.star_data { height:36px; position:relative; background-image:url("/pro03/data/star.png"); 
-background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
-#star_group { width:100px; height:36px; position:relative; }
-#star_group #stardate { width:100px; height:36px; background-image:url("/pro03/data/star1.png"); 
-background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
-#star_group #starrate { width:100px; height:36px; background-image:url("/pro03/data/star.png"); 
-background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
-#star10:checked ~ #star_group #starrate { width:100px; }
-#star9:checked ~ #star_group #starrate { width:90px; }
-#star8:checked ~ #star_group #starrate { width:80px; }
-#star7:checked ~ #star_group #starrate { width:70px; }
-#star6:checked ~ #star_group #starrate { width:60px; }
-#star5:checked ~ #star_group #starrate { width:50px; }
-#star4:checked ~ #star_group #starrate { width:40px; }
-#star3:checked ~ #star_group #starrate { width:30px; }
-#star2:checked ~ #star_group #starrate { width:20px; }
-#star1:checked ~ #star_group #starrate { width:10px; }
-#star_btn { width:100px; height:36px; position:absolute; z-index:20; top:0; left:0;  }
-#star_btn label { display:block; width:10px; height:36px; position:relative; float:left; }
-</style>
-<script src="https://code.jquery.com/jquery-latest.js"></script>
-  </head>
-  <body>
-  
 
- 
-<div id="nav-group">
-	<div class="container"> 
-		<nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
-		  <div class="navbar-brand">
-		    <a class="navbar-item" id="logo" href="index.html">
-		    </a>
-		
-		    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-		      <span aria-hidden="true"></span>
-		      <span aria-hidden="true"></span>
-		      <span aria-hidden="true"></span>
-		    </a>
-		  </div>
-		
-		  <div id="navbarBasicExample" class="navbar-menu">
-		    <div class="navbar-start" id="gnb">
-		    	<!-- ajax로 메뉴 로딩하여 추가하기 -->
-				<div class="navbar-item has-dropdown is-hoverable">
-			    	<a href="GetTourCateListCateA.html" class="navbar-link" >
-				      	관광
-				    </a>
-				    <div class="navbar-dropdown cate" id="cate01">
-                        <a href="GetTourDetailCateA1.html">지도향교</a>
-                        <a href="GetTourDetailCateA2.html">송도수산시장</a>
-                        <a href="GetTourDetailCateA3.html">짱뚱어다리</a>
-                        <a href="GetTourDetailCateA4.html">태평염전</a>
-				    </div>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>장소 목록</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+	<style>
+		body,
+		html {
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+
+		.table {
+			min-width: 960px;
+		}
+
+		#logo {
+			display: block;
+			width: 195px;
+			height: 55px;
+			background-image: url("https://tour.shinan.go.kr/images/tour/main/logo.png");
+			background-size: 85% auto;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+		#nav-group {
+			border-bottom: 3px solid #ddd;
+		}
+
+		#gnb .navbar-link::after {
+			content: "";
+			display: none;
+		}
+
+		#sidebar .navbar {
+			display: block;
+			width: 100%;
+			background-color: transparent;
+		}
+
+		#sidebar .navbar-item {
+			float: none;
+			clear: both;
+			display: block;
+			width: 100%;
+		}
+
+		#frm1.search_form {
+			border-top: 2px solid #ddd;
+			border-bottom: 2px solid #ddd;
+			height: 60px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		#frm1 .inline {
+			width: 70%;
+			float: left;
+			margin-right: 2%;
+		}
+
+		#frm1.search_form .inline {
+			display: inline-block;
+			width: auto;
+		}
+
+		.navbar-item.has-dropdown.is-hoverable {
+			min-width: 110px;
+			position: static;
+		}
+
+		.navbar-item.has-dropdown.is-hoverable a {
+			font-weight: 800;
+		}
+
+		.navbar-item.has-dropdown.is-hoverable.single {
+			position: relative;
+		}
+
+		#nav .navbar-dropdown.cate {
+			min-width: 940px;
+			width: 940px;
+			position: absolute;
+			left: 50px;
+		}
+
+		#nav .navbar-dropdown.single {
+			min-width: 150px;
+			width: 150px;
+			left: auto;
+			top: 68px;
+		}
+
+		#nav .navbar-dropdown.cate a {
+			display: inline-block;
+			padding: 8px;
+			margin-right: 20px;
+			width: 120px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			font-weight: 500;
+		}
+
+		#nav .navbar-dropdown.single a {
+			display: inline-block;
+			width: 150px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			font-weight: 500;
+		}
+
+		p.title {
+			font-size: 1.4rem;
+		}
+
+		p.subtitle {
+			font-size: 1.1rem;
+		}
+
+		.item_com {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			font-size: 0.9rem;
+		}
+
+		.breadcrumb ul li:last-child {
+			padding-right: 1.5rem;
+		}
+
+		p.comment2 {
+			max-width: 400px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			max-height: 40px;
+		}
+
+		.hidden_item {
+			display: none;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+
+
+
+	<div id="nav-group">
+		<div class="container">
+			<nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
+				<div class="navbar-brand">
+					<a class="navbar-item" id="logo" href="index.html">
+					</a>
 				</div>
-				<div class="navbar-item has-dropdown is-hoverable">
-			    	<a href="GetTourCateListCateB.html" class="navbar-link cate">
-				      	체험
-				    </a> 
-		   		    <div class="navbar-dropdown cate" id="cate02">
-                        <a href="GetTourDetailCateB1.html">1004섬 자전거길</a>
-                        <a href="GetTourDetailCateB2.html">증도 걷기여행 코스</a>
-                    </div>
+
+				<div id="navbarBasicExample" class="navbar-menu">
+					<div class="navbar-start" id="gnb">
+						<!-- ajax로 메뉴 로딩하여 추가하기 -->
+						<div class="navbar-item has-dropdown is-hoverable">
+							<a href="GetTourCateListCateA.html" class="navbar-link">
+								관광
+							</a>
+							<div class="navbar-dropdown cate" id="cate01">
+								<a href="GetTourDetailCateA1.html">지도향교</a>
+								<a href="GetTourDetailCateA2.html">송도수산시장</a>
+								<a href="GetTourDetailCateA3.html">짱뚱어다리</a>
+								<a href="GetTourDetailCateA4.html">태평염전</a>
+							</div>
+						</div>
+						<div class="navbar-item has-dropdown is-hoverable">
+							<a href="GetTourCateListCateB.html" class="navbar-link cate">
+								체험
+							</a>
+							<div class="navbar-dropdown cate" id="cate02">
+								<a href="GetTourDetailCateB1.html">1004섬 자전거길</a>
+								<a href="GetTourDetailCateB2.html">증도 걷기여행 코스</a>
+							</div>
+						</div>
+
+
+						<div class="navbar-item has-dropdown is-hoverable">
+							<a href="GetTourCateListCateF.html" class="navbar-link cate">
+								음식
+							</a>
+							<div class="navbar-dropdown cate" id="cate06">
+								<a href="GetTourDetailCateF1.html">신안흑산홍어</a>
+								<a href="GetTourDetailCateF2.html">신안 우럭</a>
+								<a href="GetTourDetailCateF3.html">신안병어</a>
+							</div>
+						</div>
+						<div class="navbar-item has-dropdown is-hoverable">
+							<a href="noticeList.html" class="navbar-link">
+								공지사항
+							</a>
+						</div>
+						<div class="navbar-item has-dropdown is-hoverable">
+							<a href="qnaList.html" class="navbar-link">
+								QnA
+							</a>
+						</div>
+						<div class="navbar-item has-dropdown is-hoverable">
+							<a href="impressList.html" class="navbar-link">
+								후기
+							</a>
+						</div>
+					</div>
+
+					<div class="navbar-end" id="tnb">
+						<div class="navbar-item">
+
+							<div class="buttons">
+								<a href="agree.html" class="button is-dark">
+									<strong>회원가입</strong>
+								</a>
+								<a href="login.html" class="button is-dark">
+									로그인
+								</a>
+							</div>
+
+
+						</div>
+					</div>
 				</div>
-				
-				
-				<div class="navbar-item has-dropdown is-hoverable" >
-			    	<a href="GetTourCateListCateF.html" class="navbar-link cate">
-				      	음식
-				    </a>
-		    		<div class="navbar-dropdown cate" id="cate06">
-                        <a href="GetTourDetailCateF1.html">신안흑산홍어</a>
-                        <a href="GetTourDetailCateF2.html">신안 우럭</a>
-                        <a href="GetTourDetailCateF3.html">신안병어</a>
-				    </div>
-				</div>
-				<div class="navbar-item has-dropdown is-hoverable">
-			    	<a href="noticeList.html" class="navbar-link">
-				      	공지사항
-				    </a>
-				</div>
-				<div class="navbar-item has-dropdown is-hoverable">
-			    	<a href="qnaList.html" class="navbar-link">
-				      	QnA
-				    </a>
-				</div>
-				<div class="navbar-item has-dropdown is-hoverable">
-			    	<a href="impressList.html" class="navbar-link">
-				      	후기
-				    </a>
-				</div>
-				
-				<!-- <div class="navbar-item has-dropdown is-hoverable single">
-				    <a class="navbar-link">
-				      	신안에 대하여
-				    </a>
-			  </div> -->
-			</div>
-			
-			<div class="navbar-end" id="tnb">
-			  <div class="navbar-item">
-			  	
-			 <div class="buttons">
-			   <a href="agree.html" class="button is-dark">
-			     <strong>회원가입</strong>
-			   </a>
-			   <a href="login.html" class="button is-dark">
-			     로그인
-			   </a>
-			 </div>
-			
-			
-		  </div>
+			</nav>
 		</div>
-		  </div>
-		</nav>
-	<script>
-	$(document).ready(function(){
-		$.ajax({
-			url:"/pro03/MemuLoadCtrl.do",
-			type:"POST",
-			enctype:"UTF-8",
-			datatype:"json",
-			processData:false,
-			contentType:false, 
-			cache:false,
-			success:function(data){
-				$(".navbar-dropdown.cate").empty();
-				var trans = $.parseJSON(data);
-				$.each(trans, function(key, value){
-					if(key=="data"){
-						for(var i=0;i<value.length;i++){
-							if(value[i].cate=="A"){
-								$("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="B"){
-								$("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="C"){
-								$("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="D"){
-								$("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="E"){
-								$("#cate05").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="F"){
-								$("#cate06").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							} else if(value[i].cate=="G"){
-								$("#cate07").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-							}
-						}
-					}
-				});
-				
-			}
-		});
-	});
-	</script>
 	</div>
-</div>
-	<nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
-	  <ul style="float:right;">
-	    <li><a href="index.html">Home</a></li>
-	    <li><a href="GetTourCateList.html">전체 장소</a></li>
-	    <li class="is-active"><a href="#" aria-current="page">
- 			 
-			
-			<span>음식</span>
-			
-			
-			
-			
-			
-			
-			
-			
-	    </a></li>
-	  </ul>
-	</nav>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">신안 - 음식</h1>
-      	<div id="con">
-      		<div class="tile is-ancestor columns" style="padding-bottom:40px;">
-      			
-				
-			      <div class="tile is-3" style="box-sizing:border-box;">
-			        <article class="tile is-child is-one-third notification" style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
-			          <p class="title">신안흑산홍어</p>
-			          <p class="subtitle">
-			 			 
-						
-						<span>음식</span>
-						
-						
-						
-						
-						
-						
-						
-						
-			          </p>
-			          <figure class="image is-4by3">
-			            <img src="https://tour.shinan.go.kr/images/tour/contents/food_img01.jpg" alt="신안흑산홍어">
-			          </figure>
-			          <div class="content" style="margin:10px;">
-			          	<p class="item_com">입안을 톡쏘는 맛과 목과 코가 펑 뚫릴 정도의 특유한 냄새가 옛 향수를 물씬 풍긴다.
-                            특히, 고단백 저지방으로 숙취를 풀어주고 거담제거 효과가 뛰어나며 발효시킬 때 끈적끈적한 점액은 
-                            스테미너 식품으로 널리 알려져 있다. 처음 맛보는 사람들은 홍어의 톡쏘는 맛에 놀라 입을 다물지 못할 정도이다. 
-                            하지만 홍어맛을 제대로 아는 미식가들은 그 맛을 잊지 못해 고가임도 불구하고 찾아서 먹는다.
-                             홍어는 유일하게 삭혀서 먹는 생선이다. 그래서 산간 오지에 서 여름 철에 먹을수 있는 생선으로 식도락 들이 많이 찾는다.
-                              홍어맛을 그대로 느끼고 싶다면 회를 먹고 
-                              잘익은 김치와 삶은 돼지고기, 홍어, 이 세가지를 한 입에 먹을 수 있도록
-                               한 홍어3합도 별미중의 별미이다.</p>
-			          </div>
-			          <a href="GetTourDetailCateF1.html" class="button is-primary">자세히 보기</a>
-			        </article>
-			      </div>
-				
-			      <div class="tile is-3" style="box-sizing:border-box;">
-			        <article class="tile is-child is-one-third notification" style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
-			          <p class="title">신안 우럭</p>
-			          <p class="subtitle">
-			 			 
-						
-						<span>음식</span>
-						
-						
-						
-						
-						
-						
-						
-						
-			          </p>
-			          <figure class="image is-4by3">
-			            <img src="https://tour.shinan.go.kr/images/tour/contents/food_img02.jpg" alt="신안 우럭">
-			          </figure>
-			          <div class="content" style="margin:10px;">
-			          	<p class="item_com">흑산권역 청정해역에서 생산되는 우럭</p>
-			          </div>
-			          <a href="GetTourDetailCateF2.html" class="button is-primary">자세히 보기</a>
-			        </article>
-			      </div>
-                
-                  <div class="tile is-3" style="box-sizing:border-box;">
-			        <article class="tile is-child is-one-third notification" style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
-			          <p class="title">신안 병어</p>
-			          <p class="subtitle">
-			 			 
-						
-						<span>음식</span>
-						
-						
-						
-						
-						
-						
-						
-						
-			          </p>
-			          <figure class="image is-4by3">
-			            <img src="https://tour.shinan.go.kr/images/tour/contents/food_img03.jpg" alt="신안 병어">
-			          </figure>
-			          <div class="content" style="margin:10px;">
-			          	<p class="item_com">원기회복에 좋은 생선</p>
-			          </div>
-			          <a href="GetTourDetailCateF2.html" class="button is-primary">자세히 보기</a>
-			        </article>
-			      </div>
+	<nav class="breadcrumb" aria-label="breadcrumbs"
+		style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
+		<ul style="float:right;">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="GetTourCateList.html">전체 장소</a></li>
+			<li class="is-active"><a href="#" aria-current="page">
 
+
+					<span>음식</span>
+
+
+
+
+
+
+
+
+				</a></li>
+		</ul>
+	</nav>
+	<section class="section">
+		<div class="container">
+			<h1 class="title">신안 - 음식</h1>
+			<div id="con">
+				<div class="tile is-ancestor columns" style="padding-bottom:40px;">
+
+
+					<div class="tile is-3" style="box-sizing:border-box;">
+						<article class="tile is-child is-one-third notification"
+							style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+							<p class="title">신안흑산홍어</p>
+							<p class="subtitle">
+
+
+								<span>음식</span>
+
+
+
+
+
+
+
+
+							</p>
+							<figure class="image is-4by3">
+								<img src="https://tour.shinan.go.kr/images/tour/contents/food_img01.jpg" alt="신안흑산홍어">
+							</figure>
+							<div class="content" style="margin:10px;">
+								<p class="item_com">입안을 톡쏘는 맛과 목과 코가 펑 뚫릴 정도의 특유한 냄새가 옛 향수를 물씬 풍긴다.
+									특히, 고단백 저지방으로 숙취를 풀어주고 거담제거 효과가 뛰어나며 발효시킬 때 끈적끈적한 점액은
+									스테미너 식품으로 널리 알려져 있다. 처음 맛보는 사람들은 홍어의 톡쏘는 맛에 놀라 입을 다물지 못할 정도이다.
+									하지만 홍어맛을 제대로 아는 미식가들은 그 맛을 잊지 못해 고가임도 불구하고 찾아서 먹는다.
+									홍어는 유일하게 삭혀서 먹는 생선이다. 그래서 산간 오지에 서 여름 철에 먹을수 있는 생선으로 식도락 들이 많이 찾는다.
+									홍어맛을 그대로 느끼고 싶다면 회를 먹고
+									잘익은 김치와 삶은 돼지고기, 홍어, 이 세가지를 한 입에 먹을 수 있도록
+									한 홍어3합도 별미중의 별미이다.</p>
+							</div>
+							<a href="GetTourDetailCateF1.html" class="button is-primary">자세히 보기</a>
+						</article>
+					</div>
+
+					<div class="tile is-3" style="box-sizing:border-box;">
+						<article class="tile is-child is-one-third notification"
+							style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+							<p class="title">신안 우럭</p>
+							<p class="subtitle">
+
+
+								<span>음식</span>
+
+
+
+
+
+
+
+
+							</p>
+							<figure class="image is-4by3">
+								<img src="https://tour.shinan.go.kr/images/tour/contents/food_img02.jpg" alt="신안 우럭">
+							</figure>
+							<div class="content" style="margin:10px;">
+								<p class="item_com">흑산권역 청정해역에서 생산되는 우럭</p>
+							</div>
+							<a href="GetTourDetailCateF2.html" class="button is-primary">자세히 보기</a>
+						</article>
+					</div>
+
+					<div class="tile is-3" style="box-sizing:border-box;">
+						<article class="tile is-child is-one-third notification"
+							style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+							<p class="title">신안 병어</p>
+							<p class="subtitle">
+
+
+								<span>음식</span>
+
+
+
+
+
+
+
+
+							</p>
+							<figure class="image is-4by3">
+								<img src="https://tour.shinan.go.kr/images/tour/contents/food_img03.jpg" alt="신안 병어">
+							</figure>
+							<div class="content" style="margin:10px;">
+								<p class="item_com">원기회복에 좋은 생선</p>
+							</div>
+							<a href="GetTourDetailCateF2.html" class="button is-primary">자세히 보기</a>
+						</article>
+					</div>
+
+				</div>
 			</div>
-      	</div>
-		<div class="buttons">
-		  <a href="GetTourCateList.html" class="button is-dark">전체 목록</a>
+			<div class="buttons">
+				<a href="GetTourCateList.html" class="button is-dark">전체 목록</a>
+			</div>
 		</div>
-    </div>
-  </section>
-	
-  
-<section class="footer-2 section-padding gray-bg pb-6">
+	</section>
+
+
+	<section class="footer-2 section-padding gray-bg pb-6">
 		<div class="footer-btm mt-6 pt-6 border-top">
 			<div class="columns is-justify-content-center">
 				<div class="column is-6-desktop">
 					<div class="copyright has-text-centered ">
-						우편번호) 58827 전라남도 신안군 압해읍 천사로 1004 Tel 061-271-1004 Fax 061-240-8000 <br>Copyright (c) Shinan-gun. All Rights Reserved.
+						우편번호) 58827 전라남도 신안군 압해읍 천사로 1004 Tel 061-271-1004 Fax 061-240-8000 <br>Copyright (c)
+						Shinan-gun. All Rights Reserved.
 					</div>
 				</div>
 			</div>
 		</div>
-</section>
-  </body>
+	</section>
+</body>
+
 </html>
