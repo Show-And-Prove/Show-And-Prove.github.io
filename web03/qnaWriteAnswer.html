@@ -246,7 +246,7 @@
             </tr>
             <tr>
               <th><label for="title">답변 제목</label></th>
-              <td><input type="text" name="title" id="title" placeholder="제목 입력" class="input" required></td>
+              <td><input type="text" name="title" id="title" placeholder="제목 입력" class="input"></td>
             </tr>
             <tr>
               <th><label for="content">답변 내용</label></th>
@@ -257,7 +257,7 @@
             <tr>
               <th><label for="author">작성자</label></th>
               <td>
-                <input type="text" name="author" id="author" class="input" value='admin' readonly required>
+                <input type="text" name="author" id="author" class="input" value='admin' readonly>
                 <input type="hidden" name="lev" id="lev" value="1">
                 <input type="hidden" name="parno" id="parno" value="1">
               </td>
@@ -274,7 +274,7 @@
           </tbody>
         </table>
         <div class="btn-group">
-          <button type="submit" class="button is-dark">답글 쓰기</button>
+          <a href="qnaList.html" class="button is-dark">답글쓰기</a>
           <a href="qnaList.html" class="button is-dark">목록으로</a>
         </div>
       </form>
