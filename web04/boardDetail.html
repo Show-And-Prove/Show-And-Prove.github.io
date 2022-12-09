@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 글 보기</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="resources/css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet'
+        type='text/css'>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(document).foundation();
+        });
+    </script>
+
+    <!-- header css -->
+    <style>
+        .topbar-responsive {
+            background: #2c3840;
+            padding: 1rem 1.5rem;
+        }
+
+        .topbar-responsive .topbar-responsive-logo {
+            color: #fefefe;
+            vertical-align: middle;
+        }
+
+        .topbar-responsive .menu {
+            background: #2c3840;
+        }
+
+        .topbar-responsive .menu li:last-of-type {
+            margin-right: 0;
+        }
+
+        .topbar-responsive .menu a {
+            color: #fefefe;
+            transition: color 0.15s ease-in;
+        }
+
+        .topbar-responsive .menu a:hover {
+            color: #c6d1d8;
+        }
+
+        @media screen and (max-width: 39.9375em) {
+            .topbar-responsive .menu a {
+                padding: 0.875rem 0;
+            }
+        }
+
+        .topbar-responsive .menu .topbar-responsive-button {
+            color: #fefefe;
+            border-color: #fefefe;
+            border-radius: 5000px;
+            transition: color 0.15s ease-in, border-color 0.15s ease-in;
+        }
+
+        .topbar-responsive .menu .topbar-responsive-button:hover {
+            color: #c6d1d8;
+            border-color: #c6d1d8;
+        }
+
+        @media screen and (max-width: 39.9375em) {
+            .topbar-responsive .menu .topbar-responsive-button {
+                width: 100%;
+                margin: 0.875rem 0;
+            }
+        }
+
+        @media screen and (max-width: 39.9375em) {
+            .topbar-responsive {
+                padding: 0.75rem;
+            }
+
+            .topbar-responsive .top-bar-title {
+                position: relative;
+                width: 100%;
+            }
+
+            .topbar-responsive .top-bar-title span {
+                position: absolute;
+                right: 0;
+                border: 1px solid #fefefe;
+                border-radius: 5px;
+                padding: 0.25rem 0.45rem;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
+
+            .topbar-responsive .top-bar-title span .menu-icon {
+                margin-bottom: 4px;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes slideDown {
+            0% {
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+            }
+
+            100% {
+                -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+            }
+        }
+
+        @keyframes slideDown {
+            0% {
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+            }
+
+            100% {
+                -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+            }
+        }
+
+        @media screen and (max-width: 39.9375em) {
+            .topbar-responsive-links {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-duration: 0.5s;
+                animation-duration: 0.5s;
+                width: 100%;
+                -webkit-animation: fadeIn 1s ease-in;
+                animation: fadeIn 1s ease-in;
+            }
+        }
+    </style>
+    <!-- header css end -->
+    <!-- footer css start -->
+    <style>
+        .marketing-site-footer {
+            background: #2c3840;
+            color: #8aa0ae;
+            padding: 2rem 0 0;
+        }
+
+        .marketing-site-footer .marketing-site-footer-menu-social a {
+            color: #fefefe;
+        }
+
+        .marketing-site-footer .column-block {
+            margin-bottom: 30px;
+        }
+
+        .marketing-site-footer>.row {
+            margin-bottom: 1rem;
+        }
+
+        @media screen and (max-width: 39.9375em) {
+            .marketing-site-footer .columns {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .marketing-site-footer-name {
+            color: #fefefe;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .marketing-site-footer-title {
+            color: #fefefe;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .marketing-site-footer-block {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .marketing-site-footer-block .fa {
+            font-size: 2rem;
+            color: #020304;
+        }
+
+        .marketing-site-footer-block p {
+            margin-left: 1rem;
+            line-height: 1.125rem;
+        }
+
+        .marketing-site-footer-bottom {
+            background: #020304;
+            padding: 1rem 0;
+        }
+
+        .marketing-site-footer-bottom p,
+        .marketing-site-footer-bottom .menu {
+            margin-bottom: 0;
+        }
+
+        .marketing-site-footer-bottom .marketing-site-footer-bottom-links {
+            -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+        }
+
+        .marketing-site-footer-bottom .marketing-site-footer-bottom-links a {
+            color: #8aa0ae;
+        }
+
+        @media screen and (max-width: 63.9375em) {
+            .marketing-site-footer-bottom .marketing-site-footer-bottom-links {
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 63.9375em) {
+            .marketing-site-footer-bottom {
+                text-align: center;
+            }
+        }
+    </style>
+    <!-- footer css end -->
+
+    <!-- board css start -->
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        #gnb>ul>li[role="menuitem"] {
+            height: 38px;
+        }
+
+        #gnb>ul>li.menu-text[role="menuitem"] {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .h1 {
+            padding-top: 0.9rem;
+            padding-bottom: 0.3rem;
+        }
+
+        .container {
+            clear: both;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container::after {
+            content: "";
+            display: block;
+            width: 100%;
+            clear: both;
+        }
+
+        #table1 th {
+            border-bottom: 1px solid #fff;
+        }
+    </style>
+    <!-- board css end -->
+</head>
+
+<body>
+    <header id="header">
+        <nav class="top-bar topbar-responsive">
+            <div class="top-bar-title">
+                <a class="topbar-responsive-logo" href="index_after_login.html"><img
+                        src="https://www.ktng.com/resources/_img/main_new/img-main-logo.png" alt="logo"></a>
+            </div>
+            <div id="topbar-responsive" class="topbar-responsive-links">
+                <div class="top-bar-right">
+                    <ul class="menu simple vertical medium-horizontal">
+                        <li><a href="intro.html">기업 소개</a></li>
+                        <li><a href="freeList.html">홍보 채널</a></li>
+                        <li><a href="boardList.html">공지사항</a></li>
+                        <li><a href="memberList.html">회원 관리</a></li>
+                        <li><a href="index.html">로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="row column text-center">
+        <h2>공지사항 상세 보기</h2>
+        <hr>
+        <table>
+            <tbody>
+
+                <tr>
+                    <th>글 번호</th>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th>글 제목</th>
+                    <td>전자증권 전환 대상 주권 권리자(주주) 보호 및 조치사항 안내</td>
+                </tr>
+                <tr>
+                    <th>글 내용</th>
+                    <td>
+                        <p>2019. 9.16일 「주식·사채 등의 전자등록에 관한 법률(이하 “전자증권법”)」이 시행됨에 따라 당사의 전자증권 전환 대상 주권 권리자를 보호하기 위하여 전자증권법
+                            부칙 제3조 3항에 근거하여 아래의 사항을 통지합니다.
+                            – 아 래 –
+                            전자증권법 시행일(2019. 9.16)부터 주주(권리자)가 소유중인 실물증권(전환 대상 주권)은 효력을 잃게 됩니다.
+                            따라서, 주주(권리자)는 법 시행일 직전 영업일(2019. 9.11)까지 증권회사 계좌(주식 등이 전자등록되는 전자등록계좌)를 통지하고 소유중인 실물증권(전환 대상
+                            주권)을 제출해야 하며, 방법은 아래와 같습니다.
+
+                            ※ 주주 조치 사항
+                            2019. 8.21일까지 증권회사를 방문하여 소유중인 실물증권을 제출하고 계좌에 입고 요청하시기 바라며,
+                            2019. 8.21일까지 증권회사를 방문하지 못한 경우에는, 2019. 8.22~9.11일까지 KB국민은행 증권대행부(명의개서대행회사)를 방문하여 소유중인 실물증권을
+                            제출하고 증권회사 계좌에 입고 요청하시기 바랍니다.
+                            * 증권회사 방문 기일(2019. 8.21일) 및 방문 시 필요 서류는 증권회사별로 상이할 수 있으니 해당 증권사에 별도 문의하시고, KB국민은행 증권대행부 방문 시
+                            필요서류는 2페이지를 참조해 주시기 바랍니다.
+                            [참고] 당사(발행인)은 법 시행일 직전 영업일(2019. 9.11)의 주주명부에 기재된 권리자를 기준으로 전자등록이 되도록 전자등록기관(한국예탁결제원)에 요청할
+                            예정입니다.
+
+                            2019년 7월 18일
+                            주식회사 케이티앤지
+                            대표이사 백복인</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>작성자</th>
+                    <td>admin</td>
+                </tr>
+                <tr>
+                    <th>작성일시</th>
+                    <td>2022-12-06 10:49:21.0</td>
+                </tr>
+                <tr>
+                    <th>읽은 횟수</th>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="button-group">
+            <a class="button" href="boardList.html">글 목록</a>
+            <a class="button" href="boardList.html">글 삭제</a>
+            <a class="button" href="boardEdit.html">글 수정</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+    <footer class="marketing-site-footer">
+        <div class="row medium-unstack">
+            <div class="medium-4 columns">
+                <h4 class="marketing-site-footer-name"><img
+                        src="https://www.ktng.com/resources/_img/main_new/img-main-logo.png" alt="logo"></h4>
+                <p>보다 나은 삶을 함께 만들어가는 상상실현 기업</p>
+            </div>
+            <div class="medium-4 columns">
+                <h4 class="marketing-site-footer-title">CONTACT</h4>
+                <div class="marketing-site-footer-block">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <p>대표번호 : 080 931 0399</p>
+                </div>
+                <div class="marketing-site-footer-block">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <p>대표주소 : 대전광역시 대덕구 벚꽃길 71 (평촌동 100)</p>
+                </div>
+            </div>
+            <div class="medium-4 columns">
+                <h4 class="marketing-site-footer-title">SNS</h4>
+                <div class="row small-up-3">
+                    <div class="column column-block">
+                        <a href="https://www.facebook.com/KTnGCorp"><img
+                                src="https://www.ktng.com/resources/_img/main_new/icon-main-footer-fb.png"
+                                alt="페이스북" /></a>
+                    </div>
+                    <div class="column column-block">
+                        <a href="https://www.instagram.com/ktng_daily/"><img
+                                src="https://www.ktng.com/resources/_img/main_new/icon-main-footer-ig.png"
+                                alt="인스타그램" /></a>
+                    </div>
+                    <div class="column column-block">
+                        <a href="https://www.youtube.com/channel/UCVIYOhk0nZYOADDm7yF3DIA"><img
+                                src="https://www.ktng.com/resources/_img/main_new/icon-main-footer-yt.png"
+                                alt="유튜브" /></a>
+                    </div>
+                    <div class="column column-block">
+                        <img src="https://www.ktng.com/resources/_img/main_new/icon-main-footer-wa.png" alt="수상" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="marketing-site-footer-bottom">
+            <div class="row large-unstack align-middle">
+                <div class="column">
+                    <p>Copyright © 2014 KT&G Corp. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

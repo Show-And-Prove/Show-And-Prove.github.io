@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 수정하기</title>
+    <!-- 헤드 부분 인클루드 -->
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="resources/css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet'
+        type='text/css'>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(document).foundation();
+        });
+    </script>
+
+    <!-- header css -->
+    <style>
+        .topbar-responsive {
+            background: #2c3840;
+            padding: 1rem 1.5rem;
+        }
+
+        .topbar-responsive .topbar-responsive-logo {
+            color: #fefefe;
+            vertical-align: middle;
+        }
+
+        .topbar-responsive .menu {
+            background: #2c3840;
+        }
+
+        .topbar-responsive .menu li:last-of-type {
+            margin-right: 0;
+        }
+
+        .topbar-responsive .menu a {
+            color: #fefefe;
+            transition: color 0.15s ease-in;
+        }
+
+        .topbar-responsive .menu a:hover {
+            color: #c6d1d8;
+        }
+
+        @media screen and (max-width: 39.9375em) {
+            .topbar-responsive .menu a {
+                padding: 0.875rem 0;
+            }
+        }
+
+        .topbar-responsive .menu .topbar-responsive-button {
+            color: #fefefe;
+            border-color: #fefefe;
+            border-radius: 5000px;
+            transition: color 0.15s ease-in, border-color 0.15s ease-in;
+        }
+
+        .topbar-responsive .menu .topbar-responsive-button:hover {
+            color: #c6d1d8;
+            border-color: #c6d1d8;
+        }
+
+        @media screen and (max-width: 39.9375em) {
+            .topbar-responsive .menu .topbar-responsive-button {
+                width: 100%;
+                margin: 0.875rem 0;
+            }
+        }
+
+        @media screen and (max-width: 39.9375em) {
+            .topbar-responsive {
+                padding: 0.75rem;
+            }
+
+            .topbar-responsive .top-bar-title {
+                position: relative;
+                width: 100%;
+            }
+
+            .topbar-responsive .top-bar-title span {
+                position: absolute;
+                right: 0;
+                border: 1px solid #fefefe;
+                border-radius: 5px;
+                padding: 0.25rem 0.45rem;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
+
+            .topbar-responsive .top-bar-title span .menu-icon {
+                margin-bottom: 4px;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes slideDown {
+            0% {
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+            }
+
+            100% {
+                -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+            }
+        }
+
+        @keyframes slideDown {
+            0% {
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+            }
+
+            100% {
+                -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+            }
+        }
+
+        @media screen and (max-width: 39.9375em) {
+            .topbar-responsive-links {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-duration: 0.5s;
+                animation-duration: 0.5s;
+                width: 100%;
+                -webkit-animation: fadeIn 1s ease-in;
+                animation: fadeIn 1s ease-in;
+            }
+        }
+    </style>
+    <!-- header css end -->
+    <!-- footer css start -->
+    <style>
+        .marketing-site-footer {
+            background: #2c3840;
+            color: #8aa0ae;
+            padding: 2rem 0 0;
+        }
+
+        .marketing-site-footer .marketing-site-footer-menu-social a {
+            color: #fefefe;
+        }
+
+        .marketing-site-footer .column-block {
+            margin-bottom: 30px;
+        }
+
+        .marketing-site-footer>.row {
+            margin-bottom: 1rem;
+        }
+
+        @media screen and (max-width: 39.9375em) {
+            .marketing-site-footer .columns {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .marketing-site-footer-name {
+            color: #fefefe;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .marketing-site-footer-title {
+            color: #fefefe;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .marketing-site-footer-block {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .marketing-site-footer-block .fa {
+            font-size: 2rem;
+            color: #020304;
+        }
+
+        .marketing-site-footer-block p {
+            margin-left: 1rem;
+            line-height: 1.125rem;
+        }
+
+        .marketing-site-footer-bottom {
+            background: #020304;
+            padding: 1rem 0;
+        }
+
+        .marketing-site-footer-bottom p,
+        .marketing-site-footer-bottom .menu {
+            margin-bottom: 0;
+        }
+
+        .marketing-site-footer-bottom .marketing-site-footer-bottom-links {
+            -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+        }
+
+        .marketing-site-footer-bottom .marketing-site-footer-bottom-links a {
+            color: #8aa0ae;
+        }
+
+        @media screen and (max-width: 63.9375em) {
+            .marketing-site-footer-bottom .marketing-site-footer-bottom-links {
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 63.9375em) {
+            .marketing-site-footer-bottom {
+                text-align: center;
+            }
+        }
+    </style>
+    <!-- footer css end -->
+
+    <!-- board css start -->
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        #gnb>ul>li[role="menuitem"] {
+            height: 38px;
+        }
+
+        #gnb>ul>li.menu-text[role="menuitem"] {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .h1 {
+            padding-top: 0.9rem;
+            padding-bottom: 0.3rem;
+        }
+
+        .container {
+            clear: both;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container::after {
+            content: "";
+            display: block;
+            width: 100%;
+            clear: both;
+        }
+
+        #table1 th {
+            border-bottom: 1px solid #fff;
+        }
+    </style>
+    <!-- board css end -->
+    <script type="text/javascript" src="/resources/ckeditor/ckeditor.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <nav class="top-bar topbar-responsive">
+            <div class="top-bar-title">
+                <a class="topbar-responsive-logo" href="index_after_login.html"><img
+                        src="https://www.ktng.com/resources/_img/main_new/img-main-logo.png" alt="logo"></a>
+            </div>
+            <div id="topbar-responsive" class="topbar-responsive-links">
+                <div class="top-bar-right">
+                    <ul class="menu simple vertical medium-horizontal">
+                        <li><a href="intro.html">기업 소개</a></li>
+                        <li><a href="freeList.html">홍보 채널</a></li>
+                        <li><a href="boardList.html">공지사항</a></li>
+                        <li><a href="memberList.html">회원 관리</a></li>
+                        <li><a href="index.html">로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="content1" id="content1">
+        <div class="row column text-center">
+            <h2 class="h1">글 수정</h2>
+            <hr>
+            <div class="container">
+                <form action="" method="post">
+                    <table id="table1">
+                        <tbody>
+                            <tr>
+                                <th style="background-color:#dcdcdc">글 제목</th>
+                                <td>
+                                    <input type="hidden" name="bno" id="bno" value="1">
+                                    <input type="text" name="title" id="title" placeholder="제목 입력"
+                                        value="KT&G, 라오스 교육 인프라 지원 위해 논께오 지역에 초등학교 건립" maxlength="98" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="background-color:#dcdcdc">글 내용</th>
+                                <td>
+                                    <textarea name="content" id="content" placeholder="내용 입력" rows="8" cols="100"
+                                        maxlength="800" required><p>KT&amp;G(사장 백복인)가 사단법인 나눔문화예술협회(이사장 유현숙)와 함께 라오스 비엔티안시 논께오 지역에 초등학교를 건립하고 지난 1일 준공식을 개최했다.</p>
+
+<p>&nbsp;</p>
+
+<p>이날 준공식에는 이상학 KT&amp;G 지속경영본부장(부사장), 유현숙 나눔문화예술협회 이사장, 푿 심마라웡 라오스 교육체육부 장관을 비롯한 라오스 정부 관계자와 논께오 지역 주민 등이 참석했다.</p>
+
+<p>&nbsp;</p>
+
+<p>KT&amp;G는 라오스 교육 인프라 지원을 위해 작년 11월부터 논께오 지역에 초등학교 건립을 추진했으며, 착공 약 1년 만에 초등학교를 완공했다. 기존의 낡고 열악했던 학교 건물은 교실 6개, 다목적실, 교무실, 화장실 4개 등을 갖춘 교육시설로 재탄생했다. 또, 교실과 다목적실에 컴퓨터, 선풍기, 책걸상, 악기 등 기자재가 마련되고 야외에는 축구장이 조성됐다.</p>
+
+<p>&nbsp;</p>
+
+<p>학교 건립에 소요된 비용은 KT&amp;G 임직원들의 자발적인 성금으로 모인 &lsquo;상상펀드&rsquo;로 전액 마련됐다. &lsquo;상상펀드&rsquo;는 2011년 출범한 KT&amp;G만의 독창적 사회공헌기금이다. 임직원들이 매월 급여의 일정 금액을 자발적으로 기부하면 회사가 동일한 금액을 더하는 &lsquo;매칭 그랜트&rsquo; 형태로 조성되며, 국내외 소외계층 지원과 긴급한 사회문제 해결에 활용되고 있다. KT&amp;G는 지난 8월 임직원 봉사단을 라오스 논께오 지역으로 파견해 임직원들이 직접 초등학교 건립을 돕기도 했다.</p>
+
+<p>&nbsp;</p>
+
+<p>이상학 KT&amp;G 지속경영본부장은 &ldquo;논께오 지역 초등학교 건립이 라오스의 미래세대 육성과 교육환경 개선에 조금이나마 도움이 되길 바란다&rdquo;며, &ldquo;앞으로도 글로벌 기업 시민의 자세로 도움이 필요한 국가들의 사회문제 해결에 적극 동참할 것&rdquo;이라고 밝혔다.</p>
+
+<p>&nbsp;</p>
+
+<p>한편, KT&amp;G는 지난 2019년 라오스 사반나케트주 깜빠네 지역에 초등학교를 건립한 바 있다.</p>
+
+<p><img alt="" src="resources/img/free/1.jfif" style="height:514px; width:700px" /></p>
+
+<p>&nbsp;</p>
+</textarea>
+                                    <script>
+                                        CKEDITOR.replace('content', { filebrowserUploadUrl: '/free/imageUpload.do' });
+                                    </script>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <a class="button" href="freeList.html">글 수정</a>
+                                    <a class="button" href="freeList.html">글 목록</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="marketing-site-footer">
+        <div class="row medium-unstack">
+            <div class="medium-4 columns">
+                <h4 class="marketing-site-footer-name"><img
+                        src="https://www.ktng.com/resources/_img/main_new/img-main-logo.png" alt="logo"></h4>
+                <p>보다 나은 삶을 함께 만들어가는 상상실현 기업</p>
+            </div>
+            <div class="medium-4 columns">
+                <h4 class="marketing-site-footer-title">CONTACT</h4>
+                <div class="marketing-site-footer-block">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <p>대표번호 : 080 931 0399</p>
+                </div>
+                <div class="marketing-site-footer-block">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <p>대표주소 : 대전광역시 대덕구 벚꽃길 71 (평촌동 100)</p>
+                </div>
+            </div>
+            <div class="medium-4 columns">
+                <h4 class="marketing-site-footer-title">SNS</h4>
+                <div class="row small-up-3">
+                    <div class="column column-block">
+                        <a href="https://www.facebook.com/KTnGCorp"><img
+                                src="https://www.ktng.com/resources/_img/main_new/icon-main-footer-fb.png"
+                                alt="페이스북" /></a>
+                    </div>
+                    <div class="column column-block">
+                        <a href="https://www.instagram.com/ktng_daily/"><img
+                                src="https://www.ktng.com/resources/_img/main_new/icon-main-footer-ig.png"
+                                alt="인스타그램" /></a>
+                    </div>
+                    <div class="column column-block">
+                        <a href="https://www.youtube.com/channel/UCVIYOhk0nZYOADDm7yF3DIA"><img
+                                src="https://www.ktng.com/resources/_img/main_new/icon-main-footer-yt.png"
+                                alt="유튜브" /></a>
+                    </div>
+                    <div class="column column-block">
+                        <img src="https://www.ktng.com/resources/_img/main_new/icon-main-footer-wa.png" alt="수상" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="marketing-site-footer-bottom">
+            <div class="row large-unstack align-middle">
+                <div class="column">
+                    <p>Copyright © 2014 KT&G Corp. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
