@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="refresh" content="6000">
+    <title>LoL 상점</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <!-- swiper -->
+
+    <!-- video -->
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <!-- video -->
+
+    <!-- metaphor -->
+    <meta name="application-name" content="LoL 상점">
+    <meta name="subject" content="LoL 상점">
+    <meta name="keywords" content="lol, 롤상점, 롤">
+    <meta name="description" content="League of Legends의 상품을 웹에서 구매해보세요!">
+    <meta name="url" content="https://jotbab.github.io/mobile01">
+    <meta name="author" content="jotbab">
+    <meta name="email" content="...">
+    <meta name="robots" content="index, flow">
+    <!-- metaphor -->
+    
+    <!-- favicon -->
+    <link rel="icon" href="assets/icon/favicon.png">
+    <link rel="icon" href="assets/icon/16.png" sizes="16x16">
+    <link rel="icon" href="assets/icon/32.png" sizes="32x32">
+    <link rel="icon" href="assets/icon/48.png" sizes="48x48">
+    <link rel="icon" href="assets/icon/64.png" sizes="64x64">
+    <link rel="icon" href="assets/icon/128.png" sizes="128x128">
+    <!-- favicon -->
+
+    <!-- 해상도 및 브라우저와 기기별 앱 아이콘 및 바로가기 아이콘 설정 -->
+    <link rel="shortcut icon" href="assets/icon/favicon.png">
+    <!-- 애플사의 기기 아이콘 설정 -->
+    <meta name="apple-mobile-web-app-title" content="LoL 상점">
+    <link rel="apple-touch-icon-precomposed" href="assets/icon/favicon.png">
+    <!-- iPhone 저사양 및 iPod -->
+    <link rel="apple-touch-icon" href="assets/icon/57.png" sizes="57x57">
+    <!-- iPad -->
+    <link rel="apple-touch-icon" href="assets/icon/76.png" sizes="76x76">
+    <!-- iPhone Retina -->
+    <link rel="apple-touch-icon" href="assets/icon/120.png" sizes="120x120">
+    <!-- iPad Retina -->
+    <link rel="apple-touch-icon" href="assets/icon/152.png" sizes="152x152">
+    <!-- iPhone 6 이상 -->
+    <link rel="apple-touch-icon" href="assets/icon/180.png" sizes="180x180">
+    <!-- 애플사 기기의 앱에 시작화면 -->
+    <link rel="apple-touch-startup-image" href="">
+    <!-- 애플사 기기의 URL바나 UI바 보이게 -->
+    <meta name="apple-mobile-web-app-capable" href="yes">
+    <!-- 상태바의 색상 설정 -->
+    <meta name="apple-mobile-web-app-status-bar-style" href="black-translucent">
+
+    <!--iOS-->
+    <meta property="al:ios:url" content=" ios 앱 URL" />
+    <meta property="al:ios:app_store_id" content="ios 앱스토어 ID" /> 
+    <meta property="al:ios:app_name" content="ios 앱 이름" /> 
+    <!--Android-->
+    <meta property="al:android:url" content="안드로이드 앱 URL" />
+    <meta property="al:android:app_name" content="안드로이드 앱 이름" />
+    <meta property="al:android:package" content="안드로이드 패키지 이름" /> 
+    <meta property="al:web:url" content="안드로이드 앱 URL" />
+
+
+    <!-- 오픈 그래프 -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jotbab.github.io/mobile01">
+    <meta property="og:title" content="LoL 상점">
+    <meta property="og:site_name" content="LoL 상점">
+    <meta property="og:image" content="">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="400">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="video">
+    <meta name="twitter:title" content="LoL 상점">
+    <meta name="twitter:description" content="League of Legends의 상품을 웹에서 구매해보세요!">
+    <meta name="twitter:image" content="">
+
+
+
+    <style>
+    .page_tit { font-size: 5vw; clear: both; padding-bottom: 2rem; }
+    .ui-header .ui-title { text-align: center; }
+    /* rp 아이콘 style */
+    .rp { width: 14px; height: 14px; }
+    /* rp 아이콘 style */
+    .sub-image { width: 360px; height: 360px; }
+    </style>
+    <!-- swiper -->
+    <style>
+        html,
+        body {
+          position: relative;
+          height: 100%;
+        }
+  
+        body {
+          background: #eee;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          color: #000;
+          margin: 0;
+          padding: 0;
+        }
+  
+        .swiper {
+          width: 100%;
+          height: 100%;
+        }
+  
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+    </style>
+    <!-- swiper -->
+    
+    <!-- video -->
+    <style>
+    .jotbab-video-player { clear:both; }
+    .jotbab-video-player::after { content:""; display:block; clear:both; }
+    .vdo1-dimensions { width: 362px; height: 210px; margin: 0; padding: 0; min-width: 360px;  min-height: 202px; }
+    .vdo1-dimensions::after { content: ""; clear: both; display: block; }
+    .video-js .vjs-tech { display: block; width: 360px; height: 210px; min-width: 360px; min-height: 202px; }
+    </style>
+    <!-- video -->
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+
+
+<!-- 메인 페이지 #page0 -->    
+<div id="page0" data-role="page" class="ui-page-theme-a ui-page-active">
+    <!-- header -->
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">LOL 상점 메인</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- header -->
+
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="b" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-b">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page6" data-icon="heart" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">감정표현</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+        <ul class="ui-grid-b">
+            <li class="ui-block-a">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+
+    <!-- content -->
+    <div data-role="content" role="main" class="ui-content">
+        <!-- swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><a href="#page11"><img src="assets/images/main/banner1.jpg" alt="배너1"></a></div>
+              <div class="swiper-slide"><a href="#page01"><img src="assets/images/main/banner2.jpg" alt="배너2"></a></div>
+              <div class="swiper-slide"><a href="#page02"><img src="assets/images/main/banner3.png" alt="배너3"></a></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: true,
+            },
+        });
+        </script>
+        <!-- swiper -->
+        <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview">
+            <li class="ui-li-has-thumb ui-first-child" data-role="list-divider">
+                인기 상품
+            </li>
+            <li>
+                <a href="" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/main/pop1.png" alt="인기1">
+                    <h2>미니 럭스</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">1900</p>
+                </a>
+            </li>
+            <li>
+                <a href="" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/main/pop2.png" alt="인기2">
+                    <h2>태초의 별의 성배 세트</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">13245</p>
+                </a>
+            </li>
+            <li class="ui-li-has-thumb" data-role="list-divider">
+                세일 상품
+            </li>
+            <li>
+                <a href="" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/main/sale1.jpg" alt="세일1">
+                    <h2>괴물 조련사 베이가</h2>
+                    <p><img class="rp" src="assets/images/rp.webp"><del>1350</del>  975</p>
+                </a>
+            </li>
+            <li>
+                <a href="" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/main/sale2.jpg" alt="세일2">
+                    <h2>서리달 케인</h2>
+                    <p><img class="rp" src="assets/images/rp.webp"><del>1350</del>  975</p>
+                </a>
+            </li>
+            <li class="ui-li-has-thumb" data-role="list-divider">
+                신규 상품
+            </li>
+            <li>
+                <a href="#page11" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/main/new1.jpg" alt="신규1">
+                    <h2>겨울의 축복 다이애나</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">1820</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page11" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/main/new2.jpg" alt="신규2">
+                    <h2>겨울의 축복 다이애나 테두리 세트</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">3130</p>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <!-- content -->
+
+    <!-- footer -->
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+    <!-- footer -->
+</div>
+<!-- 메인 페이지 #page0 -->
+
+<!-- 메인 배너 #page01 -->
+<div id="page01" data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">스킨 상세정보</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div role="sub" class="ui-content" data-role="content">
+        <div class="ui-body ui-body-a ui-corner-all">
+            <h3>겨울의 축복 워윅</h3>
+            <img src="assets/images/main/mainskin.png" alt="스킨1">
+            <p>워윅에게 새 스킨을 입혀 주세요.</p>
+            <p></p>
+            <h2><img class="rp" src="assets/images/rp.webp">1350</h2>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#cart" data-role="button">장바구니 담기</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#page1" data-role="button">목록으로</a>
+            </div>
+        </div> 
+    </div>
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+</div>
+<!-- 메인 배너 #page01 -->
+
+<!-- 메인 배너 #page02 -->
+<div id="page02" data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">나만의 상점</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+    <div data-role="content" role="sub" class="ui-content">
+        <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview">
+            <li class="ui-li-has-thumb ui-first-child" data-role="list-divider">
+                나만의 상점<br>
+                이벤트 종료 일시 : 2023년 1월 4일 02:00
+            </li>
+            <li>
+                <a href="#page021" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img class="sub-image" src="assets/images/skin/skin1.jpg" alt="스킨1">
+                    <h2>수영장 파티 케이틀린</h2>
+                    <p><img class="rp" src="assets/images/rp.webp"><del>1350</del> 405 </p>
+                </a>
+            </li>
+            <li>
+                <a href="#page022" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/skin/skin2.jpg" alt="스킨2">
+                    <h2>인간사냥꾼 니달리</h2>
+                    <p><img class="rp" src="assets/images/rp.webp"><del>975</del>  292 </p>
+                </a>
+            </li>
+            <li>
+                <a href="#page023" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/skin/skin3.jpg" alt="스킨3">
+                    <h2>당돌한 엘프 징크스</h2>
+                    <p><img class="rp" src="assets/images/rp.webp"><del>1350</del>  405 </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+</div>
+<!-- 메인 배너 #page02 -->
+
+
+<!-- 상품 카테고리 1 #page1 -->
+<div id="page1" data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">스킨</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+    <div data-role="content" role="sub" class="ui-content">
+        <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview">
+            <li class="ui-li-has-thumb ui-first-child" data-role="list-divider">
+                스킨
+            </li>
+            <li>
+                <a href="#page11" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img class="sub-image" src="assets/images/skin/skin1.jpg" alt="스킨1">
+                    <h2>겨울의 축복 다이애나</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">1820</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page11" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/skin/skin2.jpg" alt="스킨2">
+                    <h2>겨울의 축복 샤코</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">1350</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page11" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/skin/skin3.jpg" alt="스킨3">
+                    <h2>겨울의 축복 스웨인</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">1350</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page11" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/skin/skin4.jpg" alt="스킨4">
+                    <h2>겨울의 축복 워윅</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">1350</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+</div>
+<!-- 상품 카테고리 1 #page1 -->
+
+<!-- 상품 상세정보 #page11 -->
+<div id="page11" data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">스킨 상세정보</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div role="sub" class="ui-content" data-role="content">
+        <div class="ui-body ui-body-a ui-corner-all">
+            <h3>겨울의 축복 다이애나</h3>
+            <img src="assets/images/skin/skin1.jpg" alt="스킨1">
+            <p>다이애나에게 새 스킨을 입혀 주세요.</p>
+            <p></p>
+            <h2><img class="rp" src="assets/images/rp.webp">1820</h2>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#cart" data-role="button">장바구니 담기</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#page1" data-role="button">목록으로</a>
+            </div>
+        </div> 
+    </div>
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+</div>
+<!-- 상품 상세정보 #page11 -->
+
+<!-- 상품 카테고리 2 #page2 -->
+<div id="page2" data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">전략적 팀 전투</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+    <div data-role="content" role="sub" class="ui-content">
+        <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview">
+            <li class="ui-li-has-thumb ui-first-child" data-role="list-divider">
+                전략적 팀 전투
+            </li>
+            <li>
+                <a href="#page21" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img class="sub-image" src="assets/images/tatic/tatic1.png" alt="롤체1">
+                    <h2>1성 꿰맨 수염냥</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">925</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page22" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img class="sub-image" src="assets/images/tatic/tatic2.png" alt="롤체1">
+                    <h2>1성 남작이</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">2500</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page23" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img class="sub-image" src="assets/images/tatic/tatic3.png" alt="롤체1">
+                    <h2>1성 별 수호자 남작이</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">2500</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page24" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img class="sub-image" src="assets/images/tatic/tatic4.png" alt="롤체1">
+                    <h2>1성 별 수호자 수염냥</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">750</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+</div>
+<!-- #page2 -->
+
+<!-- 상품 상세정보 #page21 -->
+<div id="page21" data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">전략적 팀 전투 상세정보</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div role="sub" class="ui-content" data-role="content">
+        <div class="ui-body ui-body-a ui-corner-all">
+            <h3>1성 꿰맨 수염냥</h3>
+            <img src="assets/images/tatic/tatic1.png" alt="롤체1">
+            <p>코미디언은 아니지만 배꼽을 잡고 웃게 합니다.</p>
+            <p></p>
+            <h2><img class="rp" src="assets/images/rp.webp">925</h2>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#cart" data-role="button">장바구니 담기</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#page1" data-role="button">목록으로</a>
+            </div>
+        </div> 
+    </div>
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+</div>
+<!-- 상품 상세정보 #page21 -->
+
+<!-- 감정표현 #page6 -->
+<div id="page6" data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">감정표현</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+    <div data-role="content" role="sub" class="ui-content">
+        <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview">
+            <li class="ui-li-has-thumb ui-first-child" data-role="list-divider">
+                감정표현
+            </li>
+            <li>
+                <a href="#page61" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/6/61.png" alt="감정표현1">
+                    <h2>슬펐꿀벌</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">350</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page61" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/6/62.png" alt="감정표현2">
+                    <h2>행복했꿀벌</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">350</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page61" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="assets/images/6/63.png" alt="감정표현3">
+                    <h2>화났꿀벌</h2>
+                    <p><img class="rp" src="assets/images/rp.webp">350</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+</div>
+<!-- 상품 카테고리 1 #page1 -->
+
+<!-- 상품 상세정보 #page11 -->
+<div id="page61" data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">감정표현 상세정보</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div role="sub" class="ui-content" data-role="content">
+        <div class="ui-body ui-body-a ui-corner-all">
+            <h3>슬펐꿀벌</h3>
+            <img src="assets/images/6/61.png" alt="감정표현1">
+            <p>ㅠ_ㅠ</p>
+            <p></p>
+            <h2><img class="rp" src="assets/images/rp.webp">350</h2>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#cart" data-role="button">장바구니 담기</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#page1" data-role="button">목록으로</a>
+            </div>
+        </div> 
+    </div>
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+</div>
+<!-- 상품 상세정보 #page11 -->
+
+<!-- 새 소식 video #page3 -->
+<div id="page3" data-role="page" class="ui-page-theme-a">
+    <!-- header -->
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">새 소식</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- header -->
+
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+
+    <!-- content -->
+    <div data-role="content" role="sub" class="ui-content">
+        <div class="player">
+            <div class="jotbab-video-player">
+               <video id="vdo1" class="video-js" controls preload="auto" data-setup="{}">
+                   <source src="assets/video/video1.mp4" type="video/mp4" />
+               </video>
+            </div>
+            <div class="btn_lst" id="btn_lst">
+               <ul>
+                   <li><span data-val="assets/video/video1.mp4">2022 겨울의 축복 | 공식 이벤트 트레일러</span></li><br>
+                   <li><span data-val="assets/video/video2.mp4">칼바람 나락에 아주 큰 변화가 찾아옵니다.<br>12.23 패치노트 하이라이트</span></li><br>
+                   <li><span data-val="assets/video/video3.mp4">신바람 탈 샤코의 선물 <br>문화재 지킴이 10주년 기념 이벤트</span></li><br>
+               </ul>
+            </div>
+        </div>
+        <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+        <script>
+        $(document).ready(function(){
+           $("#btn_lst li span").click(function(){
+               $("#vdo1_html5_api").attr("src", $(this).attr("data-val"));
+            });
+        });  
+         </script>
+    </div>
+    <!-- footer -->
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+    <!-- footer -->
+</div>
+
+<!-- 새 소식 video #page3 -->
+
+
+<!-- 보유상품 #page5 -->
+<div id="page5" data-role="page" class="ui-page-theme-a">
+    <!-- header -->
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">보유중인 상품</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- header -->
+
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+
+    <!-- content -->
+    <div data-role="content" role="sub" class="ui-content">
+        <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true">
+            <li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit ui-li-has-count">
+                스킨
+            </li>
+            <li class="ui-li-has-thumb">
+                <a href="" class="ui-btn">
+                    <img src="assets/images/skin/skin1.jpg" alt="보유스킨1">
+                    <h2>무슨 다이애나</h2>
+                    <p>구매일 : 2022.12.26</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- footer -->
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+    <!-- footer -->
+</div>
+<!-- 보유상품 #page5 -->
+
+<!-- 공지사항 목록 #page4 -->
+<div id="page4" data-role="page" class="ui-page-theme-a">
+    <!-- header -->
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">공지사항</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- header -->
+
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+
+    <!-- content -->
+    <div data-role="content" role="sub" class="ui-content">
+        <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true">
+            <li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit ui-li-has-count ui-first-child">
+                2022-12-26 월요일
+                <span class="ui-li-count ui-body-inherit">1</span>
+            </li>
+            <li>
+                <a href="#page41" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <h4>라이엇 게임즈 개인정보 처리방침<br>변경 사항 안내</h4>
+                    <p>
+                        <strong>20221226 시행</strong>
+                    </p>
+                </a>
+            </li>
+            <li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit ui-li-has-count">
+                2022-12-11 일요일
+                <span class="ui-li-count ui-body-inherit">1</span>
+            </li>
+            <li>
+                <a href="#page41" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <h4>2022년 12월 11일 게임 이용 장애 현상 안내</h4>
+                    <p>
+                        <strong>12월 12일 05:50에 정상화</strong>
+                    </p>
+                </a>
+            </li>
+        </ul>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#page4_write" data-role="button">작성</a>
+            </div>
+        </div> 
+    </div>
+    <!-- content -->
+
+    <!-- footer -->
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+    <!-- footer -->
+</div>
+<!-- 공지사항 목록 #page4-->
+
+<!-- 공지사항 글 상세 #page41 -->
+<div id="page41" data-role="page" class="ui-page-theme-a">
+    <!-- header -->
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">공지사항 상세보기</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- header -->
+
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+    <!-- content -->
+    <div data-role="content" role="sub" class="ui-content">
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a">
+                <h3>라이엇 게임즈 개인정보 처리방침 변경 사항 안내</h3>
+            </div>
+            <div class="ui-body ui-body-a">
+                <p>플레이어 여러분,<br>
+
+                    2022년 12월 26일부터 개인정보 처리방침의 일부 내용이 변경될 예정입니다.<br>
+                    
+                    이와 관련한 자세한 내용은 아래와 같습니다.<br><br>
+                    
+                    [라이엇 게임즈 개인정보 처리방침 변경 사항]<br>
+                    III. 라이엇게임즈는 수집한 정보로 어떤 일을 합니까? <br>내 개인정보 처리 위탁협력사를 추가하였습니다.<br><br>
+                    
+                    변경된 개인정보 처리방침에 대한 상세한 내용은<br> [여기]를 참고해주시기 바랍니다.<br><br>
+                    
+                    라이엇 게임즈는 앞으로도 더 나은 서비스를 <br>제공할 수 있도록 최선을 다하겠습니다.<br><br>
+                    
+                    감사합니다.
+            </div>
+        </div>
+        <div class="ui-grid-c">
+            <div class="ui-block-a">
+                <a href="#page4" data-role="button">목록</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#page4" data-role="button">삭제</a>
+            </div>
+            <div class="ui-block-c">
+                <a href="#page4_modify" data-role="button">수정</a>
+            </div>
+        </div> 
+    </div>
+    <!-- content -->
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+</div>
+<!-- 공지사항 글 상세 #page41 -->
+
+
+<!-- 공지사항 작성 폼 #page4_write -->
+<div id="page4_write" data-role="page" class="ui-page-theme-a">
+    <!-- header -->
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">공지사항 작성</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- header -->
+
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+
+    <!-- content -->
+    <div data-role="content" role="sub" class="ui-content">
+        <h1 class="page_tit">공지사항</h1>
+        <div role="sub" class="ui-content" data-role="content">    
+            <div data-role="container">
+                <form>
+                    <div data-role="fieldcontain">
+                        <label for="text-basic">제목</label>
+                        <input name="text-basic" id="text-basic" type="text">
+                        <label for="textarea">내용</label>
+                        <textarea name="textarea" id="textarea" rows="8" cols="40"></textarea>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a href="#page4" data-role="button">작성</a>
+                        </div>
+                        <div class="ui-block-b">
+                            <a href="#page4" data-role="button">취소</a>
+                        </div>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>    
+    <!-- content -->
+
+    <!-- footer -->
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+    <!-- footer -->
+
+</div>
+<!-- 공지사항 작성 폼 #page4_write -->
+
+<!-- 공지사항 수정 폼 #page4_modify -->
+<div id="page4_modify" data-role="page" class="ui-page-theme-a">
+    <!-- header -->
+    <header data-role="header" class="ui-header" data-theme="a">
+        <h1 role="heading" class="ui-title">공지사항 작성</h1>
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <a href="#login" data-role="button" data-rel="dialog" data-icon="user" class="ui-btn-right">로그인</a>
+    </header>
+    <!-- header -->
+
+    <!-- navbar -->
+    <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+        <ul class="ui-grid-d">
+            <li class="ui-block-a">
+                <a href="#page1" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">스킨</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-b">
+                <a href="#page2" data-icon="shop" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">롤토체스</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-c">
+                <a href="#page3" data-icon="eye" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">새 소식</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-d">
+                <a href="#page4" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">공지사항</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+            <li class="ui-block-e">
+                <a href="#page5" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                    <span class="ui-btn-text">보유상품</span>
+                    <span class="ui-icon ui-icon-comment ui-icon-shadow"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- navbar -->
+
+    <!-- content -->
+    <div data-role="content" role="sub" class="ui-content">
+        <h1 class="page_tit">공지사항</h1>
+        <div role="sub" class="ui-content" data-role="content">    
+            <div data-role="container">
+                <form>
+                    <div data-role="fieldcontain">
+                        <label for="text-basic">제목</label>
+                        <input name="text-basic" id="text-basic" type="text" value="라이엇 게임즈 개인정보 처리방침 변경 사항 안내">
+                        <label for="textarea">내용</label>
+                        <textarea name="textarea" id="textarea" rows="8" cols="40"></textarea>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a href="#page4" data-role="button">수정</a>
+                        </div>
+                        <div class="ui-block-b">
+                            <a href="#page4" data-role="button">취소</a>
+                        </div>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>    
+    <!-- content -->
+
+    <!-- footer -->
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+    <!-- footer -->
+
+</div>
+<!-- 공지사항 작성 폼 #page4_write -->
+
+
+
+<!-- 로그인 페이지 #login -->
+<div id="login" data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <h1 class="ui-title">로그인</h1>
+    </header>
+    <div data-role="content" role="sub" class="ui-content">
+        <div data-role="fieldcontain">
+            <label for="login-id">아이디</label>
+            <input type="text" id="login-id" name="login-id"><br>
+            <label for="login-pw">비밀번호</label>
+            <input type="password" id="login-pw" name="login-pw">
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#page0" data-role="button">로그인</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#signup" data-role="button">회원가입</a>
+            </div>
+        </div> 
+    </div>
+</div>
+<!-- 로그인 페이지 -->
+
+<!-- 회원 가입 폼 #signup -->
+<div id="signup" data-role="page" class="ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <a href="#page0" data-role="button" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-left" role="button">홈으로</a>
+        <h1 class="ui-title">회원가입</h1>
+    </header>
+    <div data-role="content" role="sub" class="ui-content">
+        <h2 class="ui-title">회원가입</h2>
+        <div data-role="container">
+            <form>
+                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                    <li class="ui-field-contain ui-li-static ui-body-inherit ui-first-child">
+                        <input type="text" name="signup-id" id="signup-id" placeholder="ID 입력">
+                        <button type="button" class="ui-btn ui-btn-inline">중복확인</button>
+                    </li>
+                    <li class="ui-field-contain ui-li-static ui-body-inherit">
+                        <input type="password" name="signup-pw" id="signup-pw" placeholder="비밀번호 입력">
+                    </li>
+                    <li class="ui-field-contain ui-li-static ui-body-inherit">
+                        <input type="password" name="pw2" id="pw2" placeholder="비밀번호 확인">
+                    </li>
+                    <li class="ui-field-contain ui-li-static ui-body-inherit">
+                        <input type="tel" name="tel" id="tel" placeholder="전화번호 입력">
+                    </li>
+                    <li class="ui-field-contain ui-li-static ui-body-inherit ui-last-child">
+                        <input type="email" name="email" id="email" placeholder="이메일 입력">
+                    </li>
+                </ul>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a href="#page0" data-role="button">회원가입</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a href="#page0" data-role="button">취소</a>
+                    </div>
+                </div> 
+            </form>
+        </div>
+    </div>
+    <footer data-role="footer" class="ui-footer" data-theme="a" data-position="">
+        <p>라이엇게임즈코리아 유한회사 <br>서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)</p>
+        <p>대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488</p>
+        <p>통신판매업신고 : 2011-서울강남-02718</p>
+    </footer>
+</div>
+<!-- 회원 가입 폼 #signup -->
+
+
+
+</body>
+</html>
