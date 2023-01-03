@@ -89,8 +89,36 @@
     <meta name="twitter:description" content="League of Legends의 상품을 웹에서 구매해보세요!">
     <meta name="twitter:image" content="assets/icon/180.png">
 
+    
 
-
+    <!-- <style>
+        div { margin: 0; padding: 0; }    
+        img { display:block; width: 100%; height:auto; margin: 0; padding: 0; }    
+        #img_size:after { content:"기본"; font-size:48px; text-align: center; }
+        /* 미디어 쿼리(미디어 규칙) */    
+        /* 스마트폰 320px ~ 767px -> 중단점(break point) */
+        @media screen and (min-width:320px) and (max-width:767px) {
+            h2 { font-size:1rem; }
+            p { font-size:1.4rem; }
+            #img_size:after { content:"모바일"; display:block; clear:both; }
+        }
+        /* 태블릿 768px ~ 959px */
+        @media screen and (min-width:768px) and (max-width:959px) { 
+            h2 { font-size:1.5rem; }
+            p { font-size:1.8rem; }
+            #img_size:after { content:"태블릿"; display:block; clear:both; }
+        }
+        /* 데스크탑 또는 랩탑 960px 이상 */     
+        @media screen and (min-width:960px) { 
+            h2 { font-size:2rem; }
+            p { font-size:2.2rem; }
+            #img_size:after { content:"데스크탑"; display:block; clear:both; }
+        }
+        @media print {
+            h2, p { color:black; }
+            #img_size:after { content:"프린트"; display:block; clear:both; }
+        }        
+    </style> -->
     <style>
     .page_tit { font-size: 5vw; clear: both; padding-bottom: 2rem; }
     .ui-header .ui-title { text-align: center; }
@@ -1976,8 +2004,14 @@
     </footer>
 </div>
 <!-- 회원 가입 폼 #signup -->
-
-
+<!-- serviceWorker script -->
+<script>
+if("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js");
+    });
+}
+</script>
 
 </body>
 </html>

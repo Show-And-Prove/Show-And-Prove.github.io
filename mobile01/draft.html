@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    div { margin: 0; padding: 0; }    
+    img { display:block; width: 100%; height:auto; margin: 0; padding: 0; }    
+    #img_size:after { content:"기본"; font-size:48px; text-align: center; }
+    /* 미디어 쿼리(미디어 규칙) */    
+    /* 스마트폰 320px ~ 767px -> 중단점(break point) */
+    @media screen and (min-width:320px) and (max-width:767px) {
+        h2 { font-size:1rem; }
+        p { font-size:1.4rem; }
+        #img_size:after { content:"모바일"; display:block; clear:both; }
+    }
+    /* 태블릿 768px ~ 959px */
+    @media screen and (min-width:768px) and (max-width:959px) { 
+        h2 { font-size:1.5rem; }
+        p { font-size:1.8rem; }
+        #img_size:after { content:"태블릿"; display:block; clear:both; }
+    }
+    /* 데스크탑 또는 랩탑 960px 이상 */     
+    @media screen and (min-width:960px) { 
+        h2 { font-size:2rem; }
+        p { font-size:2.2rem; }
+        #img_size:after { content:"데스크탑"; display:block; clear:both; }
+    }
+    @media print {
+        h2, p { color:black; }
+        #img_size:after { content:"프린트"; display:block; clear:both; }
+    }        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

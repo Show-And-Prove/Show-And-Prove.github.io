@@ -40,7 +40,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/",
+    "start_url": "/mobile01/",
     "display": "standalone",
     "background_color": "#121212",
     "theme_color": "#f1718c"
