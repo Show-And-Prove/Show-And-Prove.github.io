@@ -9,11 +9,120 @@
     <!-- 파비콘 -->
     <!-- 오픈그래프 -->
     <!-- 필수 플러그인 -->
-    <script src="https://code.jquery.com/jquery-latest.js"></script> 
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/lodash.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/dataPage.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/dataPage.css">
     <!-- css 프레임워크 -->
+
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; overflow-x:hidden; }
+    /* 스크롤바 보이지 않게 - Chrome, Safari, Opera */
+    ::-webkit-scrollbar { display:none; }
+    body, html { -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */ }
+
+    #hd { position:fixed; background-color:rgba(33,33,33,0.6); width: 100vw; 
+    height:90px;  top: 0; left: 0; z-index:999; }
+    /* .page { clear:both; width:100vw; height:100vh; overflow-x:hidden; }  */
+    .page_wrap { clear:both; width: 1200px; margin: 0 auto; }    
+    .page_tit { text-align: center; line-height: 2.4;  padding-top: 2rem; }
+
+    .pic_frame { width: 140px; height: 140px; border-radius:80px; 
+    overflow: hidden; margin:0 auto; }
+    .pic1 { display:block; width: 140px; height:auto;}
+    </style>
     
 </head>
 <body>
-    
+    <div id="page1" class="page background">
+        <section class="page_wrap content-wrapper">
+            <h2 class="page_tit">Intro</h2>
+            <div class="pic_frame">
+                <img src="" class="pic1" alt="">
+            </div>
+        </section>
+    </div>
+    <div id="page2" class="page backgroud">
+        <section class="page_wrap content-wrapper">
+            <h2 class="page_tit">Work</h2>
+            <div class="lst_fr">
+                <ul>
+                    <li>
+                        <div class="cate_tit"></div>
+                        <div class="cate_con"></div>
+                    </li>
+                    <li>
+                        <div class="cate_tit"></div>
+                        <div class="cate_con"></div>
+                    </li>
+                    <li>
+                        <div class="cate_tit"></div>
+                        <div class="cate_con"></div>
+                    </li>
+                    <li>
+                        <div class="cate_tit"></div>
+                        <div class="cate_con"></div>
+                    </li>
+                    <li>
+                        <div class="cate_tit"></div>
+                        <div class="cate_con"></div>
+                    </li>
+                    <li>
+                        <div class="cate_tit"></div>
+                        <div class="cate_con"></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div id="page3" class="page background">
+        <section class="page_wrap content-wrapper">
+            <h2 class="page_tit">Gallery</h2>
+            <div class="lst_fr">
+                <ul class="gal_lst">
+                    <li class="item1">
+                        <div class="cate_fr">
+                            <img src="" alt="" class="full_pic">
+                        </div>
+                        <div class="btn_fr">
+                            <a href="" class="btn primary">Backend</a>
+                            <a href="" class="btn primary">Frontend</a>
+                        </div>
+                    </li>
+                    <li class="item2">
+                        <div class="cate_fr">
+                            <img src="" alt="" class="full_pic">
+                            <a href="" class="btn primary">Backend</a>
+                            <a href="" class="btn primary">Frontend</a>
+                        </div>
+                    </li>
+                    <li class="item3">
+                        <div class="cate_fr"><img src="" alt="" class="full_pic"></div>
+                    </li>
+                    <li class="item4">
+                        <div class="cate_fr"><img src="" alt="" class="full_pic"></div>
+                    </li>
+                    <li class="item5">
+                        <div class="cate_fr"><img src="" alt="" class="full_pic"></div>
+                    </li>
+                    <li class="item6">
+                        <div class="cate_fr"><img src="" alt="" class="full_pic"></div>
+                    </li>
+                    <li class="item7">
+                        <div class="cate_fr"><img src="" alt="" class="full_pic"></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div id="page4" class="page background">
+        <section class="page_wrap content-wrapper">
+            <h2 class="page_tit">Contact</h2>
+        </section>
+    </div>
 </body>
 </html>
